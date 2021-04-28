@@ -115,7 +115,7 @@ class Umarell(Agent):
     '''
     id_curr = 0
     agent_type = 'Umarell'
-    def __init__(self, model, prezzo, bisogno, banane_iniziali):
+    def __init__(self, model, prezzo, bisogno, banane_iniziali, pos):
         '''
         Crea un Umarell.
         Args:
@@ -130,8 +130,7 @@ class Umarell(Agent):
         self.bisogno_def = bisogno
         self.bisogno = bisogno
         self.banane_scorta = banane_iniziali
-        self.pos = (0, 0)
-        # self.start_day()
+        self.pos = pos
 
 
     def start_day(self):
@@ -147,12 +146,12 @@ class Umarell(Agent):
         Step one cell in any allowable direction.
         """
         # Pick the next cell from the adjacent cells.
-        next_moves = self.model.grid.get_neighborhood(self.pos, self.model.grid, moore=False)
+        next_moves = self.model.grid.get_neighborhood(self.pos, moore=False)
         next_move = self.random.choice(next_moves)
         # Now move:
         self.model.grid.move_agent(self, next_move)
 
-    def compra(n):
+    def compra(self, n):
         self.bisogno -= 1    
     
     def step(self):

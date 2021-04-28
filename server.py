@@ -6,6 +6,7 @@ from Mercato import Mercato
 
 COLORS = {"Vucumpra": "#00AA00", "Umarell": "#880000"}
 
+W, H = 40, 40
 
 def market_portrayal(cell):
     if cell is None:
@@ -18,11 +19,11 @@ def market_portrayal(cell):
     return portrayal
 
 
-canvas_element = CanvasGrid(market_portrayal, 100, 100, 500, 500)
+canvas_element = CanvasGrid(market_portrayal, W, H, 500, 500)
 
 model_params = {
-    "height": 40,
-    "width": 40,
+    "height": W,
+    "width": H,
     "N": UserSettableParameter("slider", "Numero vucumprà", 1, 1, 20, 1),
     "M": UserSettableParameter("slider", "Numero compratori", 1, 1, 30, 1),
 }
