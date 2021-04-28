@@ -1,5 +1,5 @@
 _______________________________________
-\ TO DO LIST:
+TO DO LIST:
 
     - Datacollector per visualizzare: (mercato.py)
         - andamento dei prezzi 
@@ -16,7 +16,7 @@ _______________________________________
     - Trovare un modo per fare un verbose mode nella visualizzazione così da capire meglio cosa succede 
     
 ________________________________________
-\ MERCATO SCEMO
+MERCATO SCEMO
 
 
 
