@@ -1,14 +1,14 @@
 import numpy as np
 
-import matplotlib.pyplot as plt
-%matplotlib inline
 
 from mesa import Model, Agent
 from mesa.time import RandomActivation
-from mesa.space import Grid
+from mesa.space import MultiGrid
 from mesa.datacollection import DataCollector
 from mesa.batchrunner import BatchRunner
 
+from MasUtils import *
+from Agenti import *
 
 class Mercato(Model):
     '''
@@ -29,32 +29,45 @@ class Mercato(Model):
         incontrano n agenti
         scelgono di comprare da un agente
     '''
-    def __init__(self, height, width, density):
+
+
+    def __init__(self, height, width, N, M):
         '''
         Create a new forest fire model.
         
         Args:
             height, width: The size of the grid to model
-            density: What fraction of grid cells have a tree in them.
+            N: numero Vucumpra
+            M: numero Umarell
         '''
         # Set up model objects
         self.schedule = RandomActivation(self)
-        self.grid = Grid(height, width, torus=False)
-        self.dc = DataCollector({"Fine": lambda m: self.count_type(m, "Fine"),
-                                "On Fire": lambda m: self.count_type(m, "On Fire"),
-                                "Burned Out": lambda m: self.count_type(m, "Burned Out")})
+        self.grid = MultiGrid(height, width, torus=False)
+        self.N = N 
+        self.M = M
+
+        # TODO datacollector
+        # self.dc = DataCollector({"Fine": lambda m: self.count_type(m, "Fine"),
+        #                         "On Fire": lambda m: self.count_type(m, "On Fire"),
+        #                         "Burned Out": lambda m: self.count_type(m, "Burned Out")})
         
-        # Place a tree in each cell with Prob = density
-        for x in range(self.width):
-            for y in range(self.height):
-                if self.random.random() < density:
-                    # Create a tree
-                    new_tree = TreeCell(self, (x, y))
-                    # Set all trees in the first column on fire.
-                    if x == 0:
-                        new_tree.condition = "On Fire"
-                    self.grid[y][x] = new_tree
-                    self.schedule.add(new_tree)
+        # Place down Vucumpras
+        for i in range(self.N):
+            x, y = random_cell(self.grid)
+            v = self.grid.get_cell_list_contents([(x, y)])
+            if len(v) == 0:
+                prezzo = np.random.rand()*10
+                new_vucumpra = Vucumpra(self, prezzo, (x, y), 25)
+                self.grid.place_agent(new_vucumpra, (x, y))
+                self.schedule.add(new_vucumpra)
+
+        for i in range(self.M):
+            new_umarell = Umarell(self, prezzo, 1, 10)
+            self.grid.place_agent(new_umarell, (0, 0))
+
+            self.schedule.add(new_umarell)
+
+            
         self.running = True
         
     def step(self):
@@ -62,20 +75,25 @@ class Mercato(Model):
         Advance the model by one step.
         '''
         self.schedule.step()
-        self.dc.collect(self)
+        
+        
+        # self.dc.collect(self)
         # Halt if no more fire
-        if self.count_type(self, "On Fire") == 0:
-            self.running = False
+        # if self.count_type(self, "On Fire") == 0:
+        #     self.running = False
     
-    @staticmethod
-    def count_type(model, tree_condition):
-        '''
-        Helper method to count trees in a given condition in a given model.
-        '''
-        count = 0
-        for tree in model.schedule.agents:
-            if tree.condition == tree_condition:
-                count += 1
-        return count
+
+    # @staticmethod
+    # def count_type(model, tree_condition):
+    #     '''
+    #     Helper method to count trees in a given condition in a given model.
+    #     '''
+    #     count = 0
+    #     for tree in model.schedule.agents:
+    #         if tree.condition == tree_condition:
+    #             count += 1
+    #     return count
 
 
+
+#
