@@ -43,7 +43,8 @@ MERCATO SCEMO
         - stessi soldi/distribuzione di soldi
         - incontrano j venditori ogni giorno a random
             ----- come scriviamo sto incontro?
-            --------------------------------------- c'è un metodo MultiGrid dentro mesa che permette a piu agenti di                                      condividere la stessa cella
+            --------------------------------------- c'è un metodo MultiGrid dentro mesa che permette a piu agenti di condividere laù
+                                                    stessa cella
                                                     potremmo simulare in questo modo gli incontri casuali nel mercato sbarazzandoci del problema dei primi vicini
                                                     https://mesa.readthedocs.io/en/stable/tutorials/intro_tutorial.html
         - decidono prezzo di acquisto
