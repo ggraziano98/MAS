@@ -52,6 +52,8 @@ class Mercato(Model):
         #                         "Burned Out": lambda m: self.count_type(m, "Burned Out")})
         
         # Place down Vucumpras
+
+        #TODO questo codice fa cagare non sempre ne spawna N
         for i in range(self.N):
             x, y = random_cell(self.grid)
             v = self.grid.get_cell_list_contents([(x, y)])
@@ -62,8 +64,9 @@ class Mercato(Model):
                 self.schedule.add(new_vucumpra)
 
         for i in range(self.M):
-            new_umarell = Umarell(self, prezzo, 1, 10)
-            self.grid.place_agent(new_umarell, (0, 0))
+            pos = random_cell(self.grid)
+            new_umarell = Umarell(self, prezzo, 1, 10, pos)
+            self.grid.place_agent(new_umarell, pos)
 
             self.schedule.add(new_umarell)
 
