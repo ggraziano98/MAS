@@ -1,4 +1,22 @@
-MERCATO SCEMO
+_______________________________________
+\\ TO DO LIST:
+
+    - Datacollector per visualizzare: (mercato.py)
+        - andamento dei prezzi 
+        - andamento delle scorte di banane (?)
+    + Aggiungere visualizzazione dei dati su (server.py)
+
+    - Far ripartire "il giorno dopo": (mercato.py)
+        - per ora appena gli umarell vanno dai vucumprà poi si fermano e non succede più niente, 
+          non si riparte dal giorno dopo nonappena tutti hanno comprato la roba 
+
+    # OPZIONALI
+    - Far si che gli umarell vadano più velocemente dai compratori senza romperci ad aspettare che il loro RW 
+      li porti esattamente in quella posizione così possiamo far girare più test in meno tempo 
+    - Trovare un modo per fare un verbose mode nella visualizzazione così da capire meglio cosa succede 
+    
+________________________________________
+\\ MERCATO SCEMO
 
 
 

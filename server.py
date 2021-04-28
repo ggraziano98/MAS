@@ -6,7 +6,7 @@ from Mercato import Mercato
 
 COLORS = {"Vucumpra": "#00AA00", "Umarell": "#880000"}
 
-W, H = 40, 40
+W, H = 10, 10
 
 def market_portrayal(cell):
     if cell is None:
