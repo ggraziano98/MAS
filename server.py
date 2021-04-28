@@ -14,7 +14,7 @@ def market_portrayal(cell):
     (x, y) = cell.pos
     portrayal["x"] = x
     portrayal["y"] = y
-    portrayal["Color"] = COLORS[type(cell)]
+    portrayal["Color"] = COLORS[cell.agent_type]
     return portrayal
 
 

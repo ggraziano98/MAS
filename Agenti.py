@@ -24,6 +24,7 @@ class Vucumpra(Agent):
         unique_id
     '''
     id_curr = 0
+    agent_type = 'Vucumpra'
     
 
     def __init__(self, model, prezzo, pos, scorta_banane):
@@ -33,8 +34,8 @@ class Vucumpra(Agent):
             prezzo: Prezzo iniziale
             pos:    Posizione
         '''
-        super().__init__(self.id_curr, model)
-        self.id_curr += 1
+        super().__init__(f'VUC_{Vucumpra.id_curr}', model)
+        Vucumpra.id_curr += 1
         self.prezzo = prezzo
         self.scorta_banane = scorta_banane
         self.pos = pos
@@ -113,6 +114,7 @@ class Umarell(Agent):
         unique_id
     '''
     id_curr = 0
+    agent_type = 'Umarell'
     def __init__(self, model, prezzo, bisogno, banane_iniziali):
         '''
         Crea un Umarell.
@@ -120,8 +122,8 @@ class Umarell(Agent):
             prezzo: prezzo a cui compra
             n:      numero di venditori che incontra
         '''
-        super().__init__(self.id_curr, model)
-        self.id_curr += 1
+        super().__init__(f'UMA_{Umarell.id_curr}', model)
+        Umarell.id_curr += 1
         self.prezzo = prezzo
         self.banane_ieri = 0
         #self.banane_totali = 0
