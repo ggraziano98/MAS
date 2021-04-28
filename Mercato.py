@@ -32,9 +32,7 @@ class Mercato(Model):
 
 
     def __init__(self, height, width, N, M):
-        '''
-        Create a new forest fire model.
-        
+        '''       
         Args:
             height, width: The size of the grid to model
             N: numero Vucumpra
