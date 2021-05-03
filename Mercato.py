@@ -1,9 +1,10 @@
 import numpy as np
-
+import networkx as nx
+from networkx.algorithms.bipartite.generators import random_graph
 
 from mesa import Model, Agent
 from mesa.time import RandomActivation
-from mesa.space import MultiGrid
+from mesa.space import NetworkGrid
 from mesa.datacollection import DataCollector
 from mesa.batchrunner import BatchRunner
 
@@ -31,7 +32,7 @@ class Mercato(Model):
     '''
 
 
-    def __init__(self, height, width, N, M):
+    def __init__(self, N, M):
         '''       
         Args:
             height, width: The size of the grid to model
@@ -40,9 +41,13 @@ class Mercato(Model):
         '''
         # Set up model objects
         self.schedule = RandomActivation(self)
-        self.grid = MultiGrid(height, width, torus=False)
+        self.num_nodes = N + M
         self.N = N 
         self.M = M
+    
+        self.G = random_graph(N, M, p=0.5)
+        self.grid = NetworkGrid(self.G)
+      
 
         # TODO datacollector
         # self.dc = DataCollector({"Fine": lambda m: self.count_type(m, "Fine"),
@@ -52,29 +57,41 @@ class Mercato(Model):
         # Place down Vucumpras
 
         #TODO questo codice fa cagare non sempre ne spawna N
+        
+        list_um_nodes = [n for n, d in self.G.nodes(data=True) if d["bipartite"] == 1]
+        list_vu_nodes = [n for n, d in self.G.nodes(data=True) if d["bipartite"] == 0]
+        
+        print(len(list_um_nodes), len(list_vu_nodes))
+        
+        
         for i in range(self.N):
-            x, y = random_cell(self.grid)
-            v = self.grid.get_cell_list_contents([(x, y)])
-            if len(v) == 0:
-                prezzo = np.random.rand()*10
-                new_vucumpra = Vucumpra(self, prezzo, (x, y), 25)
-                self.grid.place_agent(new_vucumpra, (x, y))
-                self.schedule.add(new_vucumpra)
-
+            prezzo = np.random.rand()*10
+            v = Vucumpra(self, i, prezzo, 25)
+            self.grid.place_agent(v, list_vu_nodes[i])
+            self.schedule.add(v)
+            
+        
         for i in range(self.M):
-            pos = random_cell(self.grid)
-            new_umarell = Umarell(self, prezzo, 1, 10, pos)
-            self.grid.place_agent(new_umarell, pos)
-
-            self.schedule.add(new_umarell)
-
+            prezzo = np.random.rand()*10
+            v = Umarell(self, self.N + i, prezzo, 1, 10)
+            self.grid.place_agent(v, list_um_nodes[i])
+            self.schedule.add(v)
             
         self.running = True
+        
+    def randomize_edges(self):
+        new_g = random_graph(self.N, self.M, 0.5)        
+        e = new_g.edges
+        self.G.clear_edges()
+        self.G.add_edges_from(e)
+        
         
     def step(self):
         '''
         Advance the model by one step.
         '''
+        #TODO
+        self.randomize_edges()
         self.schedule.step()
         
         
