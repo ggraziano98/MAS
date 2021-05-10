@@ -13,8 +13,8 @@ Zero intelligence ABM Financial models implement trader behaviour as noise or wi
     Study of Stock Market Structure
 
     \\ __init__
-        Order_Book: contains all the waiting orders waiting to be matched and fulfilled
-        Price_History: contains the price of assets for each time step
+        order_book: contains all the waiting orders waiting to be matched and fulfilled
+        price_history: contains the price of assets for each time step
 
     \\ Bid-Ask Method:
         Takes the highest buying price (BID) and the lowest selling price (ASK) and communicates this information to all agents in real time. 
@@ -32,33 +32,60 @@ Zero intelligence ABM Financial models implement trader behaviour as noise or wi
 
 
     \\ STEP Method:
-        Time ordered execution of market/limit orders of agents   
+        Execution of market/limit orders of agents
+        Market orders meet limit orders by the best available price. Execution time depends on price.
 
 # AGENT LEVEL:
     Behavioural study of market participants 
+    Agent type gets defined by the strategy method(s) of each agent class 
 
-## Shared Methods:
     \\ __init__: 
         Money (in their pocket)
         Assets (in their possession)
-        Strategy: Amount of stock to buy or to sell for each time step
+        S: (Strategy) Amount of stock to buy or to sell for each time step
+        Time_Horizon
 
+## Tecnical Strategies
+    The technical trader calculates the moving averages and derivatives of the log of the price_history and buys/sells an S amount of stock
+
+    # Moving Average
+    \\ MA(price_history, N):
+        MA = []
+        Average = (somma degli ultimi N prezzi)/N 
+        MA.Append(Average) per ogni time step 
+    
+    \\ MA_Cross(x,y,z(optional)):
+        x > y > z
+        The agent calculates three MAs for three different x, y and z time periods.
+        The crossover between each of these MAs gives the Technical Agent a buy/sell signal 
+        If MA(x)[-1] < MA(y)[-1] AND MA(x)[-2] > MA(y)[-2]:
+            Buy Signal
+            Send a Buy order of S assets proportional to the derivative difference between MA(x) and MA(y)
+        If MA(x)[-1] > MA(y)[-1] AND MA(x)[-2] < MA(y)[-2]:
+            Sell Signal
+            Send a Sell order of S assets proportional to the derivative difference between MA(x) and MA(y)
+
+        
+        
+## Funamentalist Strategies
+    The fundamentalist trader sets an expectation price of the stock 'exp' and buys/sells if the stock price falls below or rises abote the exp price
+
+
+
+
+## Shared Methods:
     \\ (Limit) BUY Method:
         each category of agent can perform a buy action 
         the agent will communicate to the market_model its limit price 
-    
     \\ (Limit) SELL Method: 
         each category of agent can perform a sell action 
         the agent will communicate to the market_model its limit price
-
     \\ (Market) BUY Method: 
         each category of agent can perform a sell action 
         the agent will buy the current ASK price
-
     \\ (Market) SELL Method: 
         each category of agent can perform a sell action 
         the agent will sell the current BID price 
-    
     \\ Order_Cancel Method: 
         The agent can decide to cancel an unexecuted order
 
