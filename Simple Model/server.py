@@ -54,7 +54,9 @@ grid = NetworkModule(network_portrayal, 500, 500, library="sigma")
 #     portrayal["Color"] = COLORS[cell.agent_type]
 #     return portrayal
 
-
+tree_chart = ChartModule(
+    [{"Label": label, "Color": color} for (label, color) in COLORS.items()]
+)
 
 model_params = {
     "N": UserSettableParameter("slider", "Numero vucumprà", 10, 1, 20, 1),
