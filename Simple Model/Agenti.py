@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 from mesa import Model, Agent
 from mesa.time import RandomActivation
-from mesa.space import Grid
+from mesa.space import NetworkGrid
 from mesa.datacollection import DataCollector
 from mesa.batchrunner import BatchRunner
 
@@ -23,22 +23,19 @@ class Vucumpra(Agent):
         pos                     
         unique_id
     '''
-    id_curr = 0
     agent_type = 'Vucumpra'
     
 
-    def __init__(self, model, prezzo, pos, scorta_banane):
+    def __init__(self, model, i, prezzo, scorta_banane):
         '''
         Create a venditore.
         Args:
             prezzo: Prezzo iniziale
             pos:    Posizione
-        '''
-        super().__init__(f'VUC_{Vucumpra.id_curr}', model)
-        Vucumpra.id_curr += 1
+        ''' 
+        super().__init__(i, model)
         self.prezzo = prezzo
         self.scorta_banane = scorta_banane
-        self.pos = pos
         self.registro_scorte = []
         self.registro_vendite = []
         self.avg_scorte = 0
@@ -52,7 +49,7 @@ class Vucumpra(Agent):
         self.avg_vendite = (sum(self.registro_vendite))/len(self.registro_vendite)
 
 
-    def vendi(n):
+    def vendi(self, n):
         '''
         n = numero di banane vendute 
         per ogni banana venduta aumento il numero di banane vendute
@@ -64,17 +61,17 @@ class Vucumpra(Agent):
             self.scorta_banane -= 1 
 
 
-    def rifornimento(refill):
+    def rifornimento(self, refill):
     
         '''
         ogni giorno il venditore riceve un rifornimento di banane 
 
         '''
         
-        self.stock_banane = stock_banane + refill
+        self.scorta_banane += refill
 
 
-    def prezzoseguente(scorta_banane, banane_vendute, prezzo):
+    def prezzoseguente(self):
         
         '''
         v_shift = shift del prezzo dovuto alle vendite passate
@@ -113,43 +110,30 @@ class Umarell(Agent):
         bisogno             (bisogno giornaliero)
         unique_id
     '''
-    id_curr = 0
     agent_type = 'Umarell'
-    def __init__(self, model, prezzo, bisogno, banane_iniziali, pos):
+    def __init__(self, model, i, prezzo, bisogno, banane_iniziali):
         '''
         Crea un Umarell.
         Args:
             prezzo: prezzo a cui compra
             n:      numero di venditori che incontra
         '''
-        super().__init__(f'UMA_{Umarell.id_curr}', model)
-        Umarell.id_curr += 1
+        super().__init__(i, model)
         self.prezzo = prezzo
         self.banane_ieri = 0
         #self.banane_totali = 0
         self.bisogno_def = bisogno
         self.bisogno = bisogno
         self.banane_scorta = banane_iniziali
-        self.pos = pos
 
 
-    def start_day(self):
-        """
-        Start day at random position and reset bisogno
-        """
-        pos = random_cell(self.model.grid)
-        self.model.grid.move_agent(self, pos)
-        self.bisogno = self.bisogno_def
-        
-    def random_move(self):
-        """
-        Step one cell in any allowable direction.
-        """
-        # Pick the next cell from the adjacent cells.
-        next_moves = self.model.grid.get_neighborhood(self.pos, moore=False)
-        next_move = self.random.choice(next_moves)
-        # Now move:
-        self.model.grid.move_agent(self, next_move)
+#    def start_day(self):
+#        """
+#        Start day at random position and reset bisogno
+#        """
+#        pos = random_cell(self.model.grid)
+#        self.model.grid.move_agent(self, pos)
+#        self.bisogno = self.bisogno_def
 
     def compra(self, n):
         self.bisogno -= 1    
@@ -160,17 +144,13 @@ class Umarell(Agent):
         vede i venditori più vicini
         decide se comprare o no 
         restock
-        '''
-        
-        
-        
+        '''       
         
         if self.bisogno > 0:
             #si muove in una casella se ha bisogno di banane 
-            self.random_move()
             
             #controlla dentro la casella che venditori ci sono
-            vicini = self.model.grid.get_cell_list_contents([self.pos])   
+            vicini = list(self.model.grid.iter_neighborhood(self.pos))
             vicini = [v for v in vicini if type(v) == Vucumpra]
              
             # TODO da cambiare che fa casini
