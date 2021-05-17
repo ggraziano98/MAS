@@ -40,12 +40,14 @@ class technical(Agent):
         alpha = random.randrange(5000,10000,1)*float(1e-4)
         U = alpha*(price_slope/k) #k è la frequenza con cui l'agente rivaluta la sua opinione, come la implementiamo?
         shift_probability = stats.expon.cdf(self.status*U)*k #usando sta funzione la shift_probability è già normalizzata come una probabilità (a quanto pare)
-        if random.random() < shift_probability: 
+        if self.status == +1 and random.random() < shift_probability: 
+            self.change_of_opinion()
+        if self.status == -1 and random.random() > shift_probability:
             self.change_of_opinion()
         # è la sintassi giusta per scrivere sta roba?
 
     def step(self):
-        if self.status == 1:
+        if self.status == +1:
             #self.buy_order(amount) - c'è ancora da definire il metodo buy
             pass
         else:
@@ -61,22 +63,47 @@ class technical(Agent):
                 n = 0
           
 
+       
 
-        # rettifico: non c'è alcun codice, come cazzo la implemento sta transizione di probabilità? 
-        # bisogna normalizzare la shift_probability... com'cazz s normalizz sta probbbabbiliti wagliò
+# si differenziano dai fundamental perchè l'operazione buy o sell è casuale
+class Noise(Agent):
+    
+    agent_type = 'Noise'
+    
+    def __init__(self, prezzo_t, reddito, n_azioni, unique_id):  #il costo_azione dipenderà dalla compra-vendita
+        super().__init__(prezzo_t, reddito, n_azioni, unique_id)
 
+        '''
+    NOISE TRADER
+    
+    Attributes:
         
-
+        n_azioni che ha 
+        reddito
         
+        '''   
 
-
-
-
-         
-
+        self.n_azioni    = n_azioni
+        self.reddito     = random.random()*int(1e4)
+        self.unique_id = unique_id
         
+        def does_its_thing(self):
+                
+                r = random.random()
 
+                if r <= 0.5:
+                    if self.reddito >= prezzo_t:
+                        # buy_order(amount)
+                        pass
+                             
+                else:
+                    if self.n_azioni >= 0:    #ovviamente solo se ha azioni vende
+                        # sell_order(amount)
+                        pass
 
-pass
+        def step(self):
+            self.does_its_thing()    
+
+           
 
 
