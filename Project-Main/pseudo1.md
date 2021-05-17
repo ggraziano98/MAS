@@ -46,13 +46,37 @@ Attività di network durante la "notte" (cioè da un giorno all'altro di trading
 
     \\ __init__: 
         Money (in their pocket)
+            gets initialised as a random wealth distribution
         Assets (in their possession)
+            gets initialised in a random way
         S: (Strategy) Amount of stock to buy or to sell for each time step
         Time_Horizon (Needed for fundamentalist traders)
         Opinion_Index: OI€[-1,1] with 1 being optimistic and -1 being pessimistic 
 
 ### Tecnical Strategies
-    The technical trader calculates the moving averages and derivatives of the log of the price_history and buys/sells an S amount of stock
+General Behaviour Implementation: 
+We don't account for the exact strategies used by technical traders but instead try to mimic their general behaviour by assuming they can be either optimistic or pessimistic about the future value of the stock. 
+
+nt = total number of technical traders (tts)
+n+ = number of optimistic tts
+n- = number of pessimistic tts 
+opinion index: x = (n+ + n-)/nt --- x € [-1,1]
+        -1: everyone's pessimist
+        +1: everyone's optimist
+         0: balanced overall sentiment
+
+tech_perc = nt/N --- #percentuale di technicals su N traders, it is needed for the implementation of transition capabilities between being technical and fundamental (see lux-marchesi-2000)
+k = frequency of revaluation of opinion 
+
+opinion change coefficient U
+U = alpha*x + beta*(time_derivative of price)/k
+
+
+transition_pn = k*np.exp(U) #transition from being optimist (positive=p) to being pessimist (negative=n)
+
+transition_np = k*np.exp(-U) #transition to being optimist (positive=p) from being pessimist (negative=n)
+
+{tech_perc should be multiplied to transition_ if transition between being t or f is to be implemented in the model}
 
 
 
@@ -62,7 +86,8 @@ Attività di network durante la "notte" (cioè da un giorno all'altro di trading
 
 
 
-###### I GOT TOO DEEP WITH THIS
+###### I GOT TOO DEEP WITH THIS: Chartist Implementation
+The technical trader calculates the moving averages and derivatives of the log of the price_history and buys/sells an S amount of stock.
     # Moving Average
     \\ MA(price_history, N):
         MA = []
@@ -129,3 +154,10 @@ Attività di network durante la "notte" (cioè da un giorno all'altro di trading
 
 # NETWORK LEVEL: 
     Study of self-organising social interaction networks applied to financial actors 
+
+
+# DATACOLLECTORS & VISUALIZATION
+Average value of fair value of fundamentalists
+Chartist's opinion index time series 
+
+Price Time series 
