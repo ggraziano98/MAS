@@ -46,7 +46,9 @@ class technical(Agent):
             self.change_of_opinion()
         # è la sintassi giusta per scrivere sta roba?
 
-    def step(self):
+    n_step = 0
+
+    def step(self, n_step):
         if self.status == +1:
             #self.buy_order(amount) - c'è ancora da definire il metodo buy
             pass
@@ -54,14 +56,12 @@ class technical(Agent):
             #self.sell_order(amount) - c'è ancora da definire il metodo sell 
             pass
 
-        n = 0
-        while n != self.k:
-            n += 1
-            if n == self.k: 
+        while True:
+            n_step += 1
+            if n_step%self.k == 0: 
                 self.does_its_thing()
-                # non so se è la sintassi giusta per scrivere sta roba
-                n = 0
-          
+            # in questo modo solo ogni k passi l'agente rivaluta la propria opinione 
+
 
        
 
