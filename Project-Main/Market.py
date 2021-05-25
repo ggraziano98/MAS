@@ -1,4 +1,4 @@
-from typing import List, NamedTuple
+from typing import Any, List, NamedTuple
 
 import numpy as np
 import networkx as nx
@@ -34,7 +34,7 @@ class Price():
 class Order(NamedTuple):                                                        # namedtuple per gestire più facilmente la struttura degli ordini
     price   : float
     n       : int
-    agent   : Trader
+    agent   : Any
     order_t : str
 
 

@@ -58,6 +58,7 @@ class Trader(Agent):
 
 
 
+
 class Technical(Trader):
 
     class_type = 'tech'
