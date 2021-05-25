@@ -14,7 +14,7 @@ from mesa.space import NetworkGrid
 from mesa.datacollection import DataCollector
 from mesa.batchrunner import BatchRunner
 
-from .Market import *
+from .Market import Mercato, Order
 
 #TODO
 #Price class(method?) with attributes .t, .series, .slope, .whatever --> inside market?
@@ -40,11 +40,13 @@ class Trader(Agent):
         ''' place a buy order for n assets at price '''
         order = self.model.place_order(Order(price, n, self, 'buy'))
         self.orders.append(order)
+        self.money -= n * price
 
     def sell(self, n, price):
         ''' place a sell order for n assets at price '''
         order = self.model.place_order(Order(price, n, self, 'sell'))
         self.orders.append(order)
+        self.asset -= n
 
     def step(self, *args, **kwargs):
         pass
@@ -54,9 +56,12 @@ class Trader(Agent):
         order.n -= n
         if order.n == 0:
             self.orders.remove(order)
-        m = 1 if order.order_t == 'buy' else -1
-
-
+        if order.order_t == 'buy':
+            self.money  += n * order.price
+            self.money  -= n * price
+            self.assets += n
+        else:
+            self.money += n * price
 
 
 class Technical(Trader):
@@ -143,29 +148,6 @@ class Noise(Trader):
 
     def step(self):
         self.does_its_thing()    
-
-        
-class Trader(Agent):
-    def __init__(self, model, unique_id, money, assets, args):
-        super().__init__(self, model, unique_id)
-        self.money = money
-        self.assets = assets
-
-    def does_its_thing(self):
-        # Each class implements this
-        pass
-
-    def buy(self, n, price):
-        self.model.place_order('buy', n, price)
-
-    def sell(self, n, price):
-        self.model.place_order('sell', n, price)
-
-
-
-
-
-
 
 
 class fundamental(Trader):

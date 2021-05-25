@@ -86,6 +86,11 @@ class Mercato(Model):
         buy.agent.complete_order(buy, n, price)
         sell.agent.complete_order(sell, n, price)
 
+        if buy.n == 0:
+            self.buy_book.remove(buy)
+        if sell.n == 0:
+            self.sell_book.remove(sell)
+
     def _fulfill(self):
         buy  = self.buy_book[-1]
         sell = self.sell_book[0]
