@@ -1,4 +1,6 @@
 import random
+import math
+from typing import List
 
 import scipy.stats as stats
 import numpy as np
@@ -12,46 +14,85 @@ from mesa.space import NetworkGrid
 from mesa.datacollection import DataCollector
 from mesa.batchrunner import BatchRunner
 
+from .Market import *
+
 #TODO
 #Price class(method?) with attributes .t, .series, .slope, .whatever --> inside market?
 
-class technical(Agent):
+
+def sigmoid(x):
+  return 2 / (1 + math.exp(-x)) - 1
+
+        
+class Trader(Agent):
+    def __init__(self, model: Mercato, unique_id: int, money: float, assets: int, *args, **kwargs):
+        super().__init__(self, model, unique_id)
+        self.model = model
+        self.money = money
+        self.assets = assets
+        self.orders: List[Order] = []
+
+    def does_its_thing(self):
+        ''' Logica dell'agente, implementata da ciascun tipo '''
+        pass
+
+    def buy(self, n, price):
+        ''' place a buy order for n assets at price '''
+        order = self.model.place_order(Order(price, n, self, 'buy'))
+        self.orders.append(order)
+
+    def sell(self, n, price):
+        ''' place a sell order for n assets at price '''
+        order = self.model.place_order(Order(price, n, self, 'sell'))
+        self.orders.append(order)
+
+    def step(self, *args, **kwargs):
+        pass
+
+    def complete_order(self, order: Order, n: int, price: float):
+        assert order in self.orders
+        order.n -= n
+        if order.n == 0:
+            self.orders.remove(order)
+        m = 1 if order.order_t == 'buy' else -1
+
+
+
+class Technical(Trader):
 
     class_type = 'tech'
 
-    def __init__(self, status, money, assets, price_t, k, unique_id):
-        super().__init__(status, money, assets, price_t, k, unique_id)
-        self.status = random.choice([-1,1]) #random initialization of opinion
-        self.money = money #random initialization of avb money from 100 to 5000 and step 1
+    def __init__(self, model, unique_id, money, assets, status, price_t, k):
+        super().__init__(model, unique_id, money, assets)
+        self.status = random.choice([-1,1])                                     # random initialization of opinion
+        self.money = money                                                      # random initialization of avb money from 100 to 5000 and step 1
         self.assets = assets
-        self.k = k 
+        self.k = k                                                              # k è la frequenza con cui l'agente rivaluta la sua opinione, come la implementiamo? 
         self.unique_id = unique_id
 
-    def change_of_opinion(self):
-        if self.status == 1:
-            self.status = -1
+    def change_of_opinion(self, state=0):
+        ''' set state to state or change state if state=0 '''
+        if state == 0:
+            if self.status == 1:
+                self.status = -1
+            else:
+                self.status = 1
         else:
-            self.status = 1
+            self.status = state
 
     def does_its_thing(self):
-        #calculate slope
+        # TODO rivedere con i numeri
 
-        # ogni agente calcola la slope col suo range temporale 
-        time_range = random.randint(2, 50) 
-        price_slope = np.gradient('price.series'[-time_range:-1]) #to be written later as price.slope attribute
-        alpha = 0.5 + random.random() * 0.5
-        #k è la frequenza con cui l'agente rivaluta la sua opinione, come la implementiamo?
-        U = alpha*(price_slope/self.k) 
-        shift_probability = stats.expon.cdf(self.status*U) * self.k #usando sta funzione la shift_probability è già normalizzata come una probabilità (a quanto pare)
-        if self.status == +1 and random.random() < shift_probability: 
-            self.change_of_opinion()
-        if self.status == -1 and random.random() > shift_probability:
-            self.change_of_opinion()
+        time_range = random.randint(2, 50)                                      # ogni agente calcola la slope col suo range temporale 
+        price_slope = self.model.price.slope(-time_range, -1)
+        
+        shift_probability = sigmoid(price_slope)                                # TODO per ora va bene cosi'
+
         # è la sintassi giusta per scrivere sta roba?
+        if random.random() < abs(shift_probability): 
+            self.change_of_opinion(shift_probability / abs(shift_probability))
 
-    n_step = 0
-
-    def step(self, n_step):
+    def step(self):
         if self.status == +1:
             #self.buy_order(amount) - c'è ancora da definire il metodo buy
             pass
@@ -59,21 +100,16 @@ class technical(Agent):
             #self.sell_order(amount) - c'è ancora da definire il metodo sell 
             pass
 
-        while True:
-            n_step += 1
-            if n_step%self.k == 0: 
-                self.does_its_thing()
-            # in questo modo solo ogni k passi l'agente rivaluta la propria opinione 
-
-
+        self.does_its_thing()
+        # in questo modo solo ogni k passi l'agente rivaluta la propria opinione 
        
 
 # si differenziano dai fundamental perchè l'operazione buy o sell è casuale
-class Noise(Agent):
+class Noise(Trader):
     
     agent_type = 'Noise'
     
-    def __init__(self, prezzo_t, reddito, n_azioni, unique_id):  #il costo_azione dipenderà dalla compra-vendita
+    def __init__(self, prezzo_t, reddito, n_azioni, unique_id):                 # il costo_azione dipenderà dalla compra-vendita
         super().__init__(prezzo_t, reddito, n_azioni, unique_id)
 
         '''
@@ -163,7 +199,7 @@ class fundamental(Trader):
     def step(self):
         if self.reddito > prezzo_t && self.valutazione > prezzo_t + (self.riskfree + self.pi)*prezzo_t:
             #compra
-            self.buy
+            self.buys
         
         if self.valutazione < prezzo_t + (self.riskfree)*prezzo_t && n_azioni >0:
             #vende
