@@ -1,3 +1,5 @@
+from typing import List, NamedTuple
+
 import numpy as np
 import networkx as nx
 from networkx.algorithms.bipartite.generators import random_graph
@@ -8,19 +10,53 @@ from mesa.space import NetworkGrid
 from mesa.datacollection import DataCollector
 from mesa.batchrunner import BatchRunner
 
+from .Agenti import *
+
+
+class Price():
+    def __init__(self):
+        self.series = []
+    
+    def t(self):
+        ''' prezzo corrente '''
+        return self.series[-1]
+
+    def slope(self, initial: int, final: int) -> float:
+        ''' rapporto incrementale fra prezzo al momento final e initial '''
+        return (self.series[final] - self.series[initial]) / (final - initial)
+
+    def add(self, *args: float):
+        ''' aggiungi uno o piu' prezzi alla serie '''
+        for p in args:
+            self.series.append(p)
+
+
+class Order(NamedTuple):                                                        # namedtuple per gestire più facilmente la struttura degli ordini
+    price   : float
+    n       : int
+    agent   : Trader
+    order_t : str
+
+
 class Mercato(Model):
-    def __init__(self, nf, nt):
+    def __init__(self, nf: int, nt: int, nn: int):
 
         # Set up model objects
         self.schedule = RandomActivation(self)
     
-        self.order_book = {'buy':[], 'sell':[]}
-        self.price_history = []
+        self.sell_book : List[Order] = []
+        self.buy_book  : List[Order] = []
+        self.price = Price()
         self.nf = nf
         self.nt = nt
+        self.nn = nn
 
-        # total number of fundamentalist and technical traders, stays constant
-        self.N = nf + nt 
+        self.bid = -1
+        self.ask = -1
+        self.spread = -1
+
+        # total number of noise, fundamentalist and technical traders, stays constant
+        self.N = nf + nt + nn
         
         # TODO cambiare tipo di grafo
         self.G = random_graph(nf, nt, p=0.5)
@@ -29,23 +65,36 @@ class Mercato(Model):
         self.running = False
         
     # TODO
-    def generate_agents(self):
+    def _generate_agents(self):
         pass
         
     def start(self):
-        self.generate_agents()
+        self._generate_agents()
         self.running = True
 
     #TODO
-    def get_bit_ask(self):
-        pass
+    def _get_bid_ask(self):
+        self.bid = self.buy_book[-1]
+        self.ask = self.sell_book[0]
+        self.spread = self.bid - self.ask
+
+    def _complete_order(self, buy: Order, sell: Order):
+        n = min(buy.n, sell.n)
+        # TODO vedere se cambiare questo price quando avremo il market maker
+        price = (buy.price + sell.price)/2
+
+        buy.agent.complete_order(buy, n, price)
+        sell.agent.complete_order(sell, n, price)
+
+    def _fulfill(self):
+        buy  = self.buy_book[-1]
+        sell = self.sell_book[0]
+        if buy.price > sell.price:
+            self._complete_order(buy, sell)
+            self._fulfill()
 
     #TODO
-    def fulfill(self):
-        pass
-
-    #TODO
-    def calc_volume(self):
+    def _calc_volume(self):
         pass
 
     def step(self):
@@ -53,11 +102,16 @@ class Mercato(Model):
         Advance the model by one step.
         '''
         #TODO
-        self.get_bid_ask()
+        self.sell_book.sort(key=lambda x: x.price)
+        self.buy_book.sort(key=lambda x: x.price)
+
         self.schedule.step()
-        self.fulfill()
-        self.calc_volume()
+        self._fulfill()
+        self._get_bid_ask()
+        self._calc_volume()
 
-
+    def place_order(self, order: Order):
+        order_book = self.buy_book if order.order_t == 'buy' else self.sell_book
+        order_book.append(order)
 
 
