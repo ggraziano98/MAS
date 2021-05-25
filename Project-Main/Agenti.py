@@ -124,3 +124,48 @@ class Trader(Agent):
     def sell(self, n, price):
         self.model.place_order('sell', n, price)
 
+
+
+
+
+
+
+
+class fundamental(Trader):
+    
+    agent_type = 'fund'
+    def __init__(self, model, unique_id, money, assets, args):
+        super().__init__(self, model, unique_id)
+    
+        
+        '''
+    FOUNDAMENTAL
+    
+    Attributes:
+        
+        valutazione secondo lui dell'azione
+        reddito
+        '''
+        self.valutazione=0
+        self.reddito  = random.random()*int(1e4)
+        self.n_azioni = n_azioni
+        self.riskfree = 0.03
+        self.pi =  random.random()*1e-1 + 0.10
+            
+    def does_its_thing(self):
+            
+        #valutazione
+        self.valutazione = prezzo_t + 0.2* prezzo_t*(-1 + 2*random.random())
+            
+        
+
+
+    def step(self):
+        if self.reddito > prezzo_t && self.valutazione > prezzo_t + (self.riskfree + self.pi)*prezzo_t:
+            #compra
+            self.buy
+        
+        if self.valutazione < prezzo_t + (self.riskfree)*prezzo_t && n_azioni >0:
+            #vende
+            self.sell
+              
