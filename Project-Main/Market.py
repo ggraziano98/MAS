@@ -42,10 +42,10 @@ class PriceSeries(List [Price]):
     def __init__(self, *iterable):
         super().__init__(iterable)
     
+    @property
     def t(self):
-        ''' prezzo corrente '''
-        return self[-1].close
-
+        return self[-1]
+	
     def slope(self, initial: int, final: int) -> float:
         ''' rapporto incrementale fra prezzo al momento final e initial '''
         return (self[final].close - self[initial].close) / (final - initial)
@@ -101,6 +101,9 @@ class Mercato(Model):
 
         # TODO @Marco
         volume  = 0
+        avg = 0
+
+        self.priceseries.append(Price(close, open, high, low, avg, volume, bid, ask))
 
     def _complete_order(self, buy: Order, sell: Order):
         n = min(buy.n, sell.n)

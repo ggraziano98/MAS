@@ -21,6 +21,7 @@ class Trader(Agent):
     def __init__(self, model: Mercato, unique_id: int, money: float, assets: int, *args, **kwargs):
         super().__init__(self, model, unique_id)
         self.model = model
+        self.priceseries = model.priceseries
         self.money = money
         self.assets = assets
         self.orders: List[Order] = []
@@ -82,7 +83,7 @@ class Technical(Trader):
     def does_its_thing(self):
         # TODO rivedere con i numeri
         time_range = random.randint(2, 50)                                      # ogni agente calcola la slope col suo range temporale 
-        price_slope = self.model.price.slope(-time_range, -1)
+        price_slope = self.priceseries.slope(-time_range, -1)
 
         shift_probability = sigmoid(price_slope)
 
@@ -113,10 +114,10 @@ class Fundamental(Trader):
         self.pi = pi                                                            # random.random()*1e-1 + 0.10
             
     def does_its_thing(self):
-        self.valutazione = self.model.price.t() + 0.2* self.model.price.t()*(-1 + 2*random.random())
-        if self.valutazione > self.model.price.t() + (self.riskfree + self.pi)*self.model.price.t():
+        self.valutazione = self.priceseries.t + 0.2* self.priceseries.t * (-1 + 2*random.random())
+        if self.valutazione > self.priceseries.t + (self.riskfree + self.pi)*self.priceseries.t:
             self.opinion = 1
-        elif self.valutazione < self.model.price.t() + (self.riskfree)*self.model.price.t():
+        elif self.valutazione < self.priceseries.t + (self.riskfree)*self.priceseries.t:
             self.opinion = -1
         else:
             self.opinion = 0
