@@ -71,12 +71,12 @@ class Mercato(Model):
 
         self.datacollector = DataCollector(
             {
-                # ask
-                # bid
-                # close
-                # volume
-                # optimists
-                # pessimists
+                'ask'       : 'ask',
+                'bid'       : 'bid',
+                'close'     : 'close',
+                'volume'    : 'volume',
+                'optimists' : 'optimists',
+                'pessimists': 'pessimists'
             }
         )
             
@@ -147,4 +147,27 @@ class Mercato(Model):
         order_book = self.buy_book if order.order_t == 'buy' else self.sell_book
         order_book.append(order)
 
+    @property
+    def ask(self):
+        return self.priceseries.t.ask
+
+    @property
+    def bid(self):
+        return self.priceseries.t.bid
+
+    @property
+    def close(self):
+        return self.priceseries.t.close
+
+    @property
+    def volume(self):
+        return self.priceseries.t.volume
+
+    @property
+    def optimists(self):
+        return sum((1 for a in self.schedule.agents if a.opinion == 1))
+    
+    @property
+    def pessimists(self):
+        return sum((1 for a in self.schedule.agents if a.opinion == -1))
 
