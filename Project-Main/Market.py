@@ -1,66 +1,84 @@
-from typing import Any, List, NamedTuple
+from typing import List, NamedTuple
+from __future__ import annotations
+from warnings import simplefilter
+from matplotlib.pyplot import close
 
-import numpy as np
-import networkx as nx
-from networkx.algorithms.bipartite.generators import random_graph
-
-from mesa import Model, Agent
+from mesa import Model
 from mesa.time import RandomActivation
-from mesa.space import NetworkGrid
 from mesa.datacollection import DataCollector
-from mesa.batchrunner import BatchRunner
 
-from .Agenti import *
-
-
-class Price():
-    def __init__(self):
-        self.series = []
-    
-    def t(self):
-        ''' prezzo corrente '''
-        return self.series[-1]
-
-    def slope(self, initial: int, final: int) -> float:
-        ''' rapporto incrementale fra prezzo al momento final e initial '''
-        return (self.series[final] - self.series[initial]) / (final - initial)
-
-    def add(self, *args: float):
-        ''' aggiungi uno o piu' prezzi alla serie '''
-        for p in args:
-            self.series.append(p)
-
+from .Agenti import Trader, Technical, Fundamental, Noise
 
 class Order(NamedTuple):                                                        # namedtuple per gestire più facilmente la struttura degli ordini
     price   : float
     n       : int
-    agent   : Any
+    agent   : Trader
     order_t : str
+    time    : int
+    def __lt__(self, other: Order):
+        return self.price < other.price
+
+
+class Price(NamedTuple):                                                        # namedtuple per facilitare la price history
+    close   : float
+    open    : float
+    high    : float
+    low     : float
+    avg     : float
+    volume  : float
+    bid     : float
+    ask     : float
+    
+
+class CompletedOrder(NamedTuple):                                               # just a wrapper for easier readability
+    buy     : Order
+    sell    : Order
+    price   : float
+    n       : int
+    time    : int
+
+
+class PriceSeries(List [Price]):
+    def __init__(self, *iterable):
+        super().__init__(iterable)
+    
+    def t(self):
+        ''' prezzo corrente '''
+        return self[-1].close
+
+    def slope(self, initial: int, final: int) -> float:
+        ''' rapporto incrementale fra prezzo al momento final e initial '''
+        return (self[final].close - self[initial].close) / (final - initial)
 
 
 class Mercato(Model):
     def __init__(self, nf: int, nt: int, nn: int):
-
         # Set up model objects
         self.schedule = RandomActivation(self)
-    
-        self.sell_book : List[Order] = []
-        self.buy_book  : List[Order] = []
-        self.price = Price()
+
         self.nf = nf
         self.nt = nt
         self.nn = nn
-
-        self.bid = -1
-        self.ask = -1
-        self.spread = -1
-
         # total number of noise, fundamentalist and technical traders, stays constant
         self.N = nf + nt + nn
-        
-        # TODO cambiare tipo di grafo
-        self.G = random_graph(nf, nt, p=0.5)
-        self.grid = NetworkGrid(self.G)
+
+        # TODO definire bene questi
+        self.priceseries = PriceSeries()
+    
+        self.sell_book          : List[Order] = []
+        self.buy_book           : List[Order] = []
+        self.fulfilled_orders   : List[CompletedOrder] = []                     # lista di ordini completati
+
+        self.datacollector = DataCollector(
+            {
+                # ask
+                # bid
+                # close
+                # volume
+                # optimists
+                # pessimists
+            }
+        )
             
         self.running = False
         
@@ -73,10 +91,16 @@ class Mercato(Model):
         self.running = True
 
     #TODO
-    def _get_bid_ask(self):
-        self.bid = self.buy_book[-1]
-        self.ask = self.sell_book[0]
-        self.spread = self.bid - self.ask
+    def _update_price_history(self):
+        bid     = max(self.buy_book).price
+        ask     = min(self.sell_book).price
+        high    = max(self.fulfilled_orders, key=lambda x: x.price).price
+        low     = min(self.fulfilled_orders, key=lambda x: x.price).price
+        open    = min(self.fulfilled_orders, key=lambda x: x.time).price
+        close   = max(self.fulfilled_orders, key=lambda x: x.time).price
+
+        # TODO @Marco
+        volume  = 0
 
     def _complete_order(self, buy: Order, sell: Order):
         n = min(buy.n, sell.n)
@@ -86,14 +110,14 @@ class Mercato(Model):
         buy.agent.complete_order(buy, n, price)
         sell.agent.complete_order(sell, n, price)
 
-        if buy.n == 0:
-            self.buy_book.remove(buy)
-        if sell.n == 0:
-            self.sell_book.remove(sell)
+        t = max(buy.time, sell.time)                                            # time a cui avviene l'ordine
+
+        self.fulfilled_orders.append(CompletedOrder(buy, sell, price, n, t))
 
     def _fulfill(self):
-        buy  = self.buy_book[-1]
-        sell = self.sell_book[0]
+        # Rifare in modo che possa sputare un price e un numero di azioni
+        buy  = max(self.buy_book)
+        sell = min(self.sell_book)
         if buy.price > sell.price:
             self._complete_order(buy, sell)
             self._fulfill()
@@ -106,13 +130,14 @@ class Mercato(Model):
         '''
         Advance the model by one step.
         '''
-        #TODO
-        self.sell_book.sort(key=lambda x: x.price)
-        self.buy_book.sort(key=lambda x: x.price)
-
+        self.fulfilled_orders = []
         self.schedule.step()
+
         self._fulfill()
-        self._get_bid_ask()
+        self.buy_book   = [x for x in self.buy_book if x.n > 0 ]
+        self.sell_book  = [x for x in self.sell_book if x.n > 0]
+        self._update_price_history()
+
         self._calc_volume()
 
     def place_order(self, order: Order):
