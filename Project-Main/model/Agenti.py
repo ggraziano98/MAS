@@ -73,17 +73,17 @@ class Trader(Agent):
         '''
         default logic for determining how much to buy
         '''
-        inv = random.random() * self.money
-        prezzo = self.model.bid + random.gauss(0, self.model.ask - self.model.bid)
-        n = int(inv / prezzo)
+        # inv = random.random() * self.money
+        prezzo = self.model.bid + random.gauss(0, 4* ( self.model.ask - self.model.bid))
+        n = 1
         return n, prezzo
         
     def _sell_logic(self) -> Tuple[int, float]:
         '''
         default logic for determining how much to sell
         '''
-        n = self.assets
-        prezzo = self.model.ask + random.gauss(0, self.model.ask - self.model.bid)
+        n = 1
+        prezzo = self.model.ask + random.gauss(0, 4 * (self.model.ask - self.model.bid))
         return n, prezzo
 
     @property

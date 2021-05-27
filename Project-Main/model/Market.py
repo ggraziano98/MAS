@@ -165,6 +165,9 @@ class Mercato(Model):
         if len(self.fulfilled_orders) > 0:
             self._update_price_history()
         self.datacollector.collect(self)
+        # print('==============\nFulfilled: ', *self.fulfilled_orders, sep='\n')
+        # print('==============\Buy book: ', *self.buy_book, sep='\n')
+        # print('ask:', self.ask, 'bid:', self.bid)
 
     def place_order(self, order: Order):
         order_book = self.buy_book if order.order_t == 'buy' else self.sell_book
