@@ -32,13 +32,13 @@ class Trader(Agent):
         ''' Logica dell'agente, implementata da ciascun tipo '''
         pass
 
-    def buy(self, n, price):
+    def _buy(self, n, price):
         ''' place a buy order for n assets at price '''
         order = self.model.place_order(mk.Order(price, n, self, 'buy', self.model.schedule.steps))
         self.orders.append(order)
         self.money -= n * price
 
-    def sell(self, n, price):
+    def _sell(self, n, price):
         ''' place a sell order for n assets at price '''
         order = self.model.place_order(mk.Order(price, n, self, 'sell', self.model.schedule.steps))
         self.orders.append(order)
@@ -47,12 +47,12 @@ class Trader(Agent):
     def step(self, *args, **kwargs):
         self.does_its_thing()
         if self.opinion > 0:
-            n, prezzo = self.buy_logic()
+            n, prezzo = self._buy_logic()
             if n > 0:
-                self.buy(n, prezzo)
+                self._buy(n, prezzo)
         elif self.opinion < 0:
-            n, prezzo = self.sell_logic()
-            self.sell(n, prezzo) 
+            n, prezzo = self._sell_logic()
+            self._sell(n, prezzo) 
 
 
     def complete_order(self, order: mk.Order, n: int, price: float):
@@ -69,7 +69,7 @@ class Trader(Agent):
         else:
             self.money += n * price
 
-    def buy_logic(self) -> Tuple[int, float]:
+    def _buy_logic(self) -> Tuple[int, float]:
         '''
         default logic for determining how much to buy
         '''
@@ -78,7 +78,7 @@ class Trader(Agent):
         n = int(inv / prezzo)
         return n, prezzo
         
-    def sell_logic(self) -> Tuple[int, float]:
+    def _sell_logic(self) -> Tuple[int, float]:
         '''
         default logic for determining how much to sell
         '''
