@@ -1,7 +1,7 @@
 from __future__ import annotations
 import random
 import math
-from typing import List
+from typing import List, Tuple
 
 from mesa import Agent
 
@@ -47,9 +47,13 @@ class Trader(Agent):
     def step(self, *args, **kwargs):
         self.does_its_thing()
         if self.opinion > 0:
-            self._random_buy()
+            n, prezzo = self.buy_logic()
+            if n > 0:
+                self.buy(n, prezzo)
         elif self.opinion < 0:
-            self._random_sell()
+            n, prezzo = self.sell_logic()
+            self.sell(n, prezzo) 
+
 
     def complete_order(self, order: mk.Order, n: int, price: float):
         if order not in self.orders:
@@ -65,16 +69,22 @@ class Trader(Agent):
         else:
             self.money += n * price
 
-    def _random_buy(self):
+    def buy_logic(self) -> Tuple[int, float]:
+        '''
+        default logic for determining how much to buy
+        '''
         inv = random.random() * self.money
         prezzo = self.model.bid + random.gauss(0, self.model.ask - self.model.bid)
         n = int(inv / prezzo)
-        if n > 0:
-            self.buy(n, prezzo)
+        return n, prezzo
         
-    def _random_sell(self):
+    def sell_logic(self) -> Tuple[int, float]:
+        '''
+        default logic for determining how much to sell
+        '''
+        n = self.assets
         prezzo = self.model.ask + random.gauss(0, self.model.ask - self.model.bid)
-        self.sell(self.assets, prezzo) 
+        return n, prezzo
 
     @property
     def wealth(self):
