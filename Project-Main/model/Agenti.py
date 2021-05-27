@@ -74,7 +74,7 @@ class Trader(Agent):
         default logic for determining how much to buy
         '''
         # inv = random.random() * self.money
-        prezzo = self.model.bid + random.gauss(0, 4* ( self.model.ask - self.model.bid))
+        prezzo = self.model.close * (1 + (random.random() - 0.5) * 0.5)
         n = 1
         return n, prezzo
         
@@ -83,7 +83,7 @@ class Trader(Agent):
         default logic for determining how much to sell
         '''
         n = 1
-        prezzo = self.model.ask + random.gauss(0, 4 * (self.model.ask - self.model.bid))
+        prezzo = self.model.close * (1 + (random.random() - 0.5) * 0.5)
         return n, prezzo
 
     @property
@@ -99,7 +99,7 @@ class Technical(Trader):
 
     def does_its_thing(self):
         # TODO rivedere con i numeri, k non è mai usata
-        time_range = random.randint(2, 3)                                      # ogni agente calcola la slope col suo range temporale 
+        time_range = random.randint(2, 3)                                       # ogni agente calcola la slope col suo range temporale 
         price_slope = self.priceseries.slope(-time_range, -1)
 
         shift_probability = sigmoid(price_slope)
@@ -125,17 +125,19 @@ class Fundamental(Trader):
     def __init__(self, model, unique_id, money, assets, pi):
         super().__init__(model, unique_id, money, assets)
     
-        self.valutazione = 0
+        self.valutazione = 200
         self.riskfree = 0.03
         self.pi = pi                                                            # random.random()*1e-1 + 0.10
             
     def does_its_thing(self):
-        self.valutazione = self.priceseries.t.close + 0.2* self.priceseries.t.close * (-1 + 2*random.random())
-        if self.valutazione > self.priceseries.t.close + (self.riskfree + self.pi)*self.priceseries.t.close:
+        self.valutazione = self.model.close + 0.2* self.model.close * (-1 + 2*random.random())
+        if self.valutazione > self.model.close + (self.riskfree + self.pi)*self.model.close:
             self.opinion = 1
-        elif self.valutazione < self.priceseries.t.close + (self.riskfree)*self.priceseries.t.close:
+        elif self.valutazione < self.model.close + (self.riskfree)*self.model.close:
             self.opinion = -1
         else:
             self.opinion = 0
+        
+        print(self.valutazione, self.model.close + (self.riskfree + self.pi)*self.model.close, self.opinion)
             
 

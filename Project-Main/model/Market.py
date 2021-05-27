@@ -69,7 +69,7 @@ class Mercato(Model):
         self.N = nf + nt + nn
 
         # TODO definire bene questi
-        self.priceseries = PriceSeries([Price(ask=ask0, bid=bid0)])
+        self.priceseries = PriceSeries([Price(ask=ask0, bid=bid0, close=(bid0 + ask0)/2)])
 
         self.sell_book          : List[Order] = []
         self.buy_book           : List[Order] = []
@@ -150,7 +150,8 @@ class Mercato(Model):
         sell = min(self.sell_book)
         if buy.price >= sell.price:
             self._complete_order(buy, sell)
-            self._fulfill()
+            if len(self.buy_book) > 0 and len(self.sell_book) > 0:
+                self._fulfill()
 
 
     def step(self):
@@ -159,10 +160,10 @@ class Mercato(Model):
         '''
         self.fulfilled_orders = []
         self.schedule.step()
-        if len(self.buy_book) > 0:
+        if len(self.buy_book) > 0 and len(self.sell_book) > 0:
             self._fulfill()
 
-        if len(self.fulfilled_orders) > 0:
+        if len(self.fulfilled_orders) > 0 and len(self.buy_book) > 0 and len(self.sell_book) > 0:
             self._update_price_history()
         self.datacollector.collect(self)
         # print('==============\nFulfilled: ', *self.fulfilled_orders, sep='\n')

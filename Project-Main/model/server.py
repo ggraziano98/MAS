@@ -62,9 +62,9 @@ wealth_bar = BarChartModule(
 )
 
 model_params = {
-    "nf": UserSettableParameter("slider", "Numero fundamentalists", 10, 1, 20, 1),
-    "nt": UserSettableParameter("slider", "Numero technical", 10, 1, 20, 1),
-    "nn": UserSettableParameter("slider", "Numero noise", 10, 1, 20, 1),
+    "nf": UserSettableParameter("slider", "Numero fundamentalists", 10, 0, 20, 1),
+    "nt": UserSettableParameter("slider", "Numero technical", 10, 0, 20, 1),
+    "nn": UserSettableParameter("slider", "Numero noise", 10, 0, 20, 1),
     "ask0": UserSettableParameter("number", "Ask iniziale", value=101),
     "bid0": UserSettableParameter("number", "Bid iniziale", value=99),
 }
