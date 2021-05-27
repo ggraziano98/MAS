@@ -3,13 +3,19 @@ from mesa.visualization.ModularVisualization import ModularServer
 from mesa.visualization.UserParam import UserSettableParameter
 from mesa.visualization.modules import BarChartModule, PieChartModule, ChartModule
 
-from .Market import Mercato
+from Market import Mercato
 
 GREEN   = '#0cb325'
 RED     = '#cc0808'
 BLUE    = '#2655c9'
 BLACK   = '#232833'
 MID     = "#8b8c94"
+
+AGENT_COL = {
+    'tech'  : '#9c0261',
+    'noise' : MID,
+    'fund'  : '#dba204'
+}
 
 '''
 Portrayals:
@@ -40,13 +46,6 @@ price_chart = ChartModule(
     ]
 )
 
-wealth_bar = BarChartModule(
-    [{"Label": "wealth", "Color": MID}],
-    scope="agent",
-    sorting="descending",
-    sort_by="wealth",
-)
-
 pie_chart = PieChartModule(
     [
         {"Label": "optimists", "Color": GREEN},
@@ -55,16 +54,24 @@ pie_chart = PieChartModule(
     ]
 )
 
+wealth_bar = BarChartModule(
+    [{"Label": "wealth", "Color": MID}],
+    scope="agent",
+    sorting="ascending",
+    sort_by="wealth",
+)
 
 model_params = {
     "nf": UserSettableParameter("slider", "Numero fundamentalists", 10, 1, 20, 1),
     "nt": UserSettableParameter("slider", "Numero technical", 10, 1, 20, 1),
     "nn": UserSettableParameter("slider", "Numero noise", 10, 1, 20, 1),
+    "ask0": UserSettableParameter("number", "Ask iniziale", value=101),
+    "bid0": UserSettableParameter("number", "Bid iniziale", value=99),
 }
 
 server = CustomServer(
     Mercato,
-    [price_chart, wealth_bar, pie_chart],
+    [price_chart, pie_chart, wealth_bar],
     "Mercato prova 1",
     model_params=model_params,
 )

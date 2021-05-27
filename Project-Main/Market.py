@@ -1,25 +1,27 @@
-from typing import List, NamedTuple
 from __future__ import annotations
+from typing import List, NamedTuple
 import random
+
+from recordclass import RecordClass
 
 from mesa import Model
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
 
-from .Agenti import Trader, Technical, Fundamental, Noise, starting_money, starting_assets
+from Agenti import Trader, Technical, Fundamental, Noise, starting_money, starting_assets
                                                        
 
 class Price(NamedTuple):                                                        # namedtuple per facilitare la price history
-    close   : float
-    open    : float
-    high    : float
-    low     : float
-    volume  : int
-    bid     : float
-    ask     : float
+    close   : float = 0
+    open    : float = 0
+    high    : float = 0
+    low     : float = 0
+    volume  : int   = 0
+    bid     : float = 0
+    ask     : float = 0
     
 
-class Order(NamedTuple):                                                        # namedtuple per gestire più facilmente la struttura degli ordini
+class Order(RecordClass):                                                       # tipo namedtuple ma mutable per gestire più facilmente la struttura degli ordini
     price   : float
     n       : int                                                               # numero di azioni
     agent   : Trader
@@ -27,6 +29,10 @@ class Order(NamedTuple):                                                        
     time    : int
     def __lt__(self, other: Order):                                             # python lo usa per fare i max e i min in automatico (e anche i sort obv)
         return self.price < other.price
+    def __gt__(self, other: Order):                                             # python lo usa per fare i max e i min in automatico (e anche i sort obv)
+        return self.price > other.price
+    def __eq__(self, other: Order):                                             # python lo usa per fare i max e i min in automatico (e anche i sort obv)
+        return self.price == other.price
 
 
 class CompletedOrder(NamedTuple):                                               # just a wrapper for easier readability
@@ -51,7 +57,7 @@ class PriceSeries(List [Price]):
 
 
 class Mercato(Model):
-    def __init__(self, nf: int, nt: int, nn: int):
+    def __init__(self, nf: int, nt: int, nn: int, ask0: float, bid0: float):
 
         # Set up model objects
         self.schedule = RandomActivation(self)
@@ -63,8 +69,8 @@ class Mercato(Model):
         self.N = nf + nt + nn
 
         # TODO definire bene questi
-        self.priceseries = PriceSeries()
-    
+        self.priceseries = PriceSeries([Price(ask=ask0, bid=bid0)])
+
         self.sell_book          : List[Order] = []
         self.buy_book           : List[Order] = []
         self.fulfilled_orders   : List[CompletedOrder] = []                     # lista di ordini completati
@@ -91,28 +97,23 @@ class Mercato(Model):
             self.schedule.add(p)
         for i in range(self.nt):
             p = Technical(self, i + self.nf, starting_money(), starting_assets(), random.randint(10, 20))
+            self.schedule.add(p)
         for i in range(self.nn):
-            p = Noise(self, i + self.nf+self.nt, starting_money, starting_assets())
+            p = Noise(self, i + self.nf+self.nt, starting_money(), starting_assets())
+            self.schedule.add(p)
 
     # TODO fare in modo che ci siano anche tutti gli altri parametri per price e poi appendere tutto a priceseries
     def _generate_data(self):
-        def randomwalk(step, start, lenght):
-            pos = start 
-            walk = []
-            for i in range(lenght):
-                k = random.random()
-                if k > 1/2:
-                    pos += step 
-                else:
-                    pos -= step 
-                walk.append(pos)
-            return walk
+        for i in range(self.N):
+            self.schedule.add(Noise(self, i, starting_money(), starting_assets()))
+        for i in range(3):
+            self.step()
+        for i in range(self.N):
+            self.schedule.remove(self.schedule.agents[0])
 
-        rw = randomwalk(1,0,100)
-        
     def start(self):
-        self._generate_agents()
         self._generate_data()
+        self._generate_agents()
         self.running = True
 
     #TODO
@@ -139,6 +140,11 @@ class Mercato(Model):
 
         self.fulfilled_orders.append(CompletedOrder(buy, sell, price, n, t))
 
+        if buy.n == 0:
+            self.buy_book.remove(buy)
+        if sell.n == 0:
+            self.sell_book.remove(sell)
+
     def _fulfill(self):
         buy  = max(self.buy_book)
         sell = min(self.sell_book)
@@ -153,15 +159,17 @@ class Mercato(Model):
         '''
         self.fulfilled_orders = []
         self.schedule.step()
+        if len(self.buy_book) > 0:
+            self._fulfill()
 
-        self._fulfill()
-        self.buy_book   = [x for x in self.buy_book if x.n > 0 ]
-        self.sell_book  = [x for x in self.sell_book if x.n > 0]
-        self._update_price_history()
+        if len(self.fulfilled_orders) > 0:
+            self._update_price_history()
+        self.datacollector.collect(self)
 
     def place_order(self, order: Order):
         order_book = self.buy_book if order.order_t == 'buy' else self.sell_book
         order_book.append(order)
+        return order
 
     @property
     def ask(self):
