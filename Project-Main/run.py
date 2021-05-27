@@ -1,6 +1,6 @@
 #! python
 
-from server import server
+from model.server import server
 
 print('SERVER STARTING')
 

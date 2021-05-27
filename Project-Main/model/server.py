@@ -3,7 +3,7 @@ from mesa.visualization.ModularVisualization import ModularServer
 from mesa.visualization.UserParam import UserSettableParameter
 from mesa.visualization.modules import BarChartModule, PieChartModule, ChartModule
 
-from Market import Mercato
+from model.Market import Mercato
 
 GREEN   = '#0cb325'
 RED     = '#cc0808'
@@ -19,7 +19,7 @@ AGENT_COL = {
 
 '''
 Portrayals:
-    Line Graph with ask/bid/close or open/close/high/low/volume                 (with hover?)
+    Line Graph with ask/bid/close or open/close/high/low/volume                 (cambiare l'api per avere solo gli ultimi N)
     Pie Chart with optimists/pessimists/neutral                                 (with filters for dedicated views for technical/fundamentalist/noise?)
     Bar Chart with agent wealth changing each tick                              (again, filter? or show assets/money/all)
 

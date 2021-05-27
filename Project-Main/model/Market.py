@@ -8,7 +8,7 @@ from mesa import Model
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
 
-from Agenti import Trader, Technical, Fundamental, Noise, starting_money, starting_assets
+from model.Agenti import Trader, Technical, Fundamental, Noise, starting_money, starting_assets
                                                        
 
 class Price(NamedTuple):                                                        # namedtuple per facilitare la price history

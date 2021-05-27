@@ -5,7 +5,7 @@ from typing import List, Tuple
 
 from mesa import Agent
 
-import Market as mk
+import model.Market as mk
 
 #TODO sono placeholders, da implementare in modo che le azioni siano in numero costante
 def starting_money():
