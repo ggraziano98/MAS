@@ -7,8 +7,12 @@ from mesa import Agent
 
 from .Market import *
 
-#TODO
-#Price class(method?) with attributes .t, .series, .slope, .whatever --> inside market?
+#TODO sono placeholders, da implementare in modo che le azioni siano in numero costante
+def starting_money():
+    return random.random()*10000
+#TODO sono placeholders, da implementare in modo che le azioni siano in numero costante
+def starting_assets():
+    return random.randint(0, 40)
 
 
 def sigmoid(x):
@@ -71,6 +75,10 @@ class Trader(Agent):
         prezzo = (self.model.ask + self.model.bid)/2 + random.gauss(0, self.model.spread)
         self.sell(self.assets, prezzo) 
 
+    @property
+    def wealth(self):
+        return self.money + self.assets * self.priceseries.t
+
 
 class Technical(Trader):
     agent_type = 'tech'
@@ -79,7 +87,7 @@ class Technical(Trader):
         self.k = k                                                              # k è la frequenza con cui l'agente rivaluta la sua opinione, come la implementiamo? 
 
     def does_its_thing(self):
-        # TODO rivedere con i numeri
+        # TODO rivedere con i numeri, k non è mai usata
         time_range = random.randint(2, 50)                                      # ogni agente calcola la slope col suo range temporale 
         price_slope = self.priceseries.slope(-time_range, -1)
 
@@ -89,7 +97,6 @@ class Technical(Trader):
             self.opinion = 1
         else: 
             self.opinion = -1
-        # TODO vogliamo comprare
        
 
 # si differenziano dai fundamental perchè l'operazione buy o sell è casuale

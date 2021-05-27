@@ -1,11 +1,12 @@
 from typing import List, NamedTuple
 from __future__ import annotations
+import random
 
 from mesa import Model
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
 
-from .Agenti import Trader, Technical, Fundamental, Noise
+from .Agenti import Trader, Technical, Fundamental, Noise, starting_money, starting_assets
                                                        
 
 class Price(NamedTuple):                                                        # namedtuple per facilitare la price history
@@ -51,6 +52,7 @@ class PriceSeries(List [Price]):
 
 class Mercato(Model):
     def __init__(self, nf: int, nt: int, nn: int):
+
         # Set up model objects
         self.schedule = RandomActivation(self)
 
@@ -68,24 +70,49 @@ class Mercato(Model):
         self.fulfilled_orders   : List[CompletedOrder] = []                     # lista di ordini completati
 
         self.datacollector = DataCollector(
-            {
+            model_reporters={
                 'ask'       : 'ask',
                 'bid'       : 'bid',
                 'close'     : 'close',
                 'volume'    : 'volume',
                 'optimists' : 'optimists',
                 'pessimists': 'pessimists'
+            },
+            agent_reporters={
+                'wealth'    : 'wealth'
             }
         )
             
         self.running = False
-        
-    # TODO
+
     def _generate_agents(self):
-        pass
+        for i in range(self.nf):
+            p = Fundamental(self, i, starting_money(), starting_assets(), random.random()*1e-1 + 0.10)
+            self.schedule.add(p)
+        for i in range(self.nt):
+            p = Technical(self, i + self.nf, starting_money(), starting_assets(), random.randint(10, 20))
+        for i in range(self.nn):
+            p = Noise(self, i + self.nf+self.nt, starting_money, starting_assets())
+
+    # TODO fare in modo che ci siano anche tutti gli altri parametri per price e poi appendere tutto a priceseries
+    def _generate_data(self):
+        def randomwalk(step, start, lenght):
+            pos = start 
+            walk = []
+            for i in range(lenght):
+                k = random.random()
+                if k > 1/2:
+                    pos += step 
+                else:
+                    pos -= step 
+                walk.append(pos)
+            return walk
+
+        rw = randomwalk(1,0,100)
         
     def start(self):
         self._generate_agents()
+        self._generate_data()
         self.running = True
 
     #TODO
@@ -96,9 +123,6 @@ class Mercato(Model):
         low     = min(self.fulfilled_orders, key=lambda x: x.price).price
         open    = min(self.fulfilled_orders, key=lambda x: x.time).price
         close   = max(self.fulfilled_orders, key=lambda x: x.time).price
-
-
-        # TODO @Marco
         volume  = sum((x.n for x in self.fulfilled_orders))
 
         self.priceseries.append(Price(close, open, high, low, volume, bid, ask))
@@ -116,7 +140,6 @@ class Mercato(Model):
         self.fulfilled_orders.append(CompletedOrder(buy, sell, price, n, t))
 
     def _fulfill(self):
-        # Rifare in modo che possa sputare un price e un numero di azioni
         buy  = max(self.buy_book)
         sell = min(self.sell_book)
         if buy.price >= sell.price:
@@ -159,6 +182,10 @@ class Mercato(Model):
     @property
     def optimists(self):
         return sum((1 for a in self.schedule.agents if a.opinion == 1))
+
+    @property
+    def neutral(self):
+        return sum((1 for a in self.schedule.agents if a.opinion == 0))
     
     @property
     def pessimists(self):
