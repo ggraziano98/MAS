@@ -178,9 +178,9 @@ class Mercato(Model):
         # print('==============\Buy book: ', *self.buy_book, sep='\n')
         # print('ask:', self.ask, 'bid:', self.bid)
         # print(len(self.priceseries),'\n')
-        for k in self.schedule.agents:
-            if k.agent_type == 'tech':
-                print("i'm a technical trader")
+        # for k in self.schedule.agents:
+        #     if k.agent_type == 'tech':
+        #         print("i'm a technical trader")
 
     def place_order(self, order: Order):
         order_book = self.buy_book if order.order_t == 'buy' else self.sell_book
