@@ -10,6 +10,7 @@ import model.Market as mk
 #TODO sono placeholders, da implementare in modo che le azioni siano in numero costante
 def starting_money():
     return random.random()*10000
+
 #TODO sono placeholders, da implementare in modo che le azioni siano in numero costante
 def starting_assets():
     return random.randint(0, 40)
@@ -122,21 +123,33 @@ class Noise(Trader):
 
 class Fundamental(Trader):
     agent_type = 'fund'
-    def __init__(self, model, unique_id, money, assets, pi):
+    def __init__(self, model, unique_id, money, assets, pi, k=100):
         super().__init__(model, unique_id, money, assets)
     
         self.valutazione = 200
         self.riskfree = 0.03
-        self.pi = pi                                                            # random.random()*1e-1 + 0.10
+        self.pi = pi                     
+        self.k = k                                       # random.random()*1e-1 + 0.10
             
     def does_its_thing(self):
-        self.valutazione = self.model.close + 0.2* self.model.close * (-1 + 2*random.random())
+        # self.valutazione = self.model.close + 0.2* self.model.close * (-1 + 2*random.random())
+       
+
+        t = 0
+        while t != self.k:                                                      # the agent doesn't update its valuation each time step.
+            t += 1
+            if t == self.k:
+                self.valutazione = self.model.close + 0.8* self.model.close * (-1 + 2*random.random())
+                t = 0
+
         if self.valutazione > self.model.close + (self.riskfree + self.pi)*self.model.close:
-            self.opinion = 1
+            self.opinion = 1            
         elif self.valutazione < self.model.close + (self.riskfree)*self.model.close:
             self.opinion = -1
         else:
             self.opinion = 0
+                
+                
         
         print(self.valutazione, self.model.close + (self.riskfree + self.pi)*self.model.close, self.opinion)
             
