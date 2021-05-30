@@ -1,10 +1,11 @@
 from __future__ import annotations
+from os import close
 from typing import List, NamedTuple
 import random
 
 from recordclass import RecordClass
 
-from mesa import Model
+from mesa import Model, agent
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
 
@@ -43,7 +44,7 @@ class CompletedOrder(NamedTuple):                                               
     time    : int
 
 
-class PriceSeries(List [Price]):
+class PriceSeries(List[Price]):
     def __init__(self, *iterable):
         super().__init__(*iterable)
     
@@ -53,7 +54,7 @@ class PriceSeries(List [Price]):
 	
     def slope(self, initial: int, final: int) -> float:
         ''' rapporto incrementale fra prezzo al momento final e initial '''
-        return (self[final].close - self[initial].close) / (final - initial)
+        return (self[initial].close - self[final].close) / (final - initial)
 
 
 class Mercato(Model):
@@ -65,7 +66,6 @@ class Mercato(Model):
         self.nf = nf
         self.nt = nt
         self.nn = nn
-        # total number of noise, fundamentalist and technical traders, stays constant
         self.N = nf + nt + nn
 
         # TODO definire bene questi
@@ -77,12 +77,15 @@ class Mercato(Model):
 
         self.datacollector = DataCollector(
             model_reporters={
-                'ask'       : 'ask',
-                'bid'       : 'bid',
-                'close'     : 'close',
-                'volume'    : 'volume',
-                'optimists' : 'optimists',
-                'pessimists': 'pessimists'
+                'ask'            : 'ask',
+                'bid'            : 'bid',
+                'close'          : 'close',
+                'volume'         : 'volume',
+                'optimists'      : 'optimists',
+                'pessimists'     : 'pessimists',
+                'tech_optimists' : 'tech_optimists',
+                'tech_pessimists': 'tech_pessimists'
+
             },
             agent_reporters={
                 'wealth'    : 'wealth'
@@ -93,7 +96,7 @@ class Mercato(Model):
 
     def _generate_agents(self):
         for i in range(self.nf):
-            p = Fundamental(self, i, starting_money(), starting_assets(), random.random()*1e-1 + 0.10)
+            p = Fundamental(self, i, starting_money(), starting_assets(), random.random()*1e-1 + 0.10, k=50)
             self.schedule.add(p)
         for i in range(self.nt):
             p = Technical(self, i + self.nf, starting_money(), starting_assets(), random.randint(10, 20))
@@ -101,6 +104,11 @@ class Mercato(Model):
         for i in range(self.nn):
             p = Noise(self, i + self.nf+self.nt, starting_money(), starting_assets())
             self.schedule.add(p)
+    
+    def valutazione(self):
+        # valutazione = self.close + 0.1 * self.close * (-1 + 2 * random.random())
+        valutazione = 200
+        return valutazione
 
     # TODO fare in modo che ci siano anche tutti gli altri parametri per price e poi appendere tutto a priceseries
     def _generate_data(self):
@@ -169,6 +177,10 @@ class Mercato(Model):
         # print('==============\nFulfilled: ', *self.fulfilled_orders, sep='\n')
         # print('==============\Buy book: ', *self.buy_book, sep='\n')
         # print('ask:', self.ask, 'bid:', self.bid)
+        # print(len(self.priceseries),'\n')
+        for k in self.schedule.agents:
+            if k.agent_type == 'tech':
+                print("i'm a technical trader")
 
     def place_order(self, order: Order):
         order_book = self.buy_book if order.order_t == 'buy' else self.sell_book
@@ -194,6 +206,10 @@ class Mercato(Model):
     @property
     def optimists(self):
         return sum((1 for a in self.schedule.agents if a.opinion == 1))
+    
+    @property
+    def tech_optimists(self):
+        return sum((1 for a in self.schedule.agents if a.agent_type == 'tech' and a.opinion == 1))
 
     @property
     def neutral(self):
@@ -203,3 +219,8 @@ class Mercato(Model):
     def pessimists(self):
         return sum((1 for a in self.schedule.agents if a.opinion == -1))
 
+    @property
+    def tech_pessimists(self):
+        return sum((1 for a in self.schedule.agents if a.agent_type == 'tech' and a.opinion == 1))
+
+    

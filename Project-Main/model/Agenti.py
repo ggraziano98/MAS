@@ -1,6 +1,7 @@
 from __future__ import annotations
 import random
 import math
+import numpy as np
 from typing import List, Tuple
 
 from mesa import Agent
@@ -13,7 +14,7 @@ def starting_money():
 
 #TODO sono placeholders, da implementare in modo che le azioni siano in numero costante
 def starting_assets():
-    return random.randint(0, 40)
+    return random.randint(0, 400000)
 
 def sigmoid(x):
   return 1 / (1 + math.exp(-x))
@@ -27,7 +28,8 @@ class Trader(Agent):
         self.money = money
         self.assets = assets
         self.orders: List[mk.Order] = []
-        self.opinion = 0
+        self.internal_time = 0
+        self.opinion = random.choice([-1, +1])
 
     def does_its_thing(self):
         ''' Logica dell'agente, implementata da ciascun tipo '''
@@ -75,7 +77,8 @@ class Trader(Agent):
         default logic for determining how much to buy
         '''
         # inv = random.random() * self.money
-        prezzo = self.model.close * (1 + (random.random() - 0.5) * 0.5)
+        prezzo = np.random.normal(self.model.bid, random.random())
+        # prezzo = self.model.ask * (random.random()/2 + 1/2)
         n = 1
         return n, prezzo
         
@@ -84,7 +87,8 @@ class Trader(Agent):
         default logic for determining how much to sell
         '''
         n = 1
-        prezzo = self.model.close * (1 + (random.random() - 0.5) * 0.5)
+        prezzo = np.random.normal(self.model.ask, random.random())
+        # prezzo = self.model.bid * (1 + (random.random() - 0.5) * 0.5)
         return n, prezzo
 
     @property
@@ -96,19 +100,24 @@ class Technical(Trader):
     agent_type = 'tech'
     def __init__(self, model, unique_id, money, assets, k):
         super().__init__(model, unique_id, money, assets)
-        self.k = k                                                              # k è la frequenza con cui l'agente rivaluta la sua opinione, come la implementiamo? 
+        self.k = k  
+        self.time_range = 20
+                                                                                # k è la frequenza con cui l'agente rivaluta la sua opinione, come la implementiamo? 
 
     def does_its_thing(self):
-        # TODO rivedere con i numeri, k non è mai usata
-        time_range = random.randint(2, 3)                                       # ogni agente calcola la slope col suo range temporale 
-        price_slope = self.priceseries.slope(-time_range, -1)
+        # TODO rivedere con i numeri, k non è mai usata                         # ogni agente calcola la slope col suo range temporale 
+        if self.internal_time > self.time_range:
+            price_slope = self.priceseries.slope(-self.time_range, -1)
+            shift_probability = sigmoid(self.k*price_slope)
 
-        shift_probability = sigmoid(price_slope)
+            if random.random() > shift_probability:
+                self.opinion = 1
+            else: 
+                self.opinion = -1
+        else:
+            pass
 
-        if random.random() > shift_probability:
-            self.opinion = 1
-        else: 
-            self.opinion = -1
+        self.internal_time += 1
        
 
 # si differenziano dai fundamental perchè l'operazione buy o sell è casuale
@@ -126,31 +135,36 @@ class Fundamental(Trader):
     def __init__(self, model, unique_id, money, assets, pi, k=100):
         super().__init__(model, unique_id, money, assets)
     
-        self.valutazione = 200
         self.riskfree = 0.03
         self.pi = pi                     
-        self.k = k                                       # random.random()*1e-1 + 0.10
+        self.k = k                                                 
             
     def does_its_thing(self):
         # self.valutazione = self.model.close + 0.2* self.model.close * (-1 + 2*random.random())
-       
 
+        self.internal_time += 1
+
+        if self.model.valutazione() > self.model.close + (self.riskfree + self.pi)*self.model.close:
+            self.opinion = 1   
+        elif self.model.valutazione() < self.model.close + (self.riskfree)*self.model.close:
+            self.opinion = -1
+        else:
+            self.opinion = 0
+                
+        if self.internal_time % self.k == 0:
+            self.valutazione = self.model.valutazione()
+    
+        
+        
+        '''
         t = 0
         while t != self.k:                                                      # the agent doesn't update its valuation each time step.
             t += 1
             if t == self.k:
                 self.valutazione = self.model.close + 0.8* self.model.close * (-1 + 2*random.random())
                 t = 0
+        '''
 
-        if self.valutazione > self.model.close + (self.riskfree + self.pi)*self.model.close:
-            self.opinion = 1            
-        elif self.valutazione < self.model.close + (self.riskfree)*self.model.close:
-            self.opinion = -1
-        else:
-            self.opinion = 0
-                
-                
-        
-        print(self.valutazione, self.model.close + (self.riskfree + self.pi)*self.model.close, self.opinion)
+        # print(self.valutazione, self.model.close + (self.riskfree + self.pi)*self.model.close, self.opinion)
             
 

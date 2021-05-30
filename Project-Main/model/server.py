@@ -40,9 +40,15 @@ class CustomServer(ModularServer):
 
 price_chart = ChartModule(
     [
-        {"Label": "ask", "Color": BLACK},
-        {"Label": "bid", "Color": BLACK},
+        {"Label": "ask", "Color": GREEN},
+        {"Label": "bid", "Color": RED},
         {"Label": "close", "Color": BLUE},
+    ]
+)
+
+volume_chart = ChartModule(
+    [
+        {"Label": "volume", "Color": BLACK}
     ]
 )
 
@@ -50,6 +56,14 @@ pie_chart = PieChartModule(
     [
         {"Label": "optimists", "Color": GREEN},
         {"Label": "pessimists", "Color": RED},
+        {"Label": "neutral", "Color": MID},
+    ]
+)
+
+tech_pie_chart = PieChartModule(
+    [
+        {"Label": "tech_optimists", "Color": GREEN},
+        {"Label": "tech_pessimists", "Color": RED},
         {"Label": "neutral", "Color": MID},
     ]
 )
@@ -62,16 +76,16 @@ wealth_bar = BarChartModule(
 )
 
 model_params = {
-    "nf": UserSettableParameter("slider", "Numero fundamentalists", 10, 0, 20, 1),
-    "nt": UserSettableParameter("slider", "Numero technical", 10, 0, 20, 1),
-    "nn": UserSettableParameter("slider", "Numero noise", 10, 0, 20, 1),
+    "nf": UserSettableParameter("slider", "Numero fundamentalists", 0, 0, 500, 1),
+    "nt": UserSettableParameter("slider", "Numero technical", 100, 0, 500, 1),
+    "nn": UserSettableParameter("slider", "Numero noise", 0, 0, 500, 1),
     "ask0": UserSettableParameter("number", "Ask iniziale", value=101),
     "bid0": UserSettableParameter("number", "Bid iniziale", value=99),
 }
 
 server = CustomServer(
     Mercato,
-    [price_chart, pie_chart, wealth_bar],
+    [price_chart, volume_chart, pie_chart, tech_pie_chart, wealth_bar],
     "Mercato prova 1",
     model_params=model_params,
 )
