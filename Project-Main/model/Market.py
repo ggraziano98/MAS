@@ -169,7 +169,7 @@ class Mercato(Model):
         self.fulfilled_orders = []
         self.schedule.step()
         if len(self.buy_book) > 0 and len(self.sell_book) > 0:
-            self._fulfill()
+            self._fulfill()   #Control
 
         if len(self.fulfilled_orders) > 0 and len(self.buy_book) > 0 and len(self.sell_book) > 0:
             self._update_price_history()
