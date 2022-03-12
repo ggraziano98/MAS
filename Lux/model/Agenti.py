@@ -1,15 +1,19 @@
 from __future__ import annotations
-from locale import ABDAY_1
+
 import random
 import math
-import numpy as np
+import logging
 from typing import List, Tuple
 
+import numpy as np
 from mesa import Agent
 
 import model.Market as mk
 
         
+log = logging.getLogger("AgentLog")
+log.setLevel(logging.INFO)
+
 class Trader(Agent):
     def __init__(self, model: mk.Mercato, unique_id: int, *args, **kwargs):
         super().__init__(unique_id, model)
@@ -17,7 +21,7 @@ class Trader(Agent):
         self.opinion = random.choice([-1, +1])
         self.orders = []
 
-    def does_its_thing(self):
+    def trader_logic(self):
         ''' Logica dell'agente, implementata da ciascun tipo '''
         pass
 
@@ -32,7 +36,7 @@ class Trader(Agent):
         self.model.sell()
 
     def step(self, *args, **kwargs):
-        self.does_its_thing()
+        self.trader_logic()
         if self.opinion > 0:
             self._buy()
         elif self.opinion < 0:
@@ -46,11 +50,13 @@ class Technical(Trader):
         self.a1 = a1  # dipendenza dalla maggioranza, < 1
         self.a2 = a2  # dipendenza dal mercato, < 1
         
-    def does_its_thing(self):
-        price_slope = self.model.priceseries.slope(-self.v1, -1)
+    def trader_logic(self):
+        price_slope = self.model.priceseries.slope(- int(1 / self.v1), -1)
         x = (self.model.priceseries.t.ask - self.model.priceseries.t.bid) / self.model.nt
         U1 = self.a1 * x + self.a2 * price_slope / self.v1
         p_transition = self.v1 * (self.model.nt / self.model.N * math.exp(self.opinion * U1))
+
+        log.debug(f"Trader id: {self.unique_id : 4d} - Slope: {price_slope:4.2f} - x: {x:4.2f} - Transition probability: {p_transition:4.3f}")
 
         if random.random() < p_transition:
             self.opinion = self.opinion * -1

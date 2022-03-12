@@ -34,6 +34,7 @@ class CustomServer(ModularServer):
     '''
     just a wrapper to call a function after initialization
     '''
+
     def reset_model(self):
         super().reset_model()
         self.model.start()
@@ -42,12 +43,6 @@ ask_bid_chart = ChartModule(
     [
         {"Label": "ask", "Color": GREEN},
         {"Label": "bid", "Color": RED},
-    ]
-)
-
-p_trans_chart = ChartModule(
-    [
-        {"Label": "p_trans", "Color": GREEN},
     ]
 )
 
@@ -70,8 +65,10 @@ model_params = {
 
 server = CustomServer(
     Mercato,
-    [ask_bid_chart, tech_pie_chart, p_trans_chart, price_chart],
+    [ask_bid_chart, tech_pie_chart, price_chart],
     "Mercato prova 1",
     model_params=model_params,
 )
+
+
 

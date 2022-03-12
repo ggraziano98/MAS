@@ -1,14 +1,18 @@
 from __future__ import annotations
-from typing import List, NamedTuple
-import random
 
+import random
+import logging
+import math
+from typing import List, NamedTuple
 
 from mesa import Model, agent
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
 
 from model.Agenti import Trader, Technical
-                                                       
+
+log = logging.getLogger("MarketLog")
+log.setLevel(logging.DEBUG)                                         
 
 class Price(NamedTuple):                                                        # namedtuple per facilitare la price history
     p   : float = 10
@@ -34,7 +38,7 @@ class PriceSeries(List[Price]):
 
 
 class Mercato(Model):
-    def __init__(self, nt: int, p0: float = 10, beta: int = 6, deltap: float = 1):
+    def __init__(self, nt: int, p0: float = 10, beta: float = 1/6, deltap: float = 1):
 
         # Set up model objects
         self.schedule = RandomActivation(self)
@@ -56,7 +60,6 @@ class Mercato(Model):
                 'bid'            : 'bid',
                 'tech_optimists' : 'tech_optimists',
                 'tech_pessimists': 'tech_pessimists',
-                'p_trans'        : 'p_trans',
                 'price'          : 'price'
             },
         )
@@ -65,7 +68,7 @@ class Mercato(Model):
 
     def _generate_agents(self):
         for i in range(self.nt):
-            p = Technical(self, i + self.nt, 3, 0.6, 0.2)
+            p = Technical(self, unique_id=i, v1=1/3, a1=0.6, a2=0.2)
             self.schedule.add(p)
     
     def start(self):
@@ -82,9 +85,11 @@ class Mercato(Model):
     def _update_price(self):
         ed = self.ts_buy - self.ts_sell  # excess demand
         mu = random.gauss(0, 5)  # noise term
-        U = ed + mu
+        U = self.beta * (ed + mu)
 
-        p_trans = max(0, abs(U))
+        p_trans = max(0, math.exp(-abs(U)))
+
+        log.debug(f"ED: {ed:4d} - noise: {mu:3.2f} - Transition probability: {p_trans:4.3f}")
 
         if random.random() < p_trans:
             self.current_price += U / abs(U) * self.deltap
@@ -126,16 +131,5 @@ class Mercato(Model):
 
     @property
     def price(self):
-        print(self.current_price)
         return self.current_price
-
-    @property
-    def p_trans(self):
-        ed = self.ts_buy - self.ts_sell  # excess demand
-        mu = random.gauss(0, 5)  # noise term
-        U = ed + mu
-
-        p_trans = max(0, abs(U))
-        return p_trans * U / abs(U)
-
 
