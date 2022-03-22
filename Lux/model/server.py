@@ -34,6 +34,12 @@ class CustomServer(ModularServer):
     '''
     just a wrapper to call a function after initialization
     '''
+    def __init__(self, model_cls, visualization_elements, name="Mesa Model", model_params=...):
+        self.settings["debug"] = False
+        self.settings["autoreload"] = False
+        self.verbose = False
+
+        super().__init__(model_cls, visualization_elements, name, model_params)
 
     def reset_model(self):
         super().reset_model()
