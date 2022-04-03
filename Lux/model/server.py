@@ -36,7 +36,7 @@ class CustomServer(ModularServer):
     '''
     def __init__(self, model_cls, visualization_elements, name="Mesa Model", model_params=...):
         self.settings["debug"] = False
-        self.settings["autoreload"] = False
+        self.settings["autoreload"] = True
         self.verbose = False
 
         super().__init__(model_cls, visualization_elements, name, model_params)
@@ -58,20 +58,28 @@ price_chart = ChartModule(
     ]
 )
 
+tech_fraction_chart = ChartModule(
+    [
+        {"Label": "technical_fraction", "Color": GREEN},
+    ]
+)
+
 tech_pie_chart = PieChartModule(
     [
         {"Label": "tech_optimists", "Color": GREEN},
         {"Label": "tech_pessimists", "Color": RED},
+        {"Label": "nf", "Color": BLUE}
     ]
 )
 
 model_params = {
-    "nt": UserSettableParameter("slider", "Numero technical", 100, 0, 500, 1),
+    "nt": UserSettableParameter("slider", "Numero Technical", 10, 0, 500, 1),
+    "nf": UserSettableParameter("slider", "Numero Fundamentalists", 490, 0, 500, 1),
 }
 
 server = CustomServer(
     Mercato,
-    [ask_bid_chart, tech_pie_chart, price_chart],
+    [ask_bid_chart, tech_pie_chart, price_chart, tech_fraction_chart],
     "Mercato prova 1",
     model_params=model_params,
 )
