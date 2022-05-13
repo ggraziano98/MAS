@@ -33,12 +33,12 @@ class Trader(Agent):
     def __init__(self, model: mk.Mercato, unique_id: int, strategy: int, *args, **kwargs):
         super().__init__(unique_id, model)
         prop_defaults = {
-            "v1": 1/3,    # frequenza con cui un technical rivaluta la sua opinione
-            "v2": 1/2,    # frequenza con cui un trader cambia strategia
+            "v1": 3,    # frequenza con cui un technical rivaluta la sua opinione
+            "v2": 2,    # frequenza con cui un trader cambia strategia
             "a1": 0.6,    # dipendenza dalla maggioranza dei technical, < 1
             "a2": 0.2,    # dipendenza dal mercato dei technical, < 1
             "a3": 0.5,    # misura della pressione esercitata dai profitti differenziali / inerzia della reazione ai profitti differenziali
-            "R" : 0.004,  # ritorno medio dagli altri investimenti
+            "R" : 0.0004,  # ritorno medio dagli altri investimenti
             "r" : 0.004,  # dividendo nominale dell'asset
             "s" : 0.75,   # discount factor
             "pf": 10,     # prezzo del fundamentalist
@@ -68,27 +68,27 @@ class Trader(Agent):
             self._sell()
 
     def pick_strategy(self):
-        price_slope = self.model.priceseries.slope(- int(1 / self.v1), -1)
+        price_slope = self.model.priceseries.slope()
 
         # excess profits per unit by technical
         ept = (self.r + price_slope / self.v2) / self.model.price - self.R
         epf = self.s * abs((self.model.price - self.pf) / self.model.price)
 
-        if self.strategy == Strategies.Fundamentalist:
+        if self.strategy == Strategies.Fundamentalist and self.model.nf > mk.MIN_TRADER:
             trader_encoutered = 1 if random.random() < self.model.tech_optimists / self.model.nt else -1
             U = self.a3 * (trader_encoutered * ept - epf)
 
-            p_transition = self.v2 * self.model.nf / self.model.N * math.exp(-U)
+            p_transition = self.v2 * self.model.nf / self.model.N * math.exp(-U) * mk.DT
 
             if random.random() < p_transition:
                 self.strategy = Strategies.Technical
                 self.opinion = trader_encoutered
 
-        else:
+        elif self.strategy == Strategies.Technical and self.model.nf > mk.MIN_TRADER:
             U = self.a3 * (self.opinion * ept - epf)
 
             n = self.model.tech_optimists / self.model.N if self.opinion == 1 else self.model.tech_pessimists / self.model.N
-            p_transition = self.v2 * n * math.exp(U)
+            p_transition = self.v2 * n * math.exp(U) * mk.DT
 
             if random.random() < p_transition:
                 self.strategy = Strategies.Fundamentalist
@@ -97,10 +97,10 @@ class Trader(Agent):
     def trader_logic(self):
         # logica technical
         if self.strategy == Strategies.Technical:
-            price_slope = self.model.priceseries.slope(- int(1 / self.v1), -1)
+            price_slope = self.model.priceseries.slope()
             x = (self.model.tech_optimists - self.model.tech_pessimists) / self.model.nt
             U1 = self.a1 * x + self.a2 * price_slope / self.v1
-            p_transition = self.v1 * (self.model.nt / self.model.N * math.exp(self.opinion * U1))
+            p_transition = self.v1 * (self.model.nt / self.model.N * math.exp(self.opinion * U1)) * mk.DT
 
             if random.random() < p_transition:
                 self.opinion = self.opinion * -1
@@ -109,7 +109,9 @@ class Trader(Agent):
             
         # logica fundamentalist
         elif self.strategy == Strategies.Fundamentalist:
-            self.opinion = 1 if self.pf < self.model.price else - 1
-            logger.debug(f"{'Fundamentalist':15s} - ID: {self.unique_id: 4d} - Opinion: {self.opinion}")
+            self.opinion = 1 if self.pf > self.model.price else - 1
+            if self.pf == self.model.price:
+                self.opinion = random.choice([-1,1])
+            logger.debug(f"{'Fundamentalist':15s} - ID: {self.unique_id: 4d} - Market price: {self.model.price: 4.2f} - Opinion: {self.opinion}")
         
         

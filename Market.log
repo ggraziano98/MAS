@@ -1,1 +1,1783 @@
-13:21 - 22/03/2022
+11:50 - 13/05/2022
+EDt:     6 - EDf:  0.00 - ED:  6.00 - noise: -5.56 - Transition probability: 0.027
+NF:   480 - NT+:    13 - NT-:     7 - Price: 10.00
+EDt:     6 - EDf:  0.00 - ED:  6.00 - noise:  8.71 - Transition probability: 0.882
+NF:   474 - NT+:    16 - NT-:    10 - Price: 11.00
+EDt:     1 - EDf: -4.63 - ED: -3.63 - noise:  4.58 - Transition probability: 0.057
+NF:   463 - NT+:    19 - NT-:    18 - Price: 11.00
+EDt:     1 - EDf: -4.61 - ED: -3.61 - noise:  2.34 - Transition probability: 0.076
+NF:   461 - NT+:    20 - NT-:    19 - Price: 11.00
+EDt:    -5 - EDf: -4.55 - ED: -9.55 - noise: -7.28 - Transition probability: 1.010
+NF:   455 - NT+:    20 - NT-:    25 - Price: 10.00
+EDt:    -6 - EDf:  0.00 - ED: -6.00 - noise: -1.32 - Transition probability: 0.439
+NF:   452 - NT+:    21 - NT-:    27 - Price: 10.00
+EDt:   -12 - EDf:  0.00 - ED: -12.00 - noise: -4.66 - Transition probability: 1.000
+NF:   446 - NT+:    21 - NT-:    33 - Price:  9.00
+EDt:   -17 - EDf:  4.37 - ED: -12.63 - noise:  8.57 - Transition probability: 0.244
+NF:   437 - NT+:    23 - NT-:    40 - Price:  9.00
+EDt:   -22 - EDf:  4.30 - ED: -17.70 - noise: -2.36 - Transition probability: 1.203
+NF:   430 - NT+:    24 - NT-:    46 - Price:  8.00
+EDt:   -20 - EDf:  8.48 - ED: -11.52 - noise:  2.55 - Transition probability: 0.538
+NF:   424 - NT+:    28 - NT-:    48 - Price:  7.00
+EDt:   -21 - EDf:  12.51 - ED: -8.49 - noise:  0.93 - Transition probability: 0.453
+NF:   417 - NT+:    31 - NT-:    52 - Price:  6.00
+EDt:   -27 - EDf:  16.28 - ED: -10.72 - noise: 14.15 - Transition probability: 0.206
+NF:   407 - NT+:    33 - NT-:    60 - Price:  6.00
+EDt:   -27 - EDf:  16.04 - ED: -10.96 - noise: -0.87 - Transition probability: 0.710
+NF:   401 - NT+:    36 - NT-:    63 - Price:  5.00
+EDt:   -30 - EDf:  19.60 - ED: -10.40 - noise: -3.00 - Transition probability: 0.804
+NF:   392 - NT+:    39 - NT-:    69 - Price:  4.00
+EDt:   -30 - EDf:  23.04 - ED: -6.96 - noise: -1.35 - Transition probability: 0.498
+NF:   384 - NT+:    43 - NT-:    73 - Price:  3.00
+EDt:   -28 - EDf:  26.32 - ED: -1.68 - noise:  2.83 - Transition probability: 0.069
+NF:   376 - NT+:    48 - NT-:    76 - Price:  3.00
+EDt:   -28 - EDf:  25.62 - ED: -2.38 - noise:  3.04 - Transition probability: 0.040
+NF:   366 - NT+:    53 - NT-:    81 - Price:  3.00
+EDt:   -29 - EDf:  24.57 - ED: -4.43 - noise: -3.89 - Transition probability: 0.499
+NF:   351 - NT+:    60 - NT-:    89 - Price:  3.00
+EDt:   -31 - EDf:  23.87 - ED: -7.13 - noise:  6.06 - Transition probability: 0.064
+NF:   341 - NT+:    64 - NT-:    95 - Price:  2.00
+EDt:   -34 - EDf:  25.76 - ED: -8.24 - noise:  3.45 - Transition probability: 0.287
+NF:   322 - NT+:    72 - NT-:   106 - Price:  2.00
+EDt:   -39 - EDf:  24.08 - ED: -14.92 - noise:  1.28 - Transition probability: 0.819
+NF:   301 - NT+:    80 - NT-:   119 - Price:  1.00
+EDt:   -44 - EDf:  19.26 - ED: -24.74 - noise: -3.79 - Transition probability: 1.712
+NF:   214 - NT+:   121 - NT-:   165 - Price:  0.00
+EDt:    56 - EDf:  11.20 - ED: 67.20 - noise: -0.74 - Transition probability: 3.988
+NF:   112 - NT+:   222 - NT-:   166 - Price:  1.00
+EDt:    55 - EDf:  8.91 - ED: 63.91 - noise:  1.03 - Transition probability: 3.896
+NF:    99 - NT+:   228 - NT-:   173 - Price:  2.00
+EDt:    46 - EDf:  7.52 - ED: 53.52 - noise:  2.38 - Transition probability: 3.354
+NF:    94 - NT+:   226 - NT-:   180 - Price:  3.00
+EDt:    46 - EDf:  6.72 - ED: 52.72 - noise:  5.29 - Transition probability: 3.481
+NF:    96 - NT+:   225 - NT-:   179 - Price:  4.00
+EDt:    44 - EDf:  6.12 - ED: 50.12 - noise:  3.72 - Transition probability: 3.230
+NF:   102 - NT+:   221 - NT-:   177 - Price:  5.00
+EDt:    43 - EDf:  5.35 - ED: 48.35 - noise:  2.32 - Transition probability: 3.040
+NF:   107 - NT+:   218 - NT-:   175 - Price:  6.00
+EDt:    39 - EDf:  4.28 - ED: 43.28 - noise: -3.50 - Transition probability: 2.387
+NF:   107 - NT+:   216 - NT-:   177 - Price:  7.00
+EDt:    45 - EDf:  3.33 - ED: 48.33 - noise:  5.01 - Transition probability: 3.200
+NF:   111 - NT+:   217 - NT-:   172 - Price:  8.00
+EDt:    47 - EDf:  2.30 - ED: 49.30 - noise: -3.56 - Transition probability: 2.744
+NF:   115 - NT+:   216 - NT-:   169 - Price:  9.00
+EDt:    37 - EDf:  1.17 - ED: 38.17 - noise:  4.85 - Transition probability: 2.581
+NF:   117 - NT+:   210 - NT-:   173 - Price: 10.00
+EDt:    31 - EDf:  0.00 - ED: 31.00 - noise:  2.73 - Transition probability: 2.024
+NF:   121 - NT+:   205 - NT-:   174 - Price: 11.00
+EDt:    27 - EDf: -1.25 - ED: 25.75 - noise:  7.70 - Transition probability: 2.007
+NF:   125 - NT+:   201 - NT-:   174 - Price: 12.00
+EDt:    22 - EDf: -2.52 - ED: 19.48 - noise: -2.60 - Transition probability: 1.013
+NF:   126 - NT+:   198 - NT-:   176 - Price: 13.00
+EDt:    21 - EDf: -3.75 - ED: 17.25 - noise:  0.69 - Transition probability: 1.077
+NF:   125 - NT+:   198 - NT-:   177 - Price: 14.00
+EDt:    13 - EDf: -5.00 - ED:  8.00 - noise:  1.39 - Transition probability: 0.564
+NF:   125 - NT+:   194 - NT-:   181 - Price: 14.00
+EDt:     2 - EDf: -5.12 - ED: -3.12 - noise:  2.82 - Transition probability: 0.018
+NF:   128 - NT+:   187 - NT-:   185 - Price: 14.00
+EDt:    -3 - EDf: -5.16 - ED: -8.16 - noise:  7.52 - Transition probability: 0.038
+NF:   129 - NT+:   184 - NT-:   187 - Price: 14.00
+EDt:    -8 - EDf: -5.12 - ED: -13.12 - noise:  0.06 - Transition probability: 0.784
+NF:   128 - NT+:   182 - NT-:   190 - Price: 13.00
+EDt:    -5 - EDf: -3.93 - ED: -8.93 - noise:  6.51 - Transition probability: 0.145
+NF:   131 - NT+:   182 - NT-:   187 - Price: 13.00
+EDt:   -10 - EDf: -3.96 - ED: -13.96 - noise:  0.62 - Transition probability: 0.801
+NF:   132 - NT+:   179 - NT-:   189 - Price: 12.00
+EDt:    -8 - EDf: -2.72 - ED: -10.72 - noise: -2.10 - Transition probability: 0.769
+NF:   136 - NT+:   178 - NT-:   186 - Price: 11.00
+EDt:    -4 - EDf: -1.36 - ED: -5.36 - noise: -0.12 - Transition probability: 0.329
+NF:   136 - NT+:   180 - NT-:   184 - Price: 10.00
+EDt:   -13 - EDf:  0.00 - ED: -13.00 - noise: -3.24 - Transition probability: 0.974
+NF:   137 - NT+:   175 - NT-:   188 - Price:  9.00
+EDt:    -8 - EDf:  1.38 - ED: -6.62 - noise: -0.07 - Transition probability: 0.401
+NF:   138 - NT+:   177 - NT-:   185 - Price:  8.00
+EDt:   -13 - EDf:  2.78 - ED: -10.22 - noise: -1.72 - Transition probability: 0.717
+NF:   139 - NT+:   174 - NT-:   187 - Price:  7.00
+EDt:   -16 - EDf:  4.20 - ED: -11.80 - noise: -7.53 - Transition probability: 1.160
+NF:   140 - NT+:   172 - NT-:   188 - Price:  6.00
+EDt:   -11 - EDf:  5.64 - ED: -5.36 - noise:  3.83 - Transition probability: 0.092
+NF:   141 - NT+:   174 - NT-:   185 - Price:  6.00
+EDt:    -6 - EDf:  5.68 - ED: -0.32 - noise: -0.17 - Transition probability: 0.029
+NF:   142 - NT+:   176 - NT-:   182 - Price:  6.00
+EDt:    -7 - EDf:  5.72 - ED: -1.28 - noise:  4.40 - Transition probability: 0.187
+NF:   143 - NT+:   175 - NT-:   182 - Price:  6.00
+EDt:    -6 - EDf:  5.84 - ED: -0.16 - noise:  0.62 - Transition probability: 0.028
+NF:   146 - NT+:   174 - NT-:   180 - Price:  6.00
+EDt:    -8 - EDf:  5.84 - ED: -2.16 - noise:  5.30 - Transition probability: 0.188
+NF:   146 - NT+:   173 - NT-:   181 - Price:  6.00
+EDt:   -14 - EDf:  5.84 - ED: -8.16 - noise: -1.01 - Transition probability: 0.550
+NF:   146 - NT+:   170 - NT-:   184 - Price:  6.00
+EDt:   -10 - EDf:  5.76 - ED: -4.24 - noise:  2.92 - Transition probability: 0.079
+NF:   144 - NT+:   173 - NT-:   183 - Price:  6.00
+EDt:    -5 - EDf:  5.80 - ED:  0.80 - noise:  2.34 - Transition probability: 0.188
+NF:   145 - NT+:   175 - NT-:   180 - Price:  7.00
+EDt:     1 - EDf:  4.41 - ED:  5.41 - noise:  2.76 - Transition probability: 0.490
+NF:   147 - NT+:   177 - NT-:   176 - Price:  8.00
+EDt:    -7 - EDf:  2.98 - ED: -4.02 - noise:  0.97 - Transition probability: 0.183
+NF:   149 - NT+:   172 - NT-:   179 - Price:  8.00
+EDt:     4 - EDf:  3.04 - ED:  7.04 - noise: -3.48 - Transition probability: 0.214
+NF:   152 - NT+:   176 - NT-:   172 - Price:  8.00
+EDt:    -1 - EDf:  3.06 - ED:  2.06 - noise: -8.23 - Transition probability: 0.370
+NF:   153 - NT+:   173 - NT-:   174 - Price:  7.00
+EDt:    -4 - EDf:  4.50 - ED:  0.50 - noise:  0.58 - Transition probability: 0.065
+NF:   150 - NT+:   173 - NT-:   177 - Price:  7.00
+EDt:    10 - EDf:  4.50 - ED: 14.50 - noise:  3.96 - Transition probability: 1.107
+NF:   150 - NT+:   180 - NT-:   170 - Price:  8.00
+EDt:    11 - EDf:  3.06 - ED: 14.06 - noise: -0.25 - Transition probability: 0.829
+NF:   153 - NT+:   179 - NT-:   168 - Price:  8.00
+EDt:    17 - EDf:  3.10 - ED: 20.10 - noise: -4.10 - Transition probability: 0.960
+NF:   155 - NT+:   181 - NT-:   164 - Price:  8.00
+EDt:    22 - EDf:  3.12 - ED: 25.12 - noise:  3.34 - Transition probability: 1.707
+NF:   156 - NT+:   183 - NT-:   161 - Price:  9.00
+EDt:    15 - EDf:  1.57 - ED: 16.57 - noise:  2.27 - Transition probability: 1.131
+NF:   157 - NT+:   179 - NT-:   164 - Price: 10.00
+EDt:    13 - EDf:  0.00 - ED: 13.00 - noise: -6.10 - Transition probability: 0.414
+NF:   161 - NT+:   176 - NT-:   163 - Price: 11.00
+EDt:    14 - EDf: -1.64 - ED: 12.36 - noise: -0.42 - Transition probability: 0.716
+NF:   164 - NT+:   175 - NT-:   161 - Price: 11.00
+EDt:     8 - EDf: -1.68 - ED:  6.32 - noise:  3.32 - Transition probability: 0.579
+NF:   168 - NT+:   170 - NT-:   162 - Price: 12.00
+EDt:     4 - EDf: -3.36 - ED:  0.64 - noise:  1.97 - Transition probability: 0.156
+NF:   168 - NT+:   168 - NT-:   164 - Price: 12.00
+EDt:    12 - EDf: -3.36 - ED:  8.64 - noise: -2.38 - Transition probability: 0.376
+NF:   168 - NT+:   172 - NT-:   160 - Price: 12.00
+EDt:    14 - EDf: -3.36 - ED: 10.64 - noise: -3.02 - Transition probability: 0.457
+NF:   168 - NT+:   173 - NT-:   159 - Price: 12.00
+EDt:     8 - EDf: -3.36 - ED:  4.64 - noise: -0.98 - Transition probability: 0.219
+NF:   168 - NT+:   170 - NT-:   162 - Price: 13.00
+EDt:    10 - EDf: -5.10 - ED:  4.90 - noise:  1.67 - Transition probability: 0.394
+NF:   170 - NT+:   170 - NT-:   160 - Price: 14.00
+EDt:     7 - EDf: -6.84 - ED:  0.16 - noise: -3.94 - Transition probability: 0.227
+NF:   171 - NT+:   168 - NT-:   161 - Price: 14.00
+EDt:    10 - EDf: -6.88 - ED:  3.12 - noise: -3.78 - Transition probability: 0.040
+NF:   172 - NT+:   169 - NT-:   159 - Price: 14.00
+EDt:    15 - EDf: -6.76 - ED:  8.24 - noise: -0.13 - Transition probability: 0.487
+NF:   169 - NT+:   173 - NT-:   158 - Price: 14.00
+EDt:    10 - EDf: -6.72 - ED:  3.28 - noise:  1.03 - Transition probability: 0.259
+NF:   168 - NT+:   171 - NT-:   161 - Price: 14.00
+EDt:    13 - EDf: -6.84 - ED:  6.16 - noise: -6.62 - Transition probability: 0.027
+NF:   171 - NT+:   171 - NT-:   158 - Price: 14.00
+EDt:    12 - EDf: -6.72 - ED:  5.28 - noise: -0.42 - Transition probability: 0.292
+NF:   168 - NT+:   172 - NT-:   160 - Price: 15.00
+EDt:    14 - EDf: -8.40 - ED:  5.60 - noise: 10.27 - Transition probability: 0.952
+NF:   168 - NT+:   173 - NT-:   159 - Price: 16.00
+EDt:     7 - EDf: -10.26 - ED: -3.26 - noise:  0.16 - Transition probability: 0.186
+NF:   171 - NT+:   168 - NT-:   161 - Price: 16.00
+EDt:     5 - EDf: -10.14 - ED: -5.14 - noise:  1.88 - Transition probability: 0.196
+NF:   169 - NT+:   168 - NT-:   163 - Price: 16.00
+EDt:     0 - EDf: -10.08 - ED: -10.08 - noise:  1.91 - Transition probability: 0.490
+NF:   168 - NT+:   166 - NT-:   166 - Price: 15.00
+EDt:    -4 - EDf: -8.60 - ED: -12.60 - noise:  6.94 - Transition probability: 0.340
+NF:   172 - NT+:   162 - NT-:   166 - Price: 15.00
+EDt:     0 - EDf: -8.40 - ED: -8.40 - noise: -10.73 - Transition probability: 1.148
+NF:   168 - NT+:   166 - NT-:   166 - Price: 14.00
+EDt:    -7 - EDf: -6.84 - ED: -13.84 - noise: -7.55 - Transition probability: 1.283
+NF:   171 - NT+:   161 - NT-:   168 - Price: 13.00
+EDt:   -16 - EDf: -5.16 - ED: -21.16 - noise:  1.66 - Transition probability: 1.170
+NF:   172 - NT+:   156 - NT-:   172 - Price: 12.00
+EDt:   -11 - EDf: -3.46 - ED: -14.46 - noise:  1.75 - Transition probability: 0.763
+NF:   173 - NT+:   158 - NT-:   169 - Price: 12.00
+EDt:   -19 - EDf: -3.46 - ED: -22.46 - noise: -3.39 - Transition probability: 1.551
+NF:   173 - NT+:   154 - NT-:   173 - Price: 11.00
+EDt:   -22 - EDf: -1.72 - ED: -23.72 - noise: -6.06 - Transition probability: 1.787
+NF:   172 - NT+:   153 - NT-:   175 - Price: 10.00
+EDt:   -22 - EDf:  0.00 - ED: -22.00 - noise:  2.11 - Transition probability: 1.193
+NF:   174 - NT+:   152 - NT-:   174 - Price:  9.00
+EDt:   -22 - EDf:  1.76 - ED: -20.24 - noise: -1.97 - Transition probability: 1.333
+NF:   176 - NT+:   151 - NT-:   173 - Price:  8.00
+EDt:   -26 - EDf:  3.52 - ED: -22.48 - noise: -5.33 - Transition probability: 1.669
+NF:   176 - NT+:   149 - NT-:   175 - Price:  7.00
+EDt:   -27 - EDf:  5.25 - ED: -21.75 - noise: -2.12 - Transition probability: 1.432
+NF:   175 - NT+:   149 - NT-:   176 - Price:  6.00
+EDt:   -24 - EDf:  6.88 - ED: -17.12 - noise:  2.26 - Transition probability: 0.891
+NF:   172 - NT+:   152 - NT-:   176 - Price:  5.00
+EDt:   -18 - EDf:  8.60 - ED: -9.40 - noise:  2.31 - Transition probability: 0.425
+NF:   172 - NT+:   155 - NT-:   173 - Price:  4.00
+EDt:   -13 - EDf:  10.26 - ED: -2.74 - noise: -9.23 - Transition probability: 0.718
+NF:   171 - NT+:   158 - NT-:   171 - Price:  4.00
+EDt:   -10 - EDf:  10.20 - ED:  0.20 - noise:  4.49 - Transition probability: 0.281
+NF:   170 - NT+:   160 - NT-:   170 - Price:  4.00
+EDt:    -8 - EDf:  10.08 - ED:  2.08 - noise: -4.42 - Transition probability: 0.140
+NF:   168 - NT+:   162 - NT-:   170 - Price:  4.00
+EDt:    -5 - EDf:  10.02 - ED:  5.02 - noise: -5.60 - Transition probability: 0.035
+NF:   167 - NT+:   164 - NT-:   169 - Price:  4.00
+EDt:    -7 - EDf:  9.66 - ED:  2.66 - noise:  3.33 - Transition probability: 0.359
+NF:   161 - NT+:   166 - NT-:   173 - Price:  4.00
+EDt:    -9 - EDf:  9.66 - ED:  0.66 - noise: -8.04 - Transition probability: 0.443
+NF:   161 - NT+:   165 - NT-:   174 - Price:  4.00
+EDt:   -12 - EDf:  9.60 - ED: -2.40 - noise: -4.62 - Transition probability: 0.421
+NF:   160 - NT+:   164 - NT-:   176 - Price:  4.00
+EDt:     9 - EDf:  9.54 - ED: 18.54 - noise:  3.94 - Transition probability: 1.349
+NF:   159 - NT+:   175 - NT-:   166 - Price:  5.00
+EDt:    16 - EDf:  7.90 - ED: 23.90 - noise:  1.65 - Transition probability: 1.533
+NF:   158 - NT+:   179 - NT-:   163 - Price:  6.00
+EDt:    18 - EDf:  6.32 - ED: 24.32 - noise: -2.07 - Transition probability: 1.335
+NF:   158 - NT+:   180 - NT-:   162 - Price:  7.00
+EDt:    18 - EDf:  4.86 - ED: 22.86 - noise:  6.90 - Transition probability: 1.786
+NF:   162 - NT+:   178 - NT-:   160 - Price:  8.00
+EDt:    21 - EDf:  3.26 - ED: 24.26 - noise:  1.63 - Transition probability: 1.554
+NF:   163 - NT+:   179 - NT-:   158 - Price:  9.00
+EDt:    16 - EDf:  1.66 - ED: 17.66 - noise: -4.28 - Transition probability: 0.803
+NF:   166 - NT+:   175 - NT-:   159 - Price:  9.00
+EDt:    17 - EDf:  1.67 - ED: 18.67 - noise: -0.18 - Transition probability: 1.110
+NF:   167 - NT+:   175 - NT-:   158 - Price: 10.00
+EDt:     9 - EDf:  0.00 - ED:  9.00 - noise:  3.56 - Transition probability: 0.754
+NF:   167 - NT+:   171 - NT-:   162 - Price: 11.00
+EDt:     9 - EDf: -1.69 - ED:  7.31 - noise:  5.17 - Transition probability: 0.749
+NF:   169 - NT+:   170 - NT-:   161 - Price: 12.00
+EDt:     6 - EDf: -3.40 - ED:  2.60 - noise: -3.77 - Transition probability: 0.070
+NF:   170 - NT+:   168 - NT-:   162 - Price: 12.00
+EDt:    14 - EDf: -3.40 - ED: 10.60 - noise:  2.64 - Transition probability: 0.794
+NF:   170 - NT+:   172 - NT-:   158 - Price: 13.00
+EDt:    23 - EDf: -5.19 - ED: 17.81 - noise:  8.80 - Transition probability: 1.597
+NF:   173 - NT+:   175 - NT-:   152 - Price: 14.00
+EDt:    25 - EDf: -6.92 - ED: 18.08 - noise:  5.42 - Transition probability: 1.410
+NF:   173 - NT+:   176 - NT-:   151 - Price: 15.00
+EDt:    21 - EDf: -8.65 - ED: 12.35 - noise: -5.50 - Transition probability: 0.411
+NF:   173 - NT+:   174 - NT-:   153 - Price: 15.00
+EDt:    28 - EDf: -8.60 - ED: 19.40 - noise:  2.12 - Transition probability: 1.291
+NF:   172 - NT+:   178 - NT-:   150 - Price: 16.00
+EDt:    23 - EDf: -10.26 - ED: 12.74 - noise:  1.27 - Transition probability: 0.841
+NF:   171 - NT+:   176 - NT-:   153 - Price: 17.00
+EDt:    19 - EDf: -11.97 - ED:  7.03 - noise:  6.48 - Transition probability: 0.811
+NF:   171 - NT+:   174 - NT-:   155 - Price: 18.00
+EDt:    12 - EDf: -13.76 - ED: -1.76 - noise: -3.42 - Transition probability: 0.311
+NF:   172 - NT+:   170 - NT-:   158 - Price: 18.00
+EDt:    11 - EDf: -13.84 - ED: -2.84 - noise: -1.89 - Transition probability: 0.284
+NF:   173 - NT+:   169 - NT-:   158 - Price: 18.00
+EDt:     8 - EDf: -14.08 - ED: -6.08 - noise: -4.65 - Transition probability: 0.644
+NF:   176 - NT+:   166 - NT-:   158 - Price: 17.00
+EDt:     3 - EDf: -12.53 - ED: -9.53 - noise:  2.51 - Transition probability: 0.421
+NF:   179 - NT+:   162 - NT-:   159 - Price: 17.00
+EDt:    -2 - EDf: -12.60 - ED: -14.60 - noise: -5.98 - Transition probability: 1.235
+NF:   180 - NT+:   159 - NT-:   161 - Price: 16.00
+EDt:     1 - EDf: -10.74 - ED: -9.74 - noise:  2.62 - Transition probability: 0.427
+NF:   179 - NT+:   161 - NT-:   160 - Price: 15.00
+EDt:     2 - EDf: -9.00 - ED: -7.00 - noise: -7.04 - Transition probability: 0.842
+NF:   180 - NT+:   161 - NT-:   159 - Price: 14.00
+EDt:    -5 - EDf: -7.16 - ED: -12.16 - noise:  4.47 - Transition probability: 0.461
+NF:   179 - NT+:   158 - NT-:   163 - Price: 14.00
+EDt:     0 - EDf: -7.28 - ED: -7.28 - noise: -2.67 - Transition probability: 0.597
+NF:   182 - NT+:   159 - NT-:   159 - Price: 14.00
+EDt:    -5 - EDf: -7.32 - ED: -12.32 - noise: -5.82 - Transition probability: 1.088
+NF:   183 - NT+:   156 - NT-:   161 - Price: 13.00
+EDt:     3 - EDf: -5.55 - ED: -2.55 - noise: -9.50 - Transition probability: 0.723
+NF:   185 - NT+:   159 - NT-:   156 - Price: 12.00
+EDt:     5 - EDf: -3.70 - ED:  1.30 - noise:  4.16 - Transition probability: 0.328
+NF:   185 - NT+:   160 - NT-:   155 - Price: 12.00
+EDt:     9 - EDf: -3.74 - ED:  5.26 - noise: -0.57 - Transition probability: 0.281
+NF:   187 - NT+:   161 - NT-:   152 - Price: 12.00
+EDt:     8 - EDf: -3.72 - ED:  4.28 - noise:  4.07 - Transition probability: 0.501
+NF:   186 - NT+:   161 - NT-:   153 - Price: 13.00
+EDt:     8 - EDf: -5.70 - ED:  2.30 - noise: -0.27 - Transition probability: 0.122
+NF:   190 - NT+:   159 - NT-:   151 - Price: 13.00
+EDt:    10 - EDf: -5.70 - ED:  4.30 - noise:  0.85 - Transition probability: 0.309
+NF:   190 - NT+:   160 - NT-:   150 - Price: 14.00
+EDt:     7 - EDf: -7.56 - ED: -0.56 - noise:  0.11 - Transition probability: 0.027
+NF:   189 - NT+:   159 - NT-:   152 - Price: 14.00
+EDt:     9 - EDf: -7.56 - ED:  1.44 - noise: -1.29 - Transition probability: 0.009
+NF:   189 - NT+:   160 - NT-:   151 - Price: 14.00
+EDt:     8 - EDf: -7.44 - ED:  0.56 - noise:  2.43 - Transition probability: 0.180
+NF:   186 - NT+:   161 - NT-:   153 - Price: 14.00
+EDt:    10 - EDf: -7.36 - ED:  2.64 - noise:  2.68 - Transition probability: 0.319
+NF:   184 - NT+:   163 - NT-:   153 - Price: 14.00
+EDt:     8 - EDf: -7.28 - ED:  0.72 - noise:  0.78 - Transition probability: 0.090
+NF:   182 - NT+:   163 - NT-:   155 - Price: 14.00
+EDt:    -1 - EDf: -7.40 - ED: -8.40 - noise:  3.69 - Transition probability: 0.283
+NF:   185 - NT+:   157 - NT-:   158 - Price: 14.00
+EDt:   -13 - EDf: -7.40 - ED: -20.40 - noise: -7.77 - Transition probability: 1.690
+NF:   185 - NT+:   151 - NT-:   164 - Price: 13.00
+EDt:   -21 - EDf: -5.55 - ED: -26.55 - noise:  4.41 - Transition probability: 1.329
+NF:   185 - NT+:   147 - NT-:   168 - Price: 12.00
+EDt:   -17 - EDf: -3.78 - ED: -20.78 - noise: -2.14 - Transition probability: 1.375
+NF:   189 - NT+:   147 - NT-:   164 - Price: 11.00
+EDt:   -16 - EDf: -1.92 - ED: -17.92 - noise:  1.96 - Transition probability: 0.958
+NF:   192 - NT+:   146 - NT-:   162 - Price: 10.00
+EDt:   -22 - EDf:  0.00 - ED: -22.00 - noise:  1.64 - Transition probability: 1.221
+NF:   194 - NT+:   142 - NT-:   164 - Price:  9.00
+EDt:   -19 - EDf:  1.91 - ED: -17.09 - noise:  1.52 - Transition probability: 0.934
+NF:   191 - NT+:   145 - NT-:   164 - Price:  8.00
+EDt:   -15 - EDf:  3.86 - ED: -11.14 - noise:  5.88 - Transition probability: 0.316
+NF:   193 - NT+:   146 - NT-:   161 - Price:  8.00
+EDt:   -16 - EDf:  3.84 - ED: -12.16 - noise: -3.52 - Transition probability: 0.941
+NF:   192 - NT+:   146 - NT-:   162 - Price:  7.00
+EDt:   -22 - EDf:  5.82 - ED: -16.18 - noise: -2.57 - Transition probability: 1.125
+NF:   194 - NT+:   142 - NT-:   164 - Price:  6.00
+EDt:   -15 - EDf:  7.72 - ED: -7.28 - noise:  2.55 - Transition probability: 0.284
+NF:   193 - NT+:   146 - NT-:   161 - Price:  6.00
+EDt:   -16 - EDf:  7.68 - ED: -8.32 - noise: -8.56 - Transition probability: 1.013
+NF:   192 - NT+:   146 - NT-:   162 - Price:  5.00
+EDt:   -18 - EDf:  9.60 - ED: -8.40 - noise:  3.97 - Transition probability: 0.266
+NF:   192 - NT+:   145 - NT-:   163 - Price:  4.00
+EDt:   -23 - EDf:  11.34 - ED: -11.66 - noise: -9.53 - Transition probability: 1.272
+NF:   189 - NT+:   144 - NT-:   167 - Price:  3.00
+EDt:   -20 - EDf:  13.02 - ED: -6.98 - noise: -1.63 - Transition probability: 0.516
+NF:   186 - NT+:   147 - NT-:   167 - Price:  2.00
+EDt:   -16 - EDf:  14.40 - ED: -1.60 - noise: -2.73 - Transition probability: 0.260
+NF:   180 - NT+:   152 - NT-:   168 - Price:  1.00
+EDt:   -21 - EDf:  13.59 - ED: -7.41 - noise:  3.18 - Transition probability: 0.254
+NF:   151 - NT+:   164 - NT-:   185 - Price:  0.00
+EDt:    66 - EDf:  7.00 - ED: 73.00 - noise: -2.46 - Transition probability: 4.233
+NF:    70 - NT+:   248 - NT-:   182 - Price:  1.00
+EDt:    60 - EDf:  5.40 - ED: 65.40 - noise: -7.33 - Transition probability: 3.484
+NF:    60 - NT+:   250 - NT-:   190 - Price:  2.00
+EDt:    63 - EDf:  4.72 - ED: 67.72 - noise:  1.23 - Transition probability: 4.137
+NF:    59 - NT+:   252 - NT-:   189 - Price:  3.00
+EDt:    57 - EDf:  4.13 - ED: 61.13 - noise:  3.48 - Transition probability: 3.877
+NF:    59 - NT+:   249 - NT-:   192 - Price:  4.00
+EDt:    48 - EDf:  3.72 - ED: 51.72 - noise: -0.47 - Transition probability: 3.075
+NF:    62 - NT+:   243 - NT-:   195 - Price:  5.00
+EDt:    50 - EDf:  3.20 - ED: 53.20 - noise:  6.02 - Transition probability: 3.553
+NF:    64 - NT+:   243 - NT-:   193 - Price:  6.00
+EDt:    52 - EDf:  2.72 - ED: 54.72 - noise: -5.13 - Transition probability: 2.976
+NF:    68 - NT+:   242 - NT-:   190 - Price:  7.00
+EDt:    44 - EDf:  2.16 - ED: 46.16 - noise: -3.19 - Transition probability: 2.578
+NF:    72 - NT+:   236 - NT-:   192 - Price:  8.00
+EDt:    39 - EDf:  1.54 - ED: 40.54 - noise:  4.02 - Transition probability: 2.673
+NF:    77 - NT+:   231 - NT-:   192 - Price:  9.00
+EDt:    37 - EDf:  0.81 - ED: 37.81 - noise: -4.34 - Transition probability: 2.008
+NF:    81 - NT+:   228 - NT-:   191 - Price: 10.00
+EDt:    34 - EDf:  0.00 - ED: 34.00 - noise:  8.92 - Transition probability: 2.575
+NF:    84 - NT+:   225 - NT-:   191 - Price: 11.00
+EDt:    25 - EDf: -0.83 - ED: 24.17 - noise:  2.52 - Transition probability: 1.601
+NF:    83 - NT+:   221 - NT-:   196 - Price: 12.00
+EDt:    19 - EDf: -1.74 - ED: 17.26 - noise: -1.51 - Transition probability: 0.945
+NF:    87 - NT+:   216 - NT-:   197 - Price: 13.00
+EDt:    18 - EDf: -2.70 - ED: 15.30 - noise:  0.03 - Transition probability: 0.920
+NF:    90 - NT+:   214 - NT-:   196 - Price: 14.00
+EDt:    15 - EDf: -3.72 - ED: 11.28 - noise:  2.79 - Transition probability: 0.844
+NF:    93 - NT+:   211 - NT-:   196 - Price: 15.00
+EDt:    24 - EDf: -4.80 - ED: 19.20 - noise: -4.85 - Transition probability: 0.861
+NF:    96 - NT+:   214 - NT-:   190 - Price: 15.00
+EDt:    20 - EDf: -4.80 - ED: 15.20 - noise:  8.02 - Transition probability: 1.393
+NF:    96 - NT+:   212 - NT-:   192 - Price: 16.00
+EDt:    14 - EDf: -5.76 - ED:  8.24 - noise: -0.82 - Transition probability: 0.445
+NF:    96 - NT+:   209 - NT-:   195 - Price: 16.00
+EDt:    10 - EDf: -5.88 - ED:  4.12 - noise: -0.08 - Transition probability: 0.242
+NF:    98 - NT+:   206 - NT-:   196 - Price: 16.00
+EDt:    12 - EDf: -6.12 - ED:  5.88 - noise: -2.78 - Transition probability: 0.186
+NF:   102 - NT+:   205 - NT-:   193 - Price: 16.00
+EDt:     7 - EDf: -6.18 - ED:  0.82 - noise:  1.25 - Transition probability: 0.124
+NF:   103 - NT+:   202 - NT-:   195 - Price: 16.00
+EDt:     9 - EDf: -6.30 - ED:  2.70 - noise:  5.31 - Transition probability: 0.481
+NF:   105 - NT+:   202 - NT-:   193 - Price: 16.00
+EDt:    -2 - EDf: -6.48 - ED: -8.48 - noise:  0.07 - Transition probability: 0.505
+NF:   108 - NT+:   195 - NT-:   197 - Price: 16.00
+EDt:    -3 - EDf: -6.66 - ED: -9.66 - noise: -1.82 - Transition probability: 0.689
+NF:   111 - NT+:   193 - NT-:   196 - Price: 15.00
+EDt:    -5 - EDf: -5.75 - ED: -10.75 - noise: -10.97 - Transition probability: 1.303
+NF:   115 - NT+:   190 - NT-:   195 - Price: 14.00
+EDt:   -10 - EDf: -4.64 - ED: -14.64 - noise: -2.36 - Transition probability: 1.020
+NF:   116 - NT+:   187 - NT-:   197 - Price: 13.00
+EDt:     4 - EDf:  0.00 - ED:  4.00 - noise: -1.93 - Transition probability: 0.124
+NF:   484 - NT+:    10 - NT-:     6 - Price: 10.00
+EDt:    11 - EDf:  0.00 - ED: 11.00 - noise:  0.26 - Transition probability: 0.675
+NF:   473 - NT+:    19 - NT-:     8 - Price: 10.00
+EDt:    12 - EDf:  0.00 - ED: 12.00 - noise:  1.29 - Transition probability: 0.797
+NF:   464 - NT+:    24 - NT-:    12 - Price: 11.00
+EDt:    14 - EDf: -4.54 - ED:  9.46 - noise:  0.74 - Transition probability: 0.612
+NF:   454 - NT+:    30 - NT-:    16 - Price: 11.00
+EDt:    17 - EDf: -4.47 - ED: 12.53 - noise:  0.14 - Transition probability: 0.760
+NF:   447 - NT+:    35 - NT-:    18 - Price: 12.00
+EDt:    27 - EDf: -8.70 - ED: 18.30 - noise:  4.04 - Transition probability: 1.340
+NF:   435 - NT+:    46 - NT-:    19 - Price: 13.00
+EDt:    30 - EDf: -12.84 - ED: 17.16 - noise: -0.31 - Transition probability: 1.011
+NF:   428 - NT+:    51 - NT-:    21 - Price: 14.00
+EDt:    31 - EDf: -16.84 - ED: 14.16 - noise:  2.24 - Transition probability: 0.984
+NF:   421 - NT+:    55 - NT-:    24 - Price: 15.00
+EDt:    34 - EDf: -20.70 - ED: 13.30 - noise:  2.45 - Transition probability: 0.945
+NF:   414 - NT+:    60 - NT-:    26 - Price: 16.00
+EDt:    32 - EDf: -24.48 - ED:  7.52 - noise: -0.67 - Transition probability: 0.411
+NF:   408 - NT+:    62 - NT-:    30 - Price: 16.00
+EDt:    36 - EDf: -24.00 - ED: 12.00 - noise:  0.43 - Transition probability: 0.746
+NF:   400 - NT+:    68 - NT-:    32 - Price: 16.00
+EDt:    39 - EDf: -23.70 - ED: 15.30 - noise: -2.96 - Transition probability: 0.740
+NF:   395 - NT+:    72 - NT-:    33 - Price: 16.00
+EDt:    38 - EDf: -23.40 - ED: 14.60 - noise: -12.00 - Transition probability: 0.156
+NF:   390 - NT+:    74 - NT-:    36 - Price: 16.00
+EDt:    37 - EDf: -23.22 - ED: 13.78 - noise:  5.10 - Transition probability: 1.133
+NF:   387 - NT+:    75 - NT-:    38 - Price: 17.00
+EDt:    31 - EDf: -26.81 - ED:  4.19 - noise: -6.82 - Transition probability: 0.158
+NF:   383 - NT+:    74 - NT-:    43 - Price: 17.00
+EDt:    32 - EDf: -26.18 - ED:  5.82 - noise: -4.24 - Transition probability: 0.095
+NF:   374 - NT+:    79 - NT-:    47 - Price: 17.00
+EDt:    30 - EDf: -25.62 - ED:  4.38 - noise:  4.65 - Transition probability: 0.542
+NF:   366 - NT+:    82 - NT-:    52 - Price: 18.00
+EDt:    31 - EDf: -29.04 - ED:  1.96 - noise: 11.59 - Transition probability: 0.813
+NF:   363 - NT+:    84 - NT-:    53 - Price: 19.00
+EDt:    32 - EDf: -32.40 - ED: -0.40 - noise: -0.82 - Transition probability: 0.073
+NF:   360 - NT+:    86 - NT-:    54 - Price: 19.00
+EDt:    35 - EDf: -31.59 - ED:  3.41 - noise: -3.99 - Transition probability: 0.035
+NF:   351 - NT+:    92 - NT-:    57 - Price: 19.00
+EDt:    38 - EDf: -31.32 - ED:  6.68 - noise: -7.84 - Transition probability: 0.070
+NF:   348 - NT+:    95 - NT-:    57 - Price: 19.00
+EDt:    35 - EDf: -30.51 - ED:  4.49 - noise: -2.63 - Transition probability: 0.111
+NF:   339 - NT+:    98 - NT-:    63 - Price: 19.00
+EDt:    35 - EDf: -29.97 - ED:  5.03 - noise: -3.37 - Transition probability: 0.100
+NF:   333 - NT+:   101 - NT-:    66 - Price: 19.00
+EDt:    42 - EDf: -28.98 - ED: 13.02 - noise:  1.04 - Transition probability: 0.844
+NF:   322 - NT+:   110 - NT-:    68 - Price: 20.00
+EDt:    40 - EDf: -31.80 - ED:  8.20 - noise:  5.48 - Transition probability: 0.821
+NF:   318 - NT+:   111 - NT-:    71 - Price: 20.00
+EDt:    38 - EDf: -31.20 - ED:  6.80 - noise: -4.88 - Transition probability: 0.115
+NF:   312 - NT+:   113 - NT-:    75 - Price: 20.00
+EDt:    36 - EDf: -30.60 - ED:  5.40 - noise: -4.66 - Transition probability: 0.044
+NF:   306 - NT+:   115 - NT-:    79 - Price: 20.00
+EDt:    41 - EDf: -29.90 - ED: 11.10 - noise: -4.10 - Transition probability: 0.420
+NF:   299 - NT+:   121 - NT-:    80 - Price: 20.00
+EDt:    43 - EDf: -29.30 - ED: 13.70 - noise:  6.66 - Transition probability: 1.222
+NF:   293 - NT+:   125 - NT-:    82 - Price: 21.00
+EDt:    44 - EDf: -31.90 - ED: 12.10 - noise:  2.63 - Transition probability: 0.884
+NF:   290 - NT+:   127 - NT-:    83 - Price: 22.00
+EDt:    45 - EDf: -34.68 - ED: 10.32 - noise: -0.63 - Transition probability: 0.581
+NF:   289 - NT+:   128 - NT-:    83 - Price: 22.00
+EDt:    39 - EDf: -34.68 - ED:  4.32 - noise: -5.76 - Transition probability: 0.087
+NF:   289 - NT+:   125 - NT-:    86 - Price: 21.00
+EDt:    36 - EDf: -31.68 - ED:  4.32 - noise:  1.07 - Transition probability: 0.324
+NF:   288 - NT+:   124 - NT-:    88 - Price: 21.00
+EDt:    37 - EDf: -31.57 - ED:  5.43 - noise: -3.15 - Transition probability: 0.137
+NF:   287 - NT+:   125 - NT-:    88 - Price: 21.00
+EDt:    40 - EDf: -31.24 - ED:  8.76 - noise: -7.74 - Transition probability: 0.061
+NF:   284 - NT+:   128 - NT-:    88 - Price: 21.00
+EDt:    37 - EDf: -30.91 - ED:  6.09 - noise: -2.07 - Transition probability: 0.241
+NF:   281 - NT+:   128 - NT-:    91 - Price: 21.00
+EDt:    35 - EDf: -30.91 - ED:  4.09 - noise:  7.30 - Transition probability: 0.684
+NF:   281 - NT+:   127 - NT-:    92 - Price: 21.00
+EDt:    34 - EDf: -30.36 - ED:  3.64 - noise:  5.45 - Transition probability: 0.545
+NF:   276 - NT+:   129 - NT-:    95 - Price: 21.00
+EDt:    33 - EDf: -30.47 - ED:  2.53 - noise:  2.29 - Transition probability: 0.289
+NF:   277 - NT+:   128 - NT-:    95 - Price: 21.00
+EDt:    27 - EDf: -30.25 - ED: -3.25 - noise:  6.00 - Transition probability: 0.165
+NF:   275 - NT+:   126 - NT-:    99 - Price: 21.00
+EDt:    27 - EDf: -30.03 - ED: -3.03 - noise: -6.31 - Transition probability: 0.560
+NF:   273 - NT+:   127 - NT-:   100 - Price: 20.00
+EDt:    23 - EDf: -26.90 - ED: -3.90 - noise:  7.76 - Transition probability: 0.231
+NF:   269 - NT+:   127 - NT-:   104 - Price: 20.00
+EDt:    14 - EDf: -26.60 - ED: -12.60 - noise: -8.59 - Transition probability: 1.272
+NF:   266 - NT+:   124 - NT-:   110 - Price: 19.00
+EDt:     8 - EDf: -23.76 - ED: -15.76 - noise: -2.02 - Transition probability: 1.067
+NF:   264 - NT+:   122 - NT-:   114 - Price: 18.00
+EDt:     5 - EDf: -20.72 - ED: -15.72 - noise:  2.37 - Transition probability: 0.801
+NF:   259 - NT+:   123 - NT-:   118 - Price: 17.00
+EDt:     2 - EDf: -17.92 - ED: -15.92 - noise:  4.03 - Transition probability: 0.713
+NF:   256 - NT+:   123 - NT-:   121 - Price: 16.00
+EDt:    -1 - EDf: -15.06 - ED: -16.06 - noise: 10.40 - Transition probability: 0.340
+NF:   251 - NT+:   124 - NT-:   125 - Price: 15.00
+EDt:    -5 - EDf: -12.55 - ED: -17.55 - noise: -1.67 - Transition probability: 1.153
+NF:   251 - NT+:   122 - NT-:   127 - Price: 14.00
+EDt:    -9 - EDf: -9.96 - ED: -18.96 - noise:  3.22 - Transition probability: 0.944
+NF:   249 - NT+:   121 - NT-:   130 - Price: 13.00
+EDt:    -9 - EDf: -7.35 - ED: -16.35 - noise:  3.72 - Transition probability: 0.758
+NF:   245 - NT+:   123 - NT-:   132 - Price: 12.00
+EDt:   -10 - EDf: -4.84 - ED: -14.84 - noise:  3.25 - Transition probability: 0.695
+NF:   242 - NT+:   124 - NT-:   134 - Price: 11.00
+EDt:    -3 - EDf: -2.41 - ED: -5.41 - noise:  1.23 - Transition probability: 0.251
+NF:   241 - NT+:   128 - NT-:   131 - Price: 11.00
+EDt:     1 - EDf: -2.41 - ED: -1.41 - noise: -3.42 - Transition probability: 0.290
+NF:   241 - NT+:   130 - NT-:   129 - Price: 10.00
+EDt:     1 - EDf:  0.00 - ED:  1.00 - noise: -2.64 - Transition probability: 0.098
+NF:   239 - NT+:   131 - NT-:   130 - Price: 10.00
+EDt:    -1 - EDf:  0.00 - ED: -1.00 - noise:  6.27 - Transition probability: 0.316
+NF:   239 - NT+:   130 - NT-:   131 - Price: 11.00
+EDt:     1 - EDf: -2.39 - ED: -1.39 - noise:  7.65 - Transition probability: 0.376
+NF:   239 - NT+:   131 - NT-:   130 - Price: 11.00
+EDt:    -6 - EDf: -2.42 - ED: -8.42 - noise:  6.02 - Transition probability: 0.144
+NF:   242 - NT+:   126 - NT-:   132 - Price: 11.00
+EDt:    -8 - EDf: -2.40 - ED: -10.40 - noise: -1.87 - Transition probability: 0.736
+NF:   240 - NT+:   126 - NT-:   134 - Price: 10.00
+EDt:     4 - EDf:  0.00 - ED:  4.00 - noise: -0.14 - Transition probability: 0.232
+NF:   238 - NT+:   133 - NT-:   129 - Price: 10.00
+EDt:     8 - EDf:  0.00 - ED:  8.00 - noise: -5.65 - Transition probability: 0.141
+NF:   236 - NT+:   136 - NT-:   128 - Price: 10.00
+EDt:     3 - EDf:  0.00 - ED:  3.00 - noise:  1.37 - Transition probability: 0.262
+NF:   237 - NT+:   133 - NT-:   130 - Price: 10.00
+EDt:     0 - EDf:  0.00 - ED:  0.00 - noise:  4.79 - Transition probability: 0.288
+NF:   236 - NT+:   132 - NT-:   132 - Price: 10.00
+EDt:     2 - EDf:  0.00 - ED:  2.00 - noise: -1.24 - Transition probability: 0.045
+NF:   234 - NT+:   134 - NT-:   132 - Price: 10.00
+EDt:     4 - EDf:  0.00 - ED:  4.00 - noise: -2.19 - Transition probability: 0.109
+NF:   232 - NT+:   136 - NT-:   132 - Price: 10.00
+EDt:     1 - EDf:  0.00 - ED:  1.00 - noise: -2.47 - Transition probability: 0.088
+NF:   229 - NT+:   136 - NT-:   135 - Price: 10.00
+EDt:    -1 - EDf:  0.00 - ED: -1.00 - noise: -4.65 - Transition probability: 0.339
+NF:   231 - NT+:   134 - NT-:   135 - Price: 10.00
+EDt:     1 - EDf:  0.00 - ED:  1.00 - noise:  6.96 - Transition probability: 0.478
+NF:   233 - NT+:   134 - NT-:   133 - Price: 11.00
+EDt:     2 - EDf: -2.32 - ED: -0.32 - noise:  0.26 - Transition probability: 0.003
+NF:   232 - NT+:   135 - NT-:   133 - Price: 11.00
+EDt:    -8 - EDf: -2.32 - ED: -10.32 - noise: -1.79 - Transition probability: 0.727
+NF:   232 - NT+:   130 - NT-:   138 - Price: 10.00
+EDt:    -3 - EDf:  0.00 - ED: -3.00 - noise: -1.41 - Transition probability: 0.264
+NF:   231 - NT+:   133 - NT-:   136 - Price: 10.00
+EDt:    -3 - EDf:  0.00 - ED: -3.00 - noise:  1.15 - Transition probability: 0.111
+NF:   229 - NT+:   134 - NT-:   137 - Price:  9.00
+EDt:    -5 - EDf:  2.29 - ED: -2.71 - noise:  0.92 - Transition probability: 0.107
+NF:   229 - NT+:   133 - NT-:   138 - Price:  9.00
+EDt:    -7 - EDf:  2.25 - ED: -4.75 - noise:  5.69 - Transition probability: 0.056
+NF:   225 - NT+:   134 - NT-:   141 - Price:  9.00
+EDt:     0 - EDf:  2.24 - ED:  2.24 - noise: -2.05 - Transition probability: 0.011
+NF:   224 - NT+:   138 - NT-:   138 - Price:  9.00
+EDt:     5 - EDf:  2.23 - ED:  7.23 - noise:  3.33 - Transition probability: 0.634
+NF:   223 - NT+:   141 - NT-:   136 - Price: 10.00
+EDt:    10 - EDf:  0.00 - ED: 10.00 - noise:  2.45 - Transition probability: 0.747
+NF:   224 - NT+:   143 - NT-:   133 - Price: 10.00
+EDt:    15 - EDf:  0.00 - ED: 15.00 - noise: -0.55 - Transition probability: 0.867
+NF:   223 - NT+:   146 - NT-:   131 - Price: 11.00
+EDt:    17 - EDf: -2.23 - ED: 14.77 - noise: -2.14 - Transition probability: 0.758
+NF:   223 - NT+:   147 - NT-:   130 - Price: 11.00
+EDt:    17 - EDf: -2.25 - ED: 14.75 - noise:  2.82 - Transition probability: 1.054
+NF:   225 - NT+:   146 - NT-:   129 - Price: 12.00
+EDt:    21 - EDf: -4.42 - ED: 16.58 - noise:  4.32 - Transition probability: 1.254
+NF:   221 - NT+:   150 - NT-:   129 - Price: 13.00
+EDt:    10 - EDf: -6.66 - ED:  3.34 - noise: -4.74 - Transition probability: 0.084
+NF:   222 - NT+:   144 - NT-:   134 - Price: 13.00
+EDt:     8 - EDf: -6.54 - ED:  1.46 - noise:  2.78 - Transition probability: 0.255
+NF:   218 - NT+:   145 - NT-:   137 - Price: 13.00
+EDt:    14 - EDf: -6.54 - ED:  7.46 - noise: -3.50 - Transition probability: 0.237
+NF:   218 - NT+:   148 - NT-:   134 - Price: 13.00
+EDt:    16 - EDf: -6.60 - ED:  9.40 - noise:  0.85 - Transition probability: 0.615
+NF:   220 - NT+:   148 - NT-:   132 - Price: 13.00
+EDt:    11 - EDf: -6.69 - ED:  4.31 - noise:  3.20 - Transition probability: 0.450
+NF:   223 - NT+:   144 - NT-:   133 - Price: 14.00
+EDt:    12 - EDf: -8.96 - ED:  3.04 - noise: -1.12 - Transition probability: 0.115
+NF:   224 - NT+:   144 - NT-:   132 - Price: 14.00
+EDt:     6 - EDf: -8.80 - ED: -2.80 - noise: -6.83 - Transition probability: 0.578
+NF:   220 - NT+:   143 - NT-:   137 - Price: 14.00
+EDt:    -1 - EDf: -8.84 - ED: -9.84 - noise: -0.14 - Transition probability: 0.599
+NF:   221 - NT+:   139 - NT-:   140 - Price: 14.00
+EDt:     3 - EDf: -8.76 - ED: -5.76 - noise: -4.00 - Transition probability: 0.585
+NF:   219 - NT+:   142 - NT-:   139 - Price: 13.00
+EDt:     0 - EDf: -6.60 - ED: -6.60 - noise:  4.58 - Transition probability: 0.121
+NF:   220 - NT+:   140 - NT-:   140 - Price: 13.00
+EDt:    -1 - EDf: -6.69 - ED: -7.69 - noise: -3.79 - Transition probability: 0.689
+NF:   223 - NT+:   138 - NT-:   139 - Price: 12.00
+EDt:     6 - EDf: -4.40 - ED:  1.60 - noise: -1.64 - Transition probability: 0.003
+NF:   220 - NT+:   143 - NT-:   137 - Price: 12.00
+EDt:     2 - EDf: -4.36 - ED: -2.36 - noise: -4.43 - Transition probability: 0.407
+NF:   218 - NT+:   142 - NT-:   140 - Price: 12.00
+EDt:    13 - EDf: -4.26 - ED:  8.74 - noise: -1.39 - Transition probability: 0.441
+NF:   213 - NT+:   150 - NT-:   137 - Price: 13.00
+EDt:    11 - EDf: -6.39 - ED:  4.61 - noise: -4.22 - Transition probability: 0.023
+NF:   213 - NT+:   149 - NT-:   138 - Price: 13.00
+EDt:     7 - EDf: -6.33 - ED:  0.67 - noise: -0.44 - Transition probability: 0.014
+NF:   211 - NT+:   148 - NT-:   141 - Price: 13.00
+EDt:     0 - EDf: -6.30 - ED: -6.30 - noise:  2.59 - Transition probability: 0.223
+NF:   210 - NT+:   145 - NT-:   145 - Price: 13.00
+EDt:    -5 - EDf: -6.33 - ED: -11.33 - noise: -4.30 - Transition probability: 0.938
+NF:   211 - NT+:   142 - NT-:   147 - Price: 12.00
+EDt:    -6 - EDf: -4.16 - ED: -10.16 - noise:  0.29 - Transition probability: 0.592
+NF:   208 - NT+:   143 - NT-:   149 - Price: 11.00
+EDt:    -9 - EDf: -2.07 - ED: -11.07 - noise: -2.54 - Transition probability: 0.817
+NF:   207 - NT+:   142 - NT-:   151 - Price: 10.00
+EDt:    -9 - EDf:  0.00 - ED: -9.00 - noise: -0.86 - Transition probability: 0.592
+NF:   207 - NT+:   142 - NT-:   151 - Price:  9.00
+EDt:    -4 - EDf:  2.10 - ED: -1.90 - noise:  0.67 - Transition probability: 0.074
+NF:   210 - NT+:   143 - NT-:   147 - Price:  8.00
+EDt:    -5 - EDf:  4.22 - ED: -0.78 - noise: -10.29 - Transition probability: 0.664
+NF:   211 - NT+:   142 - NT-:   147 - Price:  7.00
+EDt:    -4 - EDf:  6.30 - ED:  2.30 - noise:  1.79 - Transition probability: 0.245
+NF:   210 - NT+:   143 - NT-:   147 - Price:  7.00
+EDt:    -5 - EDf:  6.27 - ED:  1.27 - noise: 11.29 - Transition probability: 0.754
+NF:   209 - NT+:   143 - NT-:   148 - Price:  8.00
+EDt:    -3 - EDf:  4.22 - ED:  1.22 - noise: -5.20 - Transition probability: 0.239
+NF:   211 - NT+:   143 - NT-:   146 - Price:  7.00
+EDt:    -5 - EDf:  6.27 - ED:  1.27 - noise: -9.63 - Transition probability: 0.501
+NF:   209 - NT+:   143 - NT-:   148 - Price:  6.00
+EDt:    -5 - EDf:  8.36 - ED:  3.36 - noise:  8.61 - Transition probability: 0.718
+NF:   209 - NT+:   143 - NT-:   148 - Price:  7.00
+EDt:     2 - EDf:  6.36 - ED:  8.36 - noise: -3.55 - Transition probability: 0.288
+NF:   212 - NT+:   145 - NT-:   143 - Price:  7.00
+EDt:     6 - EDf:  6.36 - ED: 12.36 - noise: -8.64 - Transition probability: 0.223
+NF:   212 - NT+:   147 - NT-:   141 - Price:  7.00
+EDt:    -3 - EDf:  6.27 - ED:  3.27 - noise:  3.43 - Transition probability: 0.402
+NF:   209 - NT+:   144 - NT-:   147 - Price:  8.00
+EDt:    -2 - EDf:  4.20 - ED:  2.20 - noise: -2.63 - Transition probability: 0.026
+NF:   210 - NT+:   144 - NT-:   146 - Price:  8.00
+EDt:   -11 - EDf:  4.18 - ED: -6.82 - noise: -3.31 - Transition probability: 0.608
+NF:   209 - NT+:   140 - NT-:   151 - Price:  8.00
+EDt:    -5 - EDf:  4.14 - ED: -0.86 - noise: -5.73 - Transition probability: 0.396
+NF:   207 - NT+:   144 - NT-:   149 - Price:  8.00
+EDt:    -5 - EDf:  4.14 - ED: -0.86 - noise: -5.66 - Transition probability: 0.391
+NF:   207 - NT+:   144 - NT-:   149 - Price:  8.00
+EDt:     4 - EDf:  4.08 - ED:  8.08 - noise: -2.39 - Transition probability: 0.341
+NF:   204 - NT+:   150 - NT-:   146 - Price:  8.00
+EDt:     1 - EDf:  4.10 - ED:  5.10 - noise:  5.20 - Transition probability: 0.618
+NF:   205 - NT+:   148 - NT-:   147 - Price:  9.00
+EDt:     3 - EDf:  2.05 - ED:  5.05 - noise: -3.88 - Transition probability: 0.070
+NF:   205 - NT+:   149 - NT-:   146 - Price:  9.00
+EDt:    -1 - EDf:  2.05 - ED:  1.05 - noise:  3.58 - Transition probability: 0.278
+NF:   205 - NT+:   147 - NT-:   148 - Price: 10.00
+EDt:    -2 - EDf:  0.00 - ED: -2.00 - noise:  5.98 - Transition probability: 0.239
+NF:   206 - NT+:   146 - NT-:   148 - Price: 10.00
+EDt:    -4 - EDf:  0.00 - ED: -4.00 - noise:  0.49 - Transition probability: 0.211
+NF:   208 - NT+:   144 - NT-:   148 - Price: 10.00
+EDt:    -7 - EDf:  0.00 - ED: -7.00 - noise:  5.18 - Transition probability: 0.109
+NF:   209 - NT+:   142 - NT-:   149 - Price: 10.00
+EDt:   -13 - EDf:  0.00 - ED: -13.00 - noise: -5.01 - Transition probability: 1.080
+NF:   209 - NT+:   139 - NT-:   152 - Price:  9.00
+EDt:    -6 - EDf:  2.06 - ED: -3.94 - noise: -3.65 - Transition probability: 0.455
+NF:   206 - NT+:   144 - NT-:   150 - Price:  8.00
+EDt:     1 - EDf:  4.18 - ED:  5.18 - noise:  1.45 - Transition probability: 0.398
+NF:   209 - NT+:   146 - NT-:   145 - Price:  8.00
+EDt:     4 - EDf:  4.12 - ED:  8.12 - noise: -5.37 - Transition probability: 0.165
+NF:   206 - NT+:   149 - NT-:   145 - Price:  8.00
+EDt:     0 - EDf:  4.16 - ED:  4.16 - noise:  0.77 - Transition probability: 0.296
+NF:   208 - NT+:   146 - NT-:   146 - Price:  8.00
+EDt:    -4 - EDf:  4.12 - ED:  0.12 - noise: -5.96 - Transition probability: 0.351
+NF:   206 - NT+:   145 - NT-:   149 - Price:  7.00
+EDt:     2 - EDf:  6.12 - ED:  8.12 - noise: -0.55 - Transition probability: 0.454
+NF:   204 - NT+:   149 - NT-:   147 - Price:  8.00
+EDt:     3 - EDf:  4.06 - ED:  7.06 - noise:  6.01 - Transition probability: 0.784
+NF:   203 - NT+:   150 - NT-:   147 - Price:  9.00
+EDt:     7 - EDf:  2.05 - ED:  9.05 - noise:  7.66 - Transition probability: 1.003
+NF:   205 - NT+:   151 - NT-:   144 - Price: 10.00
+EDt:     7 - EDf:  0.00 - ED:  7.00 - noise: -6.48 - Transition probability: 0.031
+NF:   203 - NT+:   152 - NT-:   145 - Price: 10.00
+EDt:    10 - EDf:  0.00 - ED: 10.00 - noise:  5.96 - Transition probability: 0.957
+NF:   204 - NT+:   153 - NT-:   143 - Price: 11.00
+EDt:     9 - EDf: -2.07 - ED:  6.93 - noise:  2.23 - Transition probability: 0.549
+NF:   207 - NT+:   151 - NT-:   142 - Price: 12.00
+EDt:     0 - EDf: -4.20 - ED: -4.20 - noise: -0.85 - Transition probability: 0.303
+NF:   210 - NT+:   145 - NT-:   145 - Price: 12.00
+EDt:     6 - EDf: -4.16 - ED:  1.84 - noise:  1.66 - Transition probability: 0.210
+NF:   208 - NT+:   149 - NT-:   143 - Price: 12.00
+EDt:     4 - EDf: -4.12 - ED: -0.12 - noise:  0.59 - Transition probability: 0.028
+NF:   206 - NT+:   149 - NT-:   145 - Price: 12.00
+EDt:     6 - EDf: -4.12 - ED:  1.88 - noise: -1.77 - Transition probability: 0.007
+NF:   206 - NT+:   150 - NT-:   144 - Price: 12.00
+EDt:     8 - EDf: -4.12 - ED:  3.88 - noise: -5.75 - Transition probability: 0.112
+NF:   206 - NT+:   151 - NT-:   143 - Price: 11.00
+EDt:    12 - EDf: -2.06 - ED:  9.94 - noise: -1.19 - Transition probability: 0.525
+NF:   206 - NT+:   153 - NT-:   141 - Price: 11.00
+EDt:    13 - EDf: -2.05 - ED: 10.95 - noise: 11.86 - Transition probability: 1.368
+NF:   205 - NT+:   154 - NT-:   141 - Price: 12.00
+EDt:     6 - EDf: -4.04 - ED:  1.96 - noise:  1.69 - Transition probability: 0.219
+NF:   202 - NT+:   152 - NT-:   146 - Price: 12.00
+EDt:     6 - EDf: -4.00 - ED:  2.00 - noise:  5.73 - Transition probability: 0.464
+NF:   200 - NT+:   153 - NT-:   147 - Price: 13.00
+EDt:     3 - EDf: -5.91 - ED: -2.91 - noise:  2.65 - Transition probability: 0.015
+NF:   197 - NT+:   153 - NT-:   150 - Price: 13.00
+EDt:    -1 - EDf: -5.97 - ED: -6.97 - noise: -1.98 - Transition probability: 0.537
+NF:   199 - NT+:   150 - NT-:   151 - Price: 13.00
+EDt:     4 - EDf: -5.94 - ED: -1.94 - noise: -1.13 - Transition probability: 0.184
+NF:   198 - NT+:   153 - NT-:   149 - Price: 13.00
+EDt:     1 - EDf: -5.91 - ED: -4.91 - noise:  0.13 - Transition probability: 0.287
+NF:   197 - NT+:   152 - NT-:   151 - Price: 13.00
+EDt:     4 - EDf: -5.94 - ED: -1.94 - noise: -4.30 - Transition probability: 0.374
+NF:   198 - NT+:   153 - NT-:   149 - Price: 13.00
+EDt:    11 - EDf: -5.97 - ED:  5.03 - noise: -6.63 - Transition probability: 0.096
+NF:   199 - NT+:   156 - NT-:   145 - Price: 13.00
+EDt:    15 - EDf: -5.97 - ED:  9.03 - noise: -1.75 - Transition probability: 0.437
+NF:   199 - NT+:   158 - NT-:   143 - Price: 14.00
+EDt:    10 - EDf: -8.00 - ED:  2.00 - noise:  4.67 - Transition probability: 0.400
+NF:   200 - NT+:   155 - NT-:   145 - Price: 15.00
+EDt:    14 - EDf: -9.90 - ED:  4.10 - noise: -13.51 - Transition probability: 0.565
+NF:   198 - NT+:   158 - NT-:   144 - Price: 15.00
+EDt:    15 - EDf: -9.95 - ED:  5.05 - noise:  7.31 - Transition probability: 0.742
+NF:   199 - NT+:   158 - NT-:   143 - Price: 16.00
+EDt:    11 - EDf: -11.94 - ED: -0.94 - noise:  1.61 - Transition probability: 0.040
+NF:   199 - NT+:   156 - NT-:   145 - Price: 16.00
+EDt:    15 - EDf: -11.82 - ED:  3.18 - noise: -0.58 - Transition probability: 0.156
+NF:   197 - NT+:   159 - NT-:   144 - Price: 16.00
+EDt:    15 - EDf: -11.82 - ED:  3.18 - noise: -1.83 - Transition probability: 0.081
+NF:   197 - NT+:   159 - NT-:   144 - Price: 16.00
+EDt:    15 - EDf: -11.94 - ED:  3.06 - noise:  3.66 - Transition probability: 0.403
+NF:   199 - NT+:   158 - NT-:   143 - Price: 16.00
+EDt:    12 - EDf: -12.00 - ED:  0.00 - noise:  0.13 - Transition probability: 0.008
+NF:   200 - NT+:   156 - NT-:   144 - Price: 16.00
+EDt:     8 - EDf: -11.88 - ED: -3.88 - noise: -2.06 - Transition probability: 0.357
+NF:   198 - NT+:   155 - NT-:   147 - Price: 15.00
+EDt:     8 - EDf: -9.80 - ED: -1.80 - noise: -3.10 - Transition probability: 0.294
+NF:   196 - NT+:   156 - NT-:   148 - Price: 15.00
+EDt:     3 - EDf: -9.75 - ED: -6.75 - noise:  5.78 - Transition probability: 0.058
+NF:   195 - NT+:   154 - NT-:   151 - Price: 15.00
+EDt:     5 - EDf: -9.85 - ED: -4.85 - noise:  0.21 - Transition probability: 0.278
+NF:   197 - NT+:   154 - NT-:   149 - Price: 15.00
+EDt:     7 - EDf: -9.95 - ED: -2.95 - noise: -0.48 - Transition probability: 0.206
+NF:   199 - NT+:   154 - NT-:   147 - Price: 15.00
+EDt:     2 - EDf: -10.00 - ED: -8.00 - noise: -3.18 - Transition probability: 0.671
+NF:   200 - NT+:   151 - NT-:   149 - Price: 14.00
+EDt:     6 - EDf: -8.08 - ED: -2.08 - noise: -1.64 - Transition probability: 0.223
+NF:   202 - NT+:   152 - NT-:   146 - Price: 14.00
+EDt:     7 - EDf: -8.04 - ED: -1.04 - noise:  0.98 - Transition probability: 0.004
+NF:   201 - NT+:   153 - NT-:   146 - Price: 14.00
+EDt:    11 - EDf: -8.20 - ED:  2.80 - noise: -5.52 - Transition probability: 0.163
+NF:   205 - NT+:   153 - NT-:   142 - Price: 14.00
+EDt:    18 - EDf: -8.24 - ED:  9.76 - noise:  1.22 - Transition probability: 0.659
+NF:   206 - NT+:   156 - NT-:   138 - Price: 14.00
+EDt:    21 - EDf: -8.28 - ED: 12.72 - noise: -1.81 - Transition probability: 0.654
+NF:   207 - NT+:   157 - NT-:   136 - Price: 15.00
+EDt:    15 - EDf: -10.25 - ED:  4.75 - noise: -0.28 - Transition probability: 0.268
+NF:   205 - NT+:   155 - NT-:   140 - Price: 16.00
+EDt:    18 - EDf: -12.00 - ED:  6.00 - noise:  3.21 - Transition probability: 0.553
+NF:   200 - NT+:   159 - NT-:   141 - Price: 16.00
+EDt:    22 - EDf: -12.12 - ED:  9.88 - noise:  1.48 - Transition probability: 0.682
+NF:   202 - NT+:   160 - NT-:   138 - Price: 16.00
+EDt:    21 - EDf: -12.06 - ED:  8.94 - noise: -1.32 - Transition probability: 0.457
+NF:   201 - NT+:   160 - NT-:   139 - Price: 16.00
+EDt:    25 - EDf: -12.06 - ED: 12.94 - noise:  3.00 - Transition probability: 0.956
+NF:   201 - NT+:   162 - NT-:   137 - Price: 17.00
+EDt:    34 - EDf: -13.86 - ED: 20.14 - noise: -5.85 - Transition probability: 0.857
+NF:   198 - NT+:   168 - NT-:   134 - Price: 18.00
+EDt:    34 - EDf: -15.84 - ED: 18.16 - noise:  9.68 - Transition probability: 1.670
+NF:   198 - NT+:   168 - NT-:   134 - Price: 19.00
+EDt:    30 - EDf: -18.00 - ED: 12.00 - noise: -2.22 - Transition probability: 0.587
+NF:   200 - NT+:   165 - NT-:   135 - Price: 19.00
+EDt:    24 - EDf: -18.00 - ED:  6.00 - noise: -4.35 - Transition probability: 0.099
+NF:   200 - NT+:   162 - NT-:   138 - Price: 19.00
+EDt:    19 - EDf: -17.91 - ED:  1.09 - noise: -0.64 - Transition probability: 0.027
+NF:   199 - NT+:   160 - NT-:   141 - Price: 19.00
+EDt:    17 - EDf: -17.91 - ED: -0.91 - noise:  6.85 - Transition probability: 0.357
+NF:   199 - NT+:   159 - NT-:   142 - Price: 20.00
+EDt:    20 - EDf: -20.00 - ED:  0.00 - noise: -1.41 - Transition probability: 0.085
+NF:   200 - NT+:   160 - NT-:   140 - Price: 20.00
+EDt:    25 - EDf: -20.10 - ED:  4.90 - noise:  1.45 - Transition probability: 0.381
+NF:   201 - NT+:   162 - NT-:   137 - Price: 20.00
+EDt:    21 - EDf: -19.90 - ED:  1.10 - noise: -5.28 - Transition probability: 0.251
+NF:   199 - NT+:   161 - NT-:   140 - Price: 20.00
+EDt:    20 - EDf: -20.00 - ED:  0.00 - noise:  9.76 - Transition probability: 0.586
+NF:   200 - NT+:   160 - NT-:   140 - Price: 21.00
+EDt:    17 - EDf: -21.89 - ED: -4.89 - noise:  4.11 - Transition probability: 0.047
+NF:   199 - NT+:   159 - NT-:   142 - Price: 21.00
+EDt:    15 - EDf: -21.89 - ED: -6.89 - noise:  4.03 - Transition probability: 0.172
+NF:   199 - NT+:   158 - NT-:   143 - Price: 21.00
+EDt:    15 - EDf: -22.11 - ED: -7.11 - noise:  1.59 - Transition probability: 0.331
+NF:   201 - NT+:   157 - NT-:   142 - Price: 21.00
+EDt:    12 - EDf: -22.44 - ED: -10.44 - noise: -8.62 - Transition probability: 1.144
+NF:   204 - NT+:   154 - NT-:   142 - Price: 20.00
+EDt:     9 - EDf: -20.10 - ED: -11.10 - noise:  3.05 - Transition probability: 0.483
+NF:   201 - NT+:   154 - NT-:   145 - Price: 19.00
+EDt:     6 - EDf: -18.00 - ED: -12.00 - noise: -0.07 - Transition probability: 0.724
+NF:   200 - NT+:   153 - NT-:   147 - Price: 18.00
+EDt:     4 - EDf: -16.00 - ED: -12.00 - noise: -4.89 - Transition probability: 1.013
+NF:   200 - NT+:   152 - NT-:   148 - Price: 17.00
+EDt:     2 - EDf: -14.00 - ED: -12.00 - noise:  5.29 - Transition probability: 0.403
+NF:   200 - NT+:   151 - NT-:   149 - Price: 16.00
+EDt:     2 - EDf: -12.00 - ED: -10.00 - noise: -0.28 - Transition probability: 0.617
+NF:   200 - NT+:   151 - NT-:   149 - Price: 15.00
+EDt:     1 - EDf: -10.05 - ED: -9.05 - noise: -9.62 - Transition probability: 1.120
+NF:   201 - NT+:   150 - NT-:   149 - Price: 14.00
+EDt:     1 - EDf: -8.04 - ED: -7.04 - noise:  5.93 - Transition probability: 0.066
+NF:   201 - NT+:   150 - NT-:   149 - Price: 14.00
+EDt:    -2 - EDf: -8.00 - ED: -10.00 - noise: -0.27 - Transition probability: 0.616
+NF:   200 - NT+:   149 - NT-:   151 - Price: 13.00
+EDt:    -3 - EDf: -6.03 - ED: -9.03 - noise:  1.44 - Transition probability: 0.456
+NF:   201 - NT+:   148 - NT-:   151 - Price: 13.00
+EDt:    -7 - EDf: -6.03 - ED: -13.03 - noise: -0.42 - Transition probability: 0.807
+NF:   201 - NT+:   146 - NT-:   153 - Price: 13.00
+EDt:   -14 - EDf: -6.06 - ED: -20.06 - noise: -0.01 - Transition probability: 1.204
+NF:   202 - NT+:   142 - NT-:   156 - Price: 12.00
+EDt:   -15 - EDf: -4.06 - ED: -19.06 - noise: -0.06 - Transition probability: 1.147
+NF:   203 - NT+:   141 - NT-:   156 - Price: 11.00
+EDt:   -12 - EDf: -2.02 - ED: -14.02 - noise:  1.67 - Transition probability: 0.741
+NF:   202 - NT+:   143 - NT-:   155 - Price: 10.00
+EDt:     0 - EDf:  0.00 - ED:  0.00 - noise: -2.08 - Transition probability: 0.125
+NF:   200 - NT+:   150 - NT-:   150 - Price: 10.00
+EDt:     0 - EDf:  0.00 - ED:  0.00 - noise: -0.05 - Transition probability: 0.003
+NF:   202 - NT+:   149 - NT-:   149 - Price: 10.00
+EDt:    -1 - EDf:  0.00 - ED: -1.00 - noise: -5.50 - Transition probability: 0.390
+NF:   201 - NT+:   149 - NT-:   150 - Price: 10.00
+EDt:     3 - EDf:  0.00 - ED:  3.00 - noise:  5.27 - Transition probability: 0.496
+NF:   199 - NT+:   152 - NT-:   149 - Price: 11.00
+EDt:    -1 - EDf: -1.97 - ED: -2.97 - noise: -3.37 - Transition probability: 0.380
+NF:   197 - NT+:   151 - NT-:   152 - Price: 11.00
+EDt:    -2 - EDf: -2.02 - ED: -4.02 - noise:  2.78 - Transition probability: 0.075
+NF:   202 - NT+:   148 - NT-:   150 - Price: 11.00
+EDt:     0 - EDf: -2.02 - ED: -2.02 - noise:  5.26 - Transition probability: 0.195
+NF:   202 - NT+:   149 - NT-:   149 - Price: 11.00
+EDt:     1 - EDf: -2.01 - ED: -1.01 - noise: -2.04 - Transition probability: 0.183
+NF:   201 - NT+:   150 - NT-:   149 - Price: 11.00
+EDt:     4 - EDf: -2.02 - ED:  1.98 - noise:  9.81 - Transition probability: 0.707
+NF:   202 - NT+:   151 - NT-:   147 - Price: 12.00
+EDt:     7 - EDf: -4.10 - ED:  2.90 - noise:  0.89 - Transition probability: 0.228
+NF:   205 - NT+:   151 - NT-:   144 - Price: 12.00
+EDt:    10 - EDf: -4.08 - ED:  5.92 - noise: -1.63 - Transition probability: 0.258
+NF:   204 - NT+:   153 - NT-:   143 - Price: 12.00
+EDt:    11 - EDf: -4.06 - ED:  6.94 - noise: -5.28 - Transition probability: 0.100
+NF:   203 - NT+:   154 - NT-:   143 - Price: 12.00
+EDt:    17 - EDf: -4.02 - ED: 12.98 - noise: -10.08 - Transition probability: 0.174
+NF:   201 - NT+:   158 - NT-:   141 - Price: 12.00
+EDt:     8 - EDf: -4.04 - ED:  3.96 - noise:  8.92 - Transition probability: 0.773
+NF:   202 - NT+:   153 - NT-:   145 - Price: 13.00
+EDt:     0 - EDf: -6.06 - ED: -6.06 - noise: -10.54 - Transition probability: 0.996
+NF:   202 - NT+:   149 - NT-:   149 - Price: 12.00
+EDt:     4 - EDf: -4.00 - ED:  0.00 - noise: -2.51 - Transition probability: 0.151
+NF:   200 - NT+:   152 - NT-:   148 - Price: 12.00
+EDt:    -1 - EDf: -4.02 - ED: -5.02 - noise:  2.34 - Transition probability: 0.161
+NF:   201 - NT+:   149 - NT-:   150 - Price: 12.00
+EDt:     1 - EDf: -3.98 - ED: -2.98 - noise:  0.20 - Transition probability: 0.167
+NF:   199 - NT+:   151 - NT-:   150 - Price: 12.00
+EDt:    -2 - EDf: -4.00 - ED: -6.00 - noise:  1.27 - Transition probability: 0.284
+NF:   200 - NT+:   149 - NT-:   151 - Price: 12.00
+EDt:   -14 - EDf: -4.00 - ED: -18.00 - noise: -0.60 - Transition probability: 1.116
+NF:   200 - NT+:   143 - NT-:   157 - Price: 11.00
+EDt:    -9 - EDf: -2.01 - ED: -11.01 - noise:  5.67 - Transition probability: 0.320
+NF:   201 - NT+:   145 - NT-:   154 - Price: 11.00
+EDt:    -9 - EDf: -2.01 - ED: -11.01 - noise: -3.73 - Transition probability: 0.885
+NF:   201 - NT+:   145 - NT-:   154 - Price: 10.00
+EDt:    -1 - EDf:  0.00 - ED: -1.00 - noise:  0.92 - Transition probability: 0.005
+NF:   201 - NT+:   149 - NT-:   150 - Price: 10.00
+EDt:   -11 - EDf:  0.00 - ED: -11.00 - noise: -2.15 - Transition probability: 0.789
+NF:   199 - NT+:   145 - NT-:   156 - Price:  9.00
+EDt:    -7 - EDf:  2.01 - ED: -4.99 - noise: -2.79 - Transition probability: 0.467
+NF:   201 - NT+:   146 - NT-:   153 - Price:  8.00
+EDt:   -10 - EDf:  3.96 - ED: -6.04 - noise: -0.06 - Transition probability: 0.366
+NF:   198 - NT+:   146 - NT-:   156 - Price:  8.00
+EDt:    -2 - EDf:  3.96 - ED:  1.96 - noise: -1.82 - Transition probability: 0.009
+NF:   198 - NT+:   150 - NT-:   152 - Price:  8.00
+EDt:    -5 - EDf:  3.98 - ED: -1.02 - noise:  0.18 - Transition probability: 0.050
+NF:   199 - NT+:   148 - NT-:   153 - Price:  8.00
+EDt:    -8 - EDf:  4.00 - ED: -4.00 - noise: -5.54 - Transition probability: 0.572
+NF:   200 - NT+:   146 - NT-:   154 - Price:  8.00
+EDt:    -3 - EDf:  3.94 - ED:  0.94 - noise: -1.17 - Transition probability: 0.014
+NF:   197 - NT+:   150 - NT-:   153 - Price:  8.00
+EDt:    -1 - EDf:  3.98 - ED:  2.98 - noise:  6.19 - Transition probability: 0.550
+NF:   199 - NT+:   150 - NT-:   151 - Price:  9.00
+EDt:     3 - EDf:  1.99 - ED:  4.99 - noise:  1.81 - Transition probability: 0.408
+NF:   199 - NT+:   152 - NT-:   149 - Price:  9.00
+EDt:     4 - EDf:  2.00 - ED:  6.00 - noise: -9.99 - Transition probability: 0.239
+NF:   200 - NT+:   152 - NT-:   148 - Price:  9.00
+EDt:     7 - EDf:  2.03 - ED:  9.03 - noise: -0.32 - Transition probability: 0.522
+NF:   203 - NT+:   152 - NT-:   145 - Price: 10.00
+EDt:    12 - EDf:  0.00 - ED: 12.00 - noise: -0.73 - Transition probability: 0.676
+NF:   200 - NT+:   156 - NT-:   144 - Price: 11.00
+EDt:     3 - EDf: -2.01 - ED:  0.99 - noise:  0.71 - Transition probability: 0.102
+NF:   201 - NT+:   151 - NT-:   148 - Price: 12.00
+EDt:     6 - EDf: -4.00 - ED:  2.00 - noise: -9.54 - Transition probability: 0.452
+NF:   200 - NT+:   153 - NT-:   147 - Price: 11.00
+EDt:     1 - EDf: -2.01 - ED: -1.01 - noise:  0.65 - Transition probability: 0.022
+NF:   201 - NT+:   150 - NT-:   149 - Price: 11.00
+EDt:     1 - EDf: -2.01 - ED: -1.01 - noise:  3.53 - Transition probability: 0.151
+NF:   201 - NT+:   150 - NT-:   149 - Price: 11.00
+EDt:    -3 - EDf: -2.01 - ED: -5.01 - noise: -9.73 - Transition probability: 0.885
+NF:   201 - NT+:   148 - NT-:   151 - Price: 11.00
+EDt:    -1 - EDf: -2.01 - ED: -3.01 - noise:  7.85 - Transition probability: 0.290
+NF:   201 - NT+:   149 - NT-:   150 - Price: 11.00
+EDt:     7 - EDf: -1.99 - ED:  5.01 - noise:  8.90 - Transition probability: 0.835
+NF:   199 - NT+:   154 - NT-:   147 - Price: 12.00
+EDt:     1 - EDf: -4.02 - ED: -3.02 - noise: -5.48 - Transition probability: 0.510
+NF:   201 - NT+:   150 - NT-:   149 - Price: 12.00
+EDt:     7 - EDf: -3.98 - ED:  3.02 - noise: -2.77 - Transition probability: 0.015
+NF:   199 - NT+:   154 - NT-:   147 - Price: 12.00
+EDt:     5 - EDf: -3.98 - ED:  1.02 - noise:  4.63 - Transition probability: 0.339
+NF:   199 - NT+:   153 - NT-:   148 - Price: 12.00
+EDt:     6 - EDf: -4.00 - ED:  2.00 - noise:  3.15 - Transition probability: 0.309
+NF:   200 - NT+:   153 - NT-:   147 - Price: 13.00
+EDt:     8 - EDf: -6.00 - ED:  2.00 - noise: -3.85 - Transition probability: 0.111
+NF:   200 - NT+:   154 - NT-:   146 - Price: 13.00
+EDt:     8 - EDf: -6.00 - ED:  2.00 - noise:  5.79 - Transition probability: 0.467
+NF:   200 - NT+:   154 - NT-:   146 - Price: 13.00
+EDt:    10 - EDf: -5.94 - ED:  4.06 - noise:  2.56 - Transition probability: 0.397
+NF:   198 - NT+:   156 - NT-:   146 - Price: 14.00
+EDt:    14 - EDf: -7.92 - ED:  6.08 - noise: -0.26 - Transition probability: 0.349
+NF:   198 - NT+:   158 - NT-:   144 - Price: 14.00
+EDt:    16 - EDf: -8.00 - ED:  8.00 - noise: -12.04 - Transition probability: 0.242
+NF:   200 - NT+:   158 - NT-:   142 - Price: 14.00
+EDt:    12 - EDf: -8.08 - ED:  3.92 - noise: -4.13 - Transition probability: 0.013
+NF:   202 - NT+:   155 - NT-:   143 - Price: 14.00
+EDt:     7 - EDf: -8.12 - ED: -1.12 - noise: -9.90 - Transition probability: 0.661
+NF:   203 - NT+:   152 - NT-:   145 - Price: 13.00
+EDt:     7 - EDf: -6.09 - ED:  0.91 - noise: -2.58 - Transition probability: 0.100
+NF:   203 - NT+:   152 - NT-:   145 - Price: 13.00
+EDt:     4 - EDf: -6.06 - ED: -2.06 - noise:  1.50 - Transition probability: 0.033
+NF:   202 - NT+:   151 - NT-:   147 - Price: 13.00
+EDt:     7 - EDf: -6.03 - ED:  0.97 - noise:  3.37 - Transition probability: 0.260
+NF:   201 - NT+:   153 - NT-:   146 - Price: 13.00
+EDt:     9 - EDf: -5.91 - ED:  3.09 - noise: -3.37 - Transition probability: 0.017
+NF:   197 - NT+:   156 - NT-:   147 - Price: 13.00
+EDt:     6 - EDf: -5.94 - ED:  0.06 - noise:  2.05 - Transition probability: 0.127
+NF:   198 - NT+:   154 - NT-:   148 - Price: 13.00
+EDt:    11 - EDf: -5.91 - ED:  5.09 - noise: -0.89 - Transition probability: 0.252
+NF:   197 - NT+:   157 - NT-:   146 - Price: 14.00
+EDt:     6 - EDf: -7.84 - ED: -1.84 - noise:  4.62 - Transition probability: 0.167
+NF:   196 - NT+:   155 - NT-:   149 - Price: 14.00
+EDt:     5 - EDf: -7.88 - ED: -2.88 - noise:  1.74 - Transition probability: 0.068
+NF:   197 - NT+:   154 - NT-:   149 - Price: 14.00
+EDt:     7 - EDf: -7.96 - ED: -0.96 - noise:  0.75 - Transition probability: 0.013
+NF:   199 - NT+:   154 - NT-:   147 - Price: 14.00
+EDt:     9 - EDf: -7.96 - ED:  1.04 - noise:  9.04 - Transition probability: 0.605
+NF:   199 - NT+:   155 - NT-:   146 - Price: 15.00
+EDt:     9 - EDf: -9.95 - ED: -0.95 - noise: -9.68 - Transition probability: 0.638
+NF:   199 - NT+:   155 - NT-:   146 - Price: 15.00
+EDt:     9 - EDf: -9.85 - ED: -0.85 - noise: -0.34 - Transition probability: 0.071
+NF:   197 - NT+:   156 - NT-:   147 - Price: 15.00
+EDt:     9 - EDf: -9.75 - ED: -0.75 - noise: -0.12 - Transition probability: 0.052
+NF:   195 - NT+:   157 - NT-:   148 - Price: 15.00
+EDt:    11 - EDf: -9.85 - ED:  1.15 - noise:  3.12 - Transition probability: 0.256
+NF:   197 - NT+:   157 - NT-:   146 - Price: 15.00
+EDt:     3 - EDf: -9.85 - ED: -6.85 - noise:  5.78 - Transition probability: 0.064
+NF:   197 - NT+:   153 - NT-:   150 - Price: 15.00
+EDt:     0 - EDf: -9.60 - ED: -9.60 - noise:  4.26 - Transition probability: 0.321
+NF:   192 - NT+:   154 - NT-:   154 - Price: 15.00
+EDt:    -5 - EDf: -9.55 - ED: -14.55 - noise: -1.82 - Transition probability: 0.982
+NF:   191 - NT+:   152 - NT-:   157 - Price: 14.00
+EDt:    -6 - EDf: -7.68 - ED: -13.68 - noise: -9.82 - Transition probability: 1.410
+NF:   192 - NT+:   151 - NT-:   157 - Price: 13.00
+EDt:    -2 - EDf: -5.76 - ED: -7.76 - noise: -0.68 - Transition probability: 0.507
+NF:   192 - NT+:   153 - NT-:   155 - Price: 13.00
+EDt:    -5 - EDf: -5.73 - ED: -10.73 - noise: -2.31 - Transition probability: 0.782
+NF:   191 - NT+:   152 - NT-:   157 - Price: 12.00
+EDt:    -6 - EDf: -3.84 - ED: -9.84 - noise: -4.45 - Transition probability: 0.858
+NF:   192 - NT+:   151 - NT-:   157 - Price: 12.00
+EDt:    -3 - EDf: -3.82 - ED: -6.82 - noise: -0.63 - Transition probability: 0.447
+NF:   191 - NT+:   153 - NT-:   156 - Price: 11.00
+EDt:     7 - EDf: -1.93 - ED:  5.07 - noise:  4.64 - Transition probability: 0.583
+NF:   193 - NT+:   157 - NT-:   150 - Price: 11.00
+EDt:     7 - EDf: -1.93 - ED:  5.07 - noise: -3.87 - Transition probability: 0.072
+NF:   193 - NT+:   157 - NT-:   150 - Price: 11.00
+EDt:    -4 - EDf: -1.94 - ED: -5.94 - noise:  7.64 - Transition probability: 0.102
+NF:   194 - NT+:   151 - NT-:   155 - Price: 11.00
+EDt:    -8 - EDf: -1.96 - ED: -9.96 - noise:  0.90 - Transition probability: 0.544
+NF:   196 - NT+:   148 - NT-:   156 - Price: 11.00
+EDt:   -10 - EDf: -1.96 - ED: -11.96 - noise: -4.72 - Transition probability: 1.001
+NF:   196 - NT+:   147 - NT-:   157 - Price: 10.00
+EDt:   -10 - EDf:  0.00 - ED: -10.00 - noise: -3.28 - Transition probability: 0.797
+NF:   194 - NT+:   148 - NT-:   158 - Price:  9.00
+EDt:   -13 - EDf:  1.95 - ED: -11.05 - noise:  4.78 - Transition probability: 0.376
+NF:   195 - NT+:   146 - NT-:   159 - Price:  9.00
+EDt:    -5 - EDf:  1.93 - ED: -3.07 - noise:  3.01 - Transition probability: 0.004
+NF:   193 - NT+:   151 - NT-:   156 - Price:  9.00
+EDt:    -8 - EDf:  1.92 - ED: -6.08 - noise:  5.00 - Transition probability: 0.065
+NF:   192 - NT+:   150 - NT-:   158 - Price:  9.00
+EDt:   -12 - EDf:  1.94 - ED: -10.06 - noise:  0.93 - Transition probability: 0.548
+NF:   194 - NT+:   147 - NT-:   159 - Price:  8.00
+EDt:    -9 - EDf:  3.90 - ED: -5.10 - noise: -3.90 - Transition probability: 0.540
+NF:   195 - NT+:   148 - NT-:   157 - Price:  7.00
+EDt:    -6 - EDf:  5.82 - ED: -0.18 - noise: -1.03 - Transition probability: 0.072
+NF:   194 - NT+:   150 - NT-:   156 - Price:  7.00
+EDt:    -4 - EDf:  5.76 - ED:  1.76 - noise: -5.32 - Transition probability: 0.214
+NF:   192 - NT+:   152 - NT-:   156 - Price:  6.00
+EDt:    -9 - EDf:  7.64 - ED: -1.36 - noise:  1.10 - Transition probability: 0.016
+NF:   191 - NT+:   150 - NT-:   159 - Price:  6.00
+EDt:   -15 - EDf:  7.56 - ED: -7.44 - noise:  3.67 - Transition probability: 0.226
+NF:   189 - NT+:   148 - NT-:   163 - Price:  6.00
+EDt:   -13 - EDf:  7.64 - ED: -5.36 - noise:  0.81 - Transition probability: 0.273
+NF:   191 - NT+:   148 - NT-:   161 - Price:  6.00
+EDt:   -17 - EDf:  7.72 - ED: -9.28 - noise:  2.88 - Transition probability: 0.384
+NF:   193 - NT+:   145 - NT-:   162 - Price:  5.00
+EDt:   -16 - EDf:  9.50 - ED: -6.50 - noise: -2.27 - Transition probability: 0.526
+NF:   190 - NT+:   147 - NT-:   163 - Price:  5.00
+EDt:   -10 - EDf:  9.50 - ED: -0.50 - noise: -5.36 - Transition probability: 0.351
+NF:   190 - NT+:   150 - NT-:   160 - Price:  4.00
+EDt:    -1 - EDf:  11.34 - ED: 10.34 - noise:  2.81 - Transition probability: 0.789
+NF:   189 - NT+:   155 - NT-:   156 - Price:  5.00
+EDt:    -7 - EDf:  9.45 - ED:  2.45 - noise: -2.21 - Transition probability: 0.014
+NF:   189 - NT+:   152 - NT-:   159 - Price:  5.00
+EDt:    -6 - EDf:  9.40 - ED:  3.40 - noise:  6.16 - Transition probability: 0.574
+NF:   188 - NT+:   153 - NT-:   159 - Price:  6.00
+EDt:    -2 - EDf:  7.44 - ED:  5.44 - noise:  1.08 - Transition probability: 0.391
+NF:   186 - NT+:   156 - NT-:   158 - Price:  6.00
+EDt:     5 - EDf:  7.56 - ED: 12.56 - noise:  2.57 - Transition probability: 0.908
+NF:   189 - NT+:   158 - NT-:   153 - Price:  6.00
+EDt:     0 - EDf:  7.52 - ED:  7.52 - noise:  3.19 - Transition probability: 0.643
+NF:   188 - NT+:   156 - NT-:   156 - Price:  7.00
+EDt:     1 - EDf:  5.67 - ED:  6.67 - noise: -6.20 - Transition probability: 0.028
+NF:   189 - NT+:   156 - NT-:   155 - Price:  7.00
+EDt:     3 - EDf:  5.67 - ED:  8.67 - noise:  4.78 - Transition probability: 0.807
+NF:   189 - NT+:   157 - NT-:   154 - Price:  7.00
+EDt:     8 - EDf:  5.52 - ED: 13.52 - noise: -1.33 - Transition probability: 0.732
+NF:   184 - NT+:   162 - NT-:   154 - Price:  8.00
+EDt:     7 - EDf:  3.70 - ED: 10.70 - noise: -0.23 - Transition probability: 0.628
+NF:   185 - NT+:   161 - NT-:   154 - Price:  8.00
+EDt:     1 - EDf:  3.74 - ED:  4.74 - noise: -5.15 - Transition probability: 0.025
+NF:   187 - NT+:   157 - NT-:   156 - Price:  8.00
+EDt:     1 - EDf:  3.74 - ED:  4.74 - noise: -2.72 - Transition probability: 0.121
+NF:   187 - NT+:   157 - NT-:   156 - Price:  8.00
+EDt:     4 - EDf:  3.76 - ED:  7.76 - noise: 15.38 - Transition probability: 1.388
+NF:   188 - NT+:   158 - NT-:   154 - Price:  9.00
+EDt:     5 - EDf:  1.87 - ED:  6.87 - noise: 10.71 - Transition probability: 1.055
+NF:   187 - NT+:   159 - NT-:   154 - Price: 10.00
+EDt:    -2 - EDf:  0.00 - ED: -2.00 - noise:  2.84 - Transition probability: 0.050
+NF:   186 - NT+:   156 - NT-:   158 - Price: 10.00
+EDt:     2 - EDf:  0.00 - ED:  2.00 - noise: -5.53 - Transition probability: 0.212
+NF:   188 - NT+:   157 - NT-:   155 - Price: 10.00
+EDt:     4 - EDf:  0.00 - ED:  4.00 - noise:  7.88 - Transition probability: 0.713
+NF:   188 - NT+:   158 - NT-:   154 - Price: 11.00
+EDt:     3 - EDf: -1.89 - ED:  1.11 - noise: -6.49 - Transition probability: 0.323
+NF:   189 - NT+:   157 - NT-:   154 - Price: 11.00
+EDt:     5 - EDf: -1.89 - ED:  3.11 - noise:  9.19 - Transition probability: 0.738
+NF:   189 - NT+:   158 - NT-:   153 - Price: 11.00
+EDt:     5 - EDf: -1.91 - ED:  3.09 - noise: -9.48 - Transition probability: 0.383
+NF:   191 - NT+:   157 - NT-:   152 - Price: 10.00
+EDt:     7 - EDf:  0.00 - ED:  7.00 - noise: -1.97 - Transition probability: 0.302
+NF:   191 - NT+:   158 - NT-:   151 - Price: 10.00
+EDt:     5 - EDf:  0.00 - ED:  5.00 - noise:  1.83 - Transition probability: 0.410
+NF:   193 - NT+:   156 - NT-:   151 - Price: 11.00
+EDt:     3 - EDf: -1.93 - ED:  1.07 - noise: -1.60 - Transition probability: 0.032
+NF:   193 - NT+:   155 - NT-:   152 - Price: 11.00
+EDt:    -4 - EDf: -1.94 - ED: -5.94 - noise:  0.48 - Transition probability: 0.328
+NF:   194 - NT+:   151 - NT-:   155 - Price: 10.00
+EDt:   -17 - EDf:  0.00 - ED: -17.00 - noise:  5.19 - Transition probability: 0.709
+NF:   193 - NT+:   145 - NT-:   162 - Price: 10.00
+EDt:    -9 - EDf:  0.00 - ED: -9.00 - noise: -1.80 - Transition probability: 0.648
+NF:   191 - NT+:   150 - NT-:   159 - Price:  9.00
+EDt:    -6 - EDf:  1.92 - ED: -4.08 - noise:  1.08 - Transition probability: 0.180
+NF:   192 - NT+:   151 - NT-:   157 - Price:  9.00
+EDt:    -6 - EDf:  1.92 - ED: -4.08 - noise: -0.65 - Transition probability: 0.284
+NF:   192 - NT+:   151 - NT-:   157 - Price:  9.00
+EDt:    -4 - EDf:  1.90 - ED: -2.10 - noise:  5.48 - Transition probability: 0.203
+NF:   190 - NT+:   153 - NT-:   157 - Price:  9.00
+EDt:    -6 - EDf:  1.92 - ED: -4.08 - noise: -7.85 - Transition probability: 0.716
+NF:   192 - NT+:   151 - NT-:   157 - Price:  8.00
+EDt:    -9 - EDf:  3.86 - ED: -5.14 - noise: -0.42 - Transition probability: 0.333
+NF:   193 - NT+:   149 - NT-:   158 - Price:  7.00
+EDt:    -7 - EDf:  5.67 - ED: -1.33 - noise: -6.44 - Transition probability: 0.466
+NF:   189 - NT+:   152 - NT-:   159 - Price:  6.00
+EDt:    -7 - EDf:  7.56 - ED:  0.56 - noise:  0.16 - Transition probability: 0.043
+NF:   189 - NT+:   152 - NT-:   159 - Price:  6.00
+EDt:    -4 - EDf:  7.44 - ED:  3.44 - noise:  2.24 - Transition probability: 0.341
+NF:   186 - NT+:   155 - NT-:   159 - Price:  7.00
+EDt:    -6 - EDf:  5.58 - ED: -0.42 - noise:  5.36 - Transition probability: 0.297
+NF:   186 - NT+:   154 - NT-:   160 - Price:  7.00
+EDt:    -5 - EDf:  5.49 - ED:  0.49 - noise: -1.13 - Transition probability: 0.038
+NF:   183 - NT+:   156 - NT-:   161 - Price:  7.00
+EDt:    -1 - EDf:  5.49 - ED:  4.49 - noise: -4.97 - Transition probability: 0.029
+NF:   183 - NT+:   158 - NT-:   159 - Price:  7.00
+EDt:     1 - EDf:  5.55 - ED:  6.55 - noise:  1.66 - Transition probability: 0.493
+NF:   185 - NT+:   158 - NT-:   157 - Price:  8.00
+EDt:     6 - EDf:  3.72 - ED:  9.72 - noise: -3.78 - Transition probability: 0.357
+NF:   186 - NT+:   160 - NT-:   154 - Price:  9.00
+EDt:    -3 - EDf:  1.85 - ED: -1.15 - noise: 12.22 - Transition probability: 0.664
+NF:   185 - NT+:   156 - NT-:   159 - Price:  9.00
+EDt:     4 - EDf:  1.84 - ED:  5.84 - noise: -5.32 - Transition probability: 0.031
+NF:   184 - NT+:   160 - NT-:   156 - Price:  9.00
+EDt:     7 - EDf:  1.85 - ED:  8.85 - noise: -4.19 - Transition probability: 0.280
+NF:   185 - NT+:   161 - NT-:   154 - Price:  9.00
+EDt:    -1 - EDf:  1.87 - ED:  0.87 - noise: -5.98 - Transition probability: 0.306
+NF:   187 - NT+:   156 - NT-:   157 - Price:  8.00
+EDt:    -1 - EDf:  3.78 - ED:  2.78 - noise: -0.88 - Transition probability: 0.114
+NF:   189 - NT+:   155 - NT-:   156 - Price:  9.00
+EDt:    -4 - EDf:  1.88 - ED: -2.12 - noise: -8.83 - Transition probability: 0.657
+NF:   188 - NT+:   154 - NT-:   158 - Price:  8.00
+EDt:     1 - EDf:  3.74 - ED:  4.74 - noise: -9.42 - Transition probability: 0.281
+NF:   187 - NT+:   157 - NT-:   156 - Price:  8.00
+EDt:    -1 - EDf:  3.70 - ED:  2.70 - noise:  0.82 - Transition probability: 0.211
+NF:   185 - NT+:   157 - NT-:   158 - Price:  9.00
+EDt:     8 - EDf:  1.82 - ED:  9.82 - noise:  4.17 - Transition probability: 0.839
+NF:   182 - NT+:   163 - NT-:   155 - Price: 10.00
+EDt:     6 - EDf:  0.00 - ED:  6.00 - noise: -5.17 - Transition probability: 0.050
+NF:   180 - NT+:   163 - NT-:   157 - Price: 10.00
+EDt:     5 - EDf:  0.00 - ED:  5.00 - noise:  6.88 - Transition probability: 0.713
+NF:   177 - NT+:   164 - NT-:   159 - Price: 11.00
+EDt:    13 - EDf: -1.79 - ED: 11.21 - noise: -5.34 - Transition probability: 0.352
+NF:   179 - NT+:   167 - NT-:   154 - Price: 12.00
+EDt:     8 - EDf: -3.60 - ED:  4.40 - noise:  4.14 - Transition probability: 0.512
+NF:   180 - NT+:   164 - NT-:   156 - Price: 12.00
+EDt:     6 - EDf: -3.64 - ED:  2.36 - noise: -2.80 - Transition probability: 0.026
+NF:   182 - NT+:   162 - NT-:   156 - Price: 12.00
+EDt:     7 - EDf: -3.74 - ED:  3.26 - noise:  4.23 - Transition probability: 0.449
+NF:   187 - NT+:   160 - NT-:   153 - Price: 13.00
+EDt:    -4 - EDf: -5.64 - ED: -9.64 - noise: -6.55 - Transition probability: 0.971
+NF:   188 - NT+:   154 - NT-:   158 - Price: 12.00
+EDt:    -6 - EDf: -3.80 - ED: -9.80 - noise: -1.16 - Transition probability: 0.658
+NF:   190 - NT+:   152 - NT-:   158 - Price: 11.00
+EDt:    -9 - EDf: -1.91 - ED: -10.91 - noise:  7.59 - Transition probability: 0.199
+NF:   191 - NT+:   150 - NT-:   159 - Price: 11.00
+EDt:   -14 - EDf: -1.86 - ED: -15.86 - noise:  3.76 - Transition probability: 0.726
+NF:   186 - NT+:   150 - NT-:   164 - Price: 11.00
+EDt:   -13 - EDf: -1.87 - ED: -14.87 - noise: -1.89 - Transition probability: 1.005
+NF:   187 - NT+:   150 - NT-:   163 - Price: 10.00
+EDt:   -12 - EDf:  0.00 - ED: -12.00 - noise: -8.04 - Transition probability: 1.203
+NF:   190 - NT+:   149 - NT-:   161 - Price:  9.00
+EDt:   -11 - EDf:  1.93 - ED: -9.07 - noise: -1.19 - Transition probability: 0.616
+NF:   193 - NT+:   148 - NT-:   159 - Price:  9.00
+EDt:    -7 - EDf:  1.93 - ED: -5.07 - noise:  1.58 - Transition probability: 0.210
+NF:   193 - NT+:   150 - NT-:   157 - Price:  9.00
+EDt:     7 - EDf:  1.95 - ED:  8.95 - noise:  0.31 - Transition probability: 0.556
+NF:   195 - NT+:   156 - NT-:   149 - Price: 10.00
+EDt:     3 - EDf:  0.00 - ED:  3.00 - noise:  2.69 - Transition probability: 0.342
+NF:   195 - NT+:   154 - NT-:   151 - Price: 10.00
+EDt:     5 - EDf:  0.00 - ED:  5.00 - noise:  0.35 - Transition probability: 0.321
+NF:   195 - NT+:   155 - NT-:   150 - Price: 10.00
+EDt:    -3 - EDf:  0.00 - ED: -3.00 - noise:  0.37 - Transition probability: 0.158
+NF:   197 - NT+:   150 - NT-:   153 - Price:  9.00
+EDt:     0 - EDf:  1.98 - ED:  1.98 - noise: -1.30 - Transition probability: 0.041
+NF:   198 - NT+:   151 - NT-:   151 - Price:  9.00
+EDt:     0 - EDf:  1.96 - ED:  1.96 - noise:  6.60 - Transition probability: 0.514
+NF:   196 - NT+:   152 - NT-:   152 - Price: 10.00
+EDt:    -3 - EDf:  0.00 - ED: -3.00 - noise:  3.48 - Transition probability: 0.029
+NF:   199 - NT+:   149 - NT-:   152 - Price: 11.00
+EDt:    -2 - EDf: -1.98 - ED: -3.98 - noise: -2.13 - Transition probability: 0.367
+NF:   198 - NT+:   150 - NT-:   152 - Price: 10.00
+EDt:    -3 - EDf:  0.00 - ED: -3.00 - noise: -5.03 - Transition probability: 0.482
+NF:   197 - NT+:   150 - NT-:   153 - Price: 10.00
+EDt:    -7 - EDf:  0.00 - ED: -7.00 - noise: -2.23 - Transition probability: 0.554
+NF:   195 - NT+:   149 - NT-:   156 - Price: 10.00
+EDt:   -10 - EDf:  0.00 - ED: -10.00 - noise: -4.18 - Transition probability: 0.851
+NF:   194 - NT+:   148 - NT-:   158 - Price:  9.00
+EDt:     2 - EDf:  1.96 - ED:  3.96 - noise: -3.87 - Transition probability: 0.006
+NF:   196 - NT+:   153 - NT-:   151 - Price:  9.00
+EDt:     4 - EDf:  1.96 - ED:  5.96 - noise: -4.01 - Transition probability: 0.117
+NF:   196 - NT+:   154 - NT-:   150 - Price: 10.00
+EDt:     0 - EDf:  0.00 - ED:  0.00 - noise: 10.89 - Transition probability: 0.653
+NF:   196 - NT+:   152 - NT-:   152 - Price: 11.00
+EDt:    -4 - EDf: -1.96 - ED: -5.96 - noise:  1.11 - Transition probability: 0.291
+NF:   196 - NT+:   150 - NT-:   154 - Price: 11.00
+EDt:    -7 - EDf: -1.95 - ED: -8.95 - noise:  7.78 - Transition probability: 0.070
+NF:   195 - NT+:   149 - NT-:   156 - Price: 11.00
+EDt:   -14 - EDf: -1.96 - ED: -15.96 - noise: -5.68 - Transition probability: 1.298
+NF:   196 - NT+:   145 - NT-:   159 - Price: 10.00
+EDt:   -16 - EDf:  0.00 - ED: -16.00 - noise:  5.66 - Transition probability: 0.621
+NF:   196 - NT+:   144 - NT-:   160 - Price: 10.00
+EDt:   -15 - EDf:  0.00 - ED: -15.00 - noise:  0.37 - Transition probability: 0.878
+NF:   197 - NT+:   144 - NT-:   159 - Price:  9.00
+EDt:   -16 - EDf:  1.96 - ED: -14.04 - noise: -5.79 - Transition probability: 1.190
+NF:   196 - NT+:   144 - NT-:   160 - Price:  8.00
+EDt:   -17 - EDf:  3.90 - ED: -13.10 - noise: -1.31 - Transition probability: 0.865
+NF:   195 - NT+:   144 - NT-:   161 - Price:  7.00
+EDt:   -21 - EDf:  5.85 - ED: -15.15 - noise: -4.56 - Transition probability: 1.182
+NF:   195 - NT+:   142 - NT-:   163 - Price:  6.00
+EDt:   -24 - EDf:  7.76 - ED: -16.24 - noise:  1.03 - Transition probability: 0.913
+NF:   194 - NT+:   141 - NT-:   165 - Price:  5.00
+EDt:   -25 - EDf:  9.65 - ED: -15.35 - noise: -6.27 - Transition probability: 1.297
+NF:   193 - NT+:   141 - NT-:   166 - Price:  4.00
+EDt:   -19 - EDf:  11.58 - ED: -7.42 - noise:  7.76 - Transition probability: 0.020
+NF:   193 - NT+:   144 - NT-:   163 - Price:  4.00
+EDt:   -22 - EDf:  11.52 - ED: -10.48 - noise:  4.46 - Transition probability: 0.361
+NF:   192 - NT+:   143 - NT-:   165 - Price:  3.00
+EDt:   -25 - EDf:  13.51 - ED: -11.49 - noise: -7.71 - Transition probability: 1.152
+NF:   193 - NT+:   141 - NT-:   166 - Price:  2.00
+EDt:   -30 - EDf:  15.04 - ED: -14.96 - noise:  2.76 - Transition probability: 0.732
+NF:   188 - NT+:   141 - NT-:   171 - Price:  1.00
+EDt:   -24 - EDf:  13.32 - ED: -10.68 - noise:  2.85 - Transition probability: 0.470
+NF:   148 - NT+:   164 - NT-:   188 - Price:  0.00
+EDt:    60 - EDf:  5.60 - ED: 65.60 - noise:  3.07 - Transition probability: 4.120
+NF:    56 - NT+:   252 - NT-:   192 - Price:  1.00
+EDt:    51 - EDf:  4.77 - ED: 55.77 - noise: -3.96 - Transition probability: 3.109
+NF:    53 - NT+:   249 - NT-:   198 - Price:  2.00
+EDt:    58 - EDf:  4.32 - ED: 62.32 - noise:  1.49 - Transition probability: 3.829
+NF:    54 - NT+:   252 - NT-:   194 - Price:  3.00
+EDt:    53 - EDf:  3.99 - ED: 56.99 - noise:  0.47 - Transition probability: 3.448
+NF:    57 - NT+:   248 - NT-:   195 - Price:  4.00
+EDt:    46 - EDf:  3.60 - ED: 49.60 - noise: -0.19 - Transition probability: 2.965
+NF:    60 - NT+:   243 - NT-:   197 - Price:  5.00
+EDt:    46 - EDf:  3.20 - ED: 49.20 - noise: -3.11 - Transition probability: 2.765
+NF:    64 - NT+:   241 - NT-:   195 - Price:  6.00
+EDt:    40 - EDf:  2.80 - ED: 42.80 - noise: -1.22 - Transition probability: 2.495
+NF:    70 - NT+:   235 - NT-:   195 - Price:  7.00
+EDt:    26 - EDf:  2.22 - ED: 28.22 - noise: -13.05 - Transition probability: 0.910
+NF:    74 - NT+:   226 - NT-:   200 - Price:  8.00
+EDt:    15 - EDf:  1.58 - ED: 16.58 - noise:  0.74 - Transition probability: 1.039
+NF:    79 - NT+:   218 - NT-:   203 - Price:  9.00
+EDt:    12 - EDf:  0.84 - ED: 12.84 - noise: -6.10 - Transition probability: 0.405
+NF:    84 - NT+:   214 - NT-:   202 - Price:  9.00
+EDt:    16 - EDf:  0.92 - ED: 16.92 - noise: -0.52 - Transition probability: 0.984
+NF:    92 - NT+:   212 - NT-:   196 - Price: 10.00
+EDt:     7 - EDf:  0.00 - ED:  7.00 - noise: -0.17 - Transition probability: 0.410
+NF:    91 - NT+:   208 - NT-:   201 - Price: 10.00
+EDt:     2 - EDf:  0.00 - ED:  2.00 - noise:  2.26 - Transition probability: 0.256
+NF:    94 - NT+:   204 - NT-:   202 - Price: 10.00
+EDt:   -11 - EDf:  0.00 - ED: -11.00 - noise: -1.52 - Transition probability: 0.751
+NF:    95 - NT+:   197 - NT-:   208 - Price:  9.00
+EDt:    -7 - EDf:  0.99 - ED: -6.01 - noise: -2.14 - Transition probability: 0.489
+NF:    99 - NT+:   197 - NT-:   204 - Price:  9.00
+EDt:    -8 - EDf:  1.04 - ED: -6.96 - noise: -3.56 - Transition probability: 0.631
+NF:   104 - NT+:   194 - NT-:   202 - Price:  8.00
+EDt:    -7 - EDf:  2.18 - ED: -4.82 - noise: -3.90 - Transition probability: 0.523
+NF:   109 - NT+:   192 - NT-:   199 - Price:  7.00
+EDt:    -6 - EDf:  3.30 - ED: -2.70 - noise: -2.43 - Transition probability: 0.308
+NF:   110 - NT+:   192 - NT-:   198 - Price:  7.00
+EDt:    -7 - EDf:  3.39 - ED: -3.61 - noise:  1.49 - Transition probability: 0.127
+NF:   113 - NT+:   190 - NT-:   197 - Price:  7.00
+EDt:   -17 - EDf:  3.45 - ED: -13.55 - noise:  5.08 - Transition probability: 0.508
+NF:   115 - NT+:   184 - NT-:   201 - Price:  7.00
+EDt:   -11 - EDf:  3.45 - ED: -7.55 - noise: -4.52 - Transition probability: 0.724
+NF:   115 - NT+:   187 - NT-:   198 - Price:  6.00
+EDt:    -3 - EDf:  4.68 - ED:  1.68 - noise: 17.10 - Transition probability: 1.127
+NF:   117 - NT+:   190 - NT-:   193 - Price:  7.00
+EDt:    -9 - EDf:  3.51 - ED: -5.49 - noise: -9.60 - Transition probability: 0.905
+NF:   117 - NT+:   187 - NT-:   196 - Price:  6.00
+EDt:   -10 - EDf:  4.80 - ED: -5.20 - noise:  2.06 - Transition probability: 0.188
+NF:   120 - NT+:   185 - NT-:   195 - Price:  6.00
+EDt:   -13 - EDf:  4.84 - ED: -8.16 - noise:  2.69 - Transition probability: 0.328
+NF:   121 - NT+:   183 - NT-:   196 - Price:  5.00
+EDt:   -13 - EDf:  6.05 - ED: -6.95 - noise: -3.09 - Transition probability: 0.603
+NF:   121 - NT+:   183 - NT-:   196 - Price:  4.00
+EDt:   -17 - EDf:  7.38 - ED: -9.62 - noise: -3.14 - Transition probability: 0.766
+NF:   123 - NT+:   180 - NT-:   197 - Price:  3.00
+EDt:   -17 - EDf:  8.33 - ED: -8.67 - noise: -1.63 - Transition probability: 0.618
+NF:   119 - NT+:   182 - NT-:   199 - Price:  3.00
+EDt:   -25 - EDf:  8.61 - ED: -16.39 - noise: -0.55 - Transition probability: 1.016
+NF:   123 - NT+:   176 - NT-:   201 - Price:  2.00
+EDt:   -22 - EDf:  9.60 - ED: -12.40 - noise:  7.78 - Transition probability: 0.277
+NF:   120 - NT+:   179 - NT-:   201 - Price:  1.00
+EDt:   -21 - EDf:  9.09 - ED: -11.91 - noise: -0.20 - Transition probability: 0.726
+NF:   101 - NT+:   189 - NT-:   210 - Price:  0.00
+EDt:    33 - EDf:  5.90 - ED: 38.90 - noise: -5.89 - Transition probability: 1.980
+NF:    59 - NT+:   237 - NT-:   204 - Price:  1.00
+EDt:    33 - EDf:  4.95 - ED: 37.95 - noise:  5.76 - Transition probability: 2.622
+NF:    55 - NT+:   239 - NT-:   206 - Price:  2.00
+EDt:    25 - EDf:  4.40 - ED: 29.40 - noise: -0.48 - Transition probability: 1.735
+NF:    55 - NT+:   235 - NT-:   210 - Price:  3.00
+EDt:    26 - EDf:  3.92 - ED: 29.92 - noise: -0.58 - Transition probability: 1.760
+NF:    56 - NT+:   235 - NT-:   209 - Price:  4.00
+EDt:    20 - EDf:  3.36 - ED: 23.36 - noise: -2.72 - Transition probability: 1.238
+NF:    56 - NT+:   232 - NT-:   212 - Price:  5.00
+EDt:    14 - EDf:  2.90 - ED: 16.90 - noise:  0.81 - Transition probability: 1.063
+NF:    58 - NT+:   228 - NT-:   214 - Price:  6.00
+EDt:    18 - EDf:  2.48 - ED: 20.48 - noise: -0.73 - Transition probability: 1.185
+NF:    62 - NT+:   228 - NT-:   210 - Price:  7.00
+EDt:    12 - EDf:  1.92 - ED: 13.92 - noise:  5.19 - Transition probability: 1.146
+NF:    64 - NT+:   224 - NT-:   212 - Price:  8.00
+EDt:     9 - EDf:  1.34 - ED: 10.34 - noise:  3.88 - Transition probability: 0.853
+NF:    67 - NT+:   221 - NT-:   212 - Price:  9.00
+EDt:     4 - EDf:  0.68 - ED:  4.68 - noise:  2.45 - Transition probability: 0.428
+NF:    68 - NT+:   218 - NT-:   214 - Price: 10.00
+EDt:     1 - EDf:  0.00 - ED:  1.00 - noise:  1.63 - Transition probability: 0.158
+NF:    71 - NT+:   215 - NT-:   214 - Price: 10.00
+EDt:    -7 - EDf:  0.00 - ED: -7.00 - noise: -4.33 - Transition probability: 0.680
+NF:    75 - NT+:   209 - NT-:   216 - Price: 10.00
+EDt:    -4 - EDf:  0.00 - ED: -4.00 - noise: -4.94 - Transition probability: 0.536
+NF:    76 - NT+:   210 - NT-:   214 - Price:  9.00
+EDt:     4 - EDf:  0.78 - ED:  4.78 - noise: -4.62 - Transition probability: 0.010
+NF:    78 - NT+:   213 - NT-:   209 - Price:  9.00
+EDt:     7 - EDf:  0.81 - ED:  7.81 - noise: -3.12 - Transition probability: 0.281
+NF:    81 - NT+:   213 - NT-:   206 - Price:  9.00
+EDt:     6 - EDf:  0.82 - ED:  6.82 - noise: -5.39 - Transition probability: 0.086
+NF:    82 - NT+:   212 - NT-:   206 - Price:  9.00
+EDt:     0 - EDf:  0.88 - ED:  0.88 - noise:  3.85 - Transition probability: 0.284
+NF:    88 - NT+:   206 - NT-:   206 - Price: 10.00
+EDt:     3 - EDf:  0.00 - ED:  3.00 - noise:  0.52 - Transition probability: 0.211
+NF:    89 - NT+:   207 - NT-:   204 - Price: 10.00
+EDt:     2 - EDf:  0.00 - ED:  2.00 - noise:  6.28 - Transition probability: 0.497
+NF:    92 - NT+:   205 - NT-:   203 - Price: 11.00
+EDt:    -7 - EDf: -0.95 - ED: -7.95 - noise: -3.79 - Transition probability: 0.704
+NF:    95 - NT+:   199 - NT-:   206 - Price: 10.00
+EDt:    -4 - EDf:  0.00 - ED: -4.00 - noise: -3.71 - Transition probability: 0.463
+NF:    96 - NT+:   200 - NT-:   204 - Price: 10.00
+EDt:    -2 - EDf:  0.00 - ED: -2.00 - noise:  2.09 - Transition probability: 0.005
+NF:   102 - NT+:   198 - NT-:   200 - Price: 10.00
+EDt:     2 - EDf:  0.00 - ED:  2.00 - noise:  5.65 - Transition probability: 0.459
+NF:   102 - NT+:   200 - NT-:   198 - Price: 11.00
+EDt:    -5 - EDf: -1.05 - ED: -6.05 - noise: -0.25 - Transition probability: 0.378
+NF:   105 - NT+:   195 - NT-:   200 - Price: 10.00
+EDt:    -7 - EDf:  0.00 - ED: -7.00 - noise: -7.26 - Transition probability: 0.856
+NF:   107 - NT+:   193 - NT-:   200 - Price: 10.00
+EDt:   -11 - EDf:  0.00 - ED: -11.00 - noise: -4.86 - Transition probability: 0.951
+NF:   111 - NT+:   189 - NT-:   200 - Price:  9.00
+EDt:   -11 - EDf:  1.13 - ED: -9.87 - noise:  0.64 - Transition probability: 0.554
+NF:   113 - NT+:   188 - NT-:   199 - Price:  9.00
+EDt:   -10 - EDf:  1.14 - ED: -8.86 - noise:  3.87 - Transition probability: 0.299
+NF:   114 - NT+:   188 - NT-:   198 - Price:  8.00
+EDt:    -8 - EDf:  2.28 - ED: -5.72 - noise: -1.64 - Transition probability: 0.441
+NF:   114 - NT+:   189 - NT-:   197 - Price:  7.00
+EDt:   -22 - EDf:  3.48 - ED: -18.52 - noise: -2.81 - Transition probability: 1.280
+NF:   116 - NT+:   181 - NT-:   203 - Price:  6.00
+EDt:   -32 - EDf:  4.72 - ED: -27.28 - noise: -0.47 - Transition probability: 1.665
+NF:   118 - NT+:   175 - NT-:   207 - Price:  5.00
+EDt:   -31 - EDf:  5.95 - ED: -25.05 - noise: -5.78 - Transition probability: 1.850
+NF:   119 - NT+:   175 - NT-:   206 - Price:  4.00
+EDt:   -23 - EDf:  7.14 - ED: -15.86 - noise: -2.73 - Transition probability: 1.116
+NF:   119 - NT+:   179 - NT-:   202 - Price:  3.00
+EDt:   -24 - EDf:  8.40 - ED: -15.60 - noise: -7.54 - Transition probability: 1.388
+NF:   120 - NT+:   178 - NT-:   202 - Price:  2.00
+EDt:   -25 - EDf:  9.20 - ED: -15.80 - noise:  3.60 - Transition probability: 0.732
+NF:   115 - NT+:   180 - NT-:   205 - Price:  2.00
+EDt:   -26 - EDf:  8.96 - ED: -17.04 - noise:  1.03 - Transition probability: 0.960
+NF:   112 - NT+:   181 - NT-:   207 - Price:  1.00
+EDt:   -27 - EDf:  9.09 - ED: -17.91 - noise:  2.06 - Transition probability: 0.951
+NF:   101 - NT+:   186 - NT-:   213 - Price:  0.00
+EDt:    34 - EDf:  4.60 - ED: 38.60 - noise: -3.85 - Transition probability: 2.085
+NF:    46 - NT+:   244 - NT-:   210 - Price:  1.00
+EDt:    29 - EDf:  4.05 - ED: 33.05 - noise:  4.48 - Transition probability: 2.252
+NF:    45 - NT+:   242 - NT-:   213 - Price:  2.00
+EDt:    30 - EDf:  3.52 - ED: 33.52 - noise:  0.34 - Transition probability: 2.032
+NF:    44 - NT+:   243 - NT-:   213 - Price:  3.00
+EDt:    28 - EDf:  3.22 - ED: 31.22 - noise:  3.84 - Transition probability: 2.104
+NF:    46 - NT+:   241 - NT-:   213 - Price:  4.00
+EDt:    20 - EDf:  3.00 - ED: 23.00 - noise: -2.81 - Transition probability: 1.212
+NF:    50 - NT+:   235 - NT-:   215 - Price:  5.00
+EDt:    29 - EDf:  2.65 - ED: 31.65 - noise:  7.27 - Transition probability: 2.335
+NF:    53 - NT+:   238 - NT-:   209 - Price:  6.00
+EDt:    20 - EDf:  2.16 - ED: 22.16 - noise:  6.17 - Transition probability: 1.700
+NF:    54 - NT+:   233 - NT-:   213 - Price:  7.00
+EDt:    14 - EDf:  1.74 - ED: 15.74 - noise: -3.87 - Transition probability: 0.712
+NF:    58 - NT+:   228 - NT-:   214 - Price:  8.00
+EDt:     7 - EDf:  1.18 - ED:  8.18 - noise: -4.50 - Transition probability: 0.221
+NF:    59 - NT+:   224 - NT-:   217 - Price:  8.00
+EDt:    11 - EDf:  1.34 - ED: 12.34 - noise: 13.64 - Transition probability: 1.559
+NF:    67 - NT+:   222 - NT-:   211 - Price:  9.00
+EDt:    11 - EDf:  0.71 - ED: 11.71 - noise:  5.00 - Transition probability: 1.003
+NF:    71 - NT+:   220 - NT-:   209 - Price: 10.00
+EDt:     9 - EDf:  0.00 - ED:  9.00 - noise: 10.89 - Transition probability: 1.193
+NF:    71 - NT+:   219 - NT-:   210 - Price: 11.00
+EDt:    12 - EDf: -0.74 - ED: 11.26 - noise:  2.02 - Transition probability: 0.797
+NF:    74 - NT+:   219 - NT-:   207 - Price: 12.00
+EDt:    -4 - EDf: -1.52 - ED: -5.52 - noise: -1.53 - Transition probability: 0.423
+NF:    76 - NT+:   210 - NT-:   214 - Price: 12.00
+EDt:    -3 - EDf: -1.58 - ED: -4.58 - noise: -2.66 - Transition probability: 0.435
+NF:    79 - NT+:   209 - NT-:   212 - Price: 12.00
+EDt:    -8 - EDf: -1.60 - ED: -9.60 - noise: -1.71 - Transition probability: 0.679
+NF:    80 - NT+:   206 - NT-:   214 - Price: 11.00
+EDt:     0 - EDf: -0.82 - ED: -0.82 - noise:  5.37 - Transition probability: 0.273
+NF:    82 - NT+:   209 - NT-:   209 - Price: 11.00
+EDt:    10 - EDf: -0.86 - ED:  9.14 - noise:  8.86 - Transition probability: 1.080
+NF:    86 - NT+:   212 - NT-:   202 - Price: 12.00
+EDt:    12 - EDf: -1.76 - ED: 10.24 - noise: -5.08 - Transition probability: 0.309
+NF:    88 - NT+:   212 - NT-:   200 - Price: 12.00
+EDt:     3 - EDf: -1.82 - ED:  1.18 - noise: -4.10 - Transition probability: 0.175
+NF:    91 - NT+:   206 - NT-:   203 - Price: 12.00
+EDt:    -1 - EDf: -1.90 - ED: -2.90 - noise:  0.39 - Transition probability: 0.151
+NF:    95 - NT+:   202 - NT-:   203 - Price: 11.00
+EDt:   -11 - EDf: -0.97 - ED: -11.97 - noise:  1.69 - Transition probability: 0.617
+NF:    97 - NT+:   196 - NT-:   207 - Price: 11.00
+EDt:   -14 - EDf: -1.02 - ED: -15.02 - noise: -9.71 - Transition probability: 1.484
+NF:   102 - NT+:   192 - NT-:   206 - Price: 10.00
+EDt:     1 - EDf:  0.00 - ED:  1.00 - noise: -13.48 - Transition probability: 0.749
+NF:   105 - NT+:   198 - NT-:   197 - Price:  9.00
+EDt:    -5 - EDf:  1.09 - ED: -3.91 - noise: -1.32 - Transition probability: 0.314
+NF:   109 - NT+:   193 - NT-:   198 - Price:  9.00
+EDt:    -3 - EDf:  1.09 - ED: -1.91 - noise: -1.79 - Transition probability: 0.222
+NF:   109 - NT+:   194 - NT-:   197 - Price:  9.00
+EDt:    -6 - EDf:  1.14 - ED: -4.86 - noise: -1.62 - Transition probability: 0.389
+NF:   114 - NT+:   190 - NT-:   196 - Price:  9.00
+EDt:   -13 - EDf:  1.17 - ED: -11.83 - noise: -10.26 - Transition probability: 1.326
+NF:   117 - NT+:   185 - NT-:   198 - Price:  8.00
+EDt:    -4 - EDf:  2.36 - ED: -1.64 - noise:  2.51 - Transition probability: 0.052
+NF:   118 - NT+:   189 - NT-:   193 - Price:  8.00
+EDt:    -3 - EDf:  2.38 - ED: -0.62 - noise:  1.97 - Transition probability: 0.081
+NF:   119 - NT+:   189 - NT-:   192 - Price:  8.00
+EDt:    -5 - EDf:  2.46 - ED: -2.54 - noise: -0.16 - Transition probability: 0.162
+NF:   123 - NT+:   186 - NT-:   191 - Price:  8.00
+EDt:   -12 - EDf:  2.48 - ED: -9.52 - noise:  0.83 - Transition probability: 0.522
+NF:   124 - NT+:   182 - NT-:   194 - Price:  8.00
+EDt:    -4 - EDf:  2.52 - ED: -1.48 - noise:  2.83 - Transition probability: 0.081
+NF:   126 - NT+:   185 - NT-:   189 - Price:  8.00
+EDt:    -4 - EDf:  2.56 - ED: -1.44 - noise:  3.81 - Transition probability: 0.142
+NF:   128 - NT+:   184 - NT-:   188 - Price:  8.00
+EDt:    -8 - EDf:  2.60 - ED: -5.40 - noise:  1.13 - Transition probability: 0.256
+NF:   130 - NT+:   181 - NT-:   189 - Price:  8.00
+EDt:    -4 - EDf:  2.64 - ED: -1.36 - noise:  8.09 - Transition probability: 0.404
+NF:   132 - NT+:   182 - NT-:   186 - Price:  8.00
+EDt:     4 - EDf:  2.64 - ED:  6.64 - noise: -7.98 - Transition probability: 0.080
+NF:   132 - NT+:   186 - NT-:   182 - Price:  7.00
+EDt:    12 - EDf:  4.08 - ED: 16.08 - noise:  4.22 - Transition probability: 1.218
+NF:   136 - NT+:   188 - NT-:   176 - Price:  8.00
+EDt:    14 - EDf:  2.76 - ED: 16.76 - noise: -1.58 - Transition probability: 0.911
+NF:   138 - NT+:   188 - NT-:   174 - Price:  9.00
+EDt:     4 - EDf:  1.38 - ED:  5.38 - noise: -1.26 - Transition probability: 0.247
+NF:   138 - NT+:   183 - NT-:   179 - Price:  9.00
+EDt:    14 - EDf:  1.38 - ED: 15.38 - noise: -1.35 - Transition probability: 0.842
+NF:   138 - NT+:   188 - NT-:   174 - Price: 10.00
+EDt:    18 - EDf:  0.00 - ED: 18.00 - noise:  6.02 - Transition probability: 1.441
+NF:   140 - NT+:   189 - NT-:   171 - Price: 11.00
+EDt:    16 - EDf: -1.44 - ED: 14.56 - noise: -8.57 - Transition probability: 0.359
+NF:   144 - NT+:   186 - NT-:   170 - Price: 11.00
+EDt:     8 - EDf: -1.46 - ED:  6.54 - noise:  1.29 - Transition probability: 0.470
+NF:   146 - NT+:   181 - NT-:   173 - Price: 12.00
+EDt:     4 - EDf: -2.92 - ED:  1.08 - noise:  3.41 - Transition probability: 0.269
+NF:   146 - NT+:   179 - NT-:   175 - Price: 12.00
+EDt:    11 - EDf: -2.98 - ED:  8.02 - noise: -2.32 - Transition probability: 0.342
+NF:   149 - NT+:   181 - NT-:   170 - Price: 12.00
+EDt:    11 - EDf: -2.98 - ED:  8.02 - noise:  5.57 - Transition probability: 0.815
+NF:   149 - NT+:   181 - NT-:   170 - Price: 13.00
+EDt:     9 - EDf: -4.53 - ED:  4.47 - noise:  1.42 - Transition probability: 0.353
+NF:   151 - NT+:   179 - NT-:   170 - Price: 14.00
+EDt:    -6 - EDf: -6.00 - ED: -12.00 - noise: -4.02 - Transition probability: 0.961
+NF:   150 - NT+:   172 - NT-:   178 - Price: 13.00
+EDt:   -10 - EDf: -4.56 - ED: -14.56 - noise: -4.52 - Transition probability: 1.145
+NF:   152 - NT+:   169 - NT-:   179 - Price: 12.00
+EDt:    -8 - EDf: -3.08 - ED: -11.08 - noise: -6.28 - Transition probability: 1.042
+NF:   154 - NT+:   169 - NT-:   177 - Price: 11.00
+EDt:   -16 - EDf: -1.58 - ED: -17.58 - noise:  7.82 - Transition probability: 0.586
+NF:   158 - NT+:   163 - NT-:   179 - Price: 11.00
+EDt:   -24 - EDf: -1.60 - ED: -25.60 - noise:  0.41 - Transition probability: 1.511
+NF:   160 - NT+:   158 - NT-:   182 - Price: 10.00
+EDt:   -22 - EDf:  0.00 - ED: -22.00 - noise: -1.16 - Transition probability: 1.389
+NF:   162 - NT+:   158 - NT-:   180 - Price:  9.00
+EDt:   -18 - EDf:  1.62 - ED: -16.38 - noise:  1.65 - Transition probability: 0.884
+NF:   162 - NT+:   160 - NT-:   178 - Price:  8.00
+EDt:   -14 - EDf:  3.28 - ED: -10.72 - noise: -4.70 - Transition probability: 0.925
+NF:   164 - NT+:   161 - NT-:   175 - Price:  7.00
+EDt:   -15 - EDf:  4.89 - ED: -10.11 - noise:  2.37 - Transition probability: 0.464
+NF:   163 - NT+:   161 - NT-:   176 - Price:  7.00
+EDt:   -20 - EDf:  4.86 - ED: -15.14 - noise: -7.13 - Transition probability: 1.336
+NF:   162 - NT+:   159 - NT-:   179 - Price:  6.00
+EDt:   -21 - EDf:  6.44 - ED: -14.56 - noise:  5.26 - Transition probability: 0.558
+NF:   161 - NT+:   159 - NT-:   180 - Price:  5.00
+EDt:   -14 - EDf:  8.10 - ED: -5.90 - noise:  9.97 - Transition probability: 0.244
+NF:   162 - NT+:   162 - NT-:   176 - Price:  5.00
+EDt:   -11 - EDf:  8.05 - ED: -2.95 - noise: -3.90 - Transition probability: 0.411
+NF:   161 - NT+:   164 - NT-:   175 - Price:  4.00
+EDt:    -8 - EDf:  9.48 - ED:  1.48 - noise:  5.86 - Transition probability: 0.440
+NF:   158 - NT+:   167 - NT-:   175 - Price:  4.00
+EDt:    -6 - EDf:  9.36 - ED:  3.36 - noise: -6.67 - Transition probability: 0.199
+NF:   156 - NT+:   169 - NT-:   175 - Price:  4.00
+EDt:   -12 - EDf:  9.48 - ED: -2.52 - noise:  0.24 - Transition probability: 0.137
+NF:   158 - NT+:   165 - NT-:   177 - Price:  4.00
+EDt:   -11 - EDf:  9.42 - ED: -1.58 - noise:  1.50 - Transition probability: 0.005
+NF:   157 - NT+:   166 - NT-:   177 - Price:  4.00
+EDt:   -14 - EDf:  9.36 - ED: -4.64 - noise:  0.43 - Transition probability: 0.252
+NF:   156 - NT+:   165 - NT-:   179 - Price:  4.00
+EDt:   -14 - EDf:  9.24 - ED: -4.76 - noise:  4.81 - Transition probability: 0.003
+NF:   154 - NT+:   166 - NT-:   180 - Price:  4.00
+EDt:   -24 - EDf:  9.24 - ED: -14.76 - noise:  8.55 - Transition probability: 0.373
+NF:   154 - NT+:   161 - NT-:   185 - Price:  4.00
+EDt:   -27 - EDf:  9.18 - ED: -17.82 - noise: -6.00 - Transition probability: 1.429
+NF:   153 - NT+:   160 - NT-:   187 - Price:  3.00
+EDt:   -19 - EDf:  10.43 - ED: -8.57 - noise:  0.23 - Transition probability: 0.500
+NF:   149 - NT+:   166 - NT-:   185 - Price:  2.00
+EDt:   -24 - EDf:  11.84 - ED: -12.16 - noise:  1.95 - Transition probability: 0.613
+NF:   148 - NT+:   164 - NT-:   188 - Price:  2.00
+EDt:   -28 - EDf:  11.20 - ED: -16.80 - noise: -6.30 - Transition probability: 1.386
+NF:   140 - NT+:   166 - NT-:   194 - Price:  1.00
+EDt:   -26 - EDf:  10.62 - ED: -15.38 - noise: -5.07 - Transition probability: 1.227
+NF:   118 - NT+:   178 - NT-:   204 - Price:  0.00
+EDt:    40 - EDf:  5.60 - ED: 45.60 - noise:  8.66 - Transition probability: 3.256
+NF:    56 - NT+:   242 - NT-:   202 - Price:  1.00
+EDt:    44 - EDf:  4.86 - ED: 48.86 - noise: -0.48 - Transition probability: 2.903
+NF:    54 - NT+:   245 - NT-:   201 - Price:  2.00
+EDt:    42 - EDf:  4.48 - ED: 46.48 - noise: -1.34 - Transition probability: 2.708
+NF:    56 - NT+:   243 - NT-:   201 - Price:  3.00
+EDt:    47 - EDf:  3.99 - ED: 50.99 - noise: -0.16 - Transition probability: 3.050
+NF:    57 - NT+:   245 - NT-:   198 - Price:  4.00
+EDt:    32 - EDf:  3.48 - ED: 35.48 - noise:  2.03 - Transition probability: 2.250
+NF:    58 - NT+:   237 - NT-:   205 - Price:  5.00
+EDt:    17 - EDf:  3.05 - ED: 20.05 - noise: -2.15 - Transition probability: 1.074
+NF:    61 - NT+:   228 - NT-:   211 - Price:  6.00
+EDt:    17 - EDf:  2.60 - ED: 19.60 - noise: -2.08 - Transition probability: 1.051
+NF:    65 - NT+:   226 - NT-:   209 - Price:  7.00
+EDt:    24 - EDf:  2.04 - ED: 26.04 - noise:  5.46 - Transition probability: 1.890
+NF:    68 - NT+:   228 - NT-:   204 - Price:  8.00
+EDt:    19 - EDf:  1.42 - ED: 20.42 - noise:  0.43 - Transition probability: 1.251
+NF:    71 - NT+:   224 - NT-:   205 - Price:  9.00
+EDt:    18 - EDf:  0.72 - ED: 18.72 - noise:  0.66 - Transition probability: 1.163
+NF:    72 - NT+:   223 - NT-:   205 - Price: 10.00
+EDt:    13 - EDf:  0.00 - ED: 13.00 - noise: 11.42 - Transition probability: 1.465
+NF:    75 - NT+:   219 - NT-:   206 - Price: 11.00
+EDt:    10 - EDf: -0.78 - ED:  9.22 - noise: -1.31 - Transition probability: 0.475
+NF:    78 - NT+:   216 - NT-:   206 - Price: 11.00
+EDt:    -1 - EDf: -0.79 - ED: -1.79 - noise: -4.38 - Transition probability: 0.370
+NF:    79 - NT+:   210 - NT-:   211 - Price: 11.00
+EDt:    -2 - EDf: -0.80 - ED: -2.80 - noise:  3.03 - Transition probability: 0.014
+NF:    80 - NT+:   209 - NT-:   211 - Price: 11.00
+EDt:    -9 - EDf: -0.83 - ED: -9.83 - noise: -8.98 - Transition probability: 1.129
+NF:    83 - NT+:   204 - NT-:   213 - Price: 10.00
+EDt:    -6 - EDf:  0.00 - ED: -6.00 - noise:  0.52 - Transition probability: 0.329
+NF:    86 - NT+:   204 - NT-:   210 - Price:  9.00
+EDt:   -13 - EDf:  0.89 - ED: -12.11 - noise:  0.46 - Transition probability: 0.699
+NF:    89 - NT+:   199 - NT-:   212 - Price:  9.00
+EDt:   -11 - EDf:  0.93 - ED: -10.07 - noise: -6.80 - Transition probability: 1.012
+NF:    93 - NT+:   198 - NT-:   209 - Price:  8.00
+EDt:   -15 - EDf:  1.90 - ED: -13.10 - noise: -0.61 - Transition probability: 0.822
+NF:    95 - NT+:   195 - NT-:   210 - Price:  7.00
+EDt:   -25 - EDf:  2.97 - ED: -22.03 - noise:  4.85 - Transition probability: 1.031
+NF:    99 - NT+:   188 - NT-:   213 - Price:  6.00
+EDt:   -21 - EDf:  4.04 - ED: -16.96 - noise:  5.44 - Transition probability: 0.691
+NF:   101 - NT+:   189 - NT-:   210 - Price:  5.00
+EDt:   -32 - EDf:  5.20 - ED: -26.80 - noise:  5.81 - Transition probability: 1.259
+NF:   104 - NT+:   182 - NT-:   214 - Price:  4.00
+EDt:   -24 - EDf:  6.24 - ED: -17.76 - noise: -1.92 - Transition probability: 1.181
+NF:   104 - NT+:   186 - NT-:   210 - Price:  3.00
+EDt:   -18 - EDf:  7.28 - ED: -10.72 - noise: -8.44 - Transition probability: 1.150
+NF:   104 - NT+:   189 - NT-:   207 - Price:  2.00
+EDt:   -18 - EDf:  8.48 - ED: -9.52 - noise: -2.69 - Transition probability: 0.733
+NF:   106 - NT+:   188 - NT-:   206 - Price:  1.00
+EDt:   -25 - EDf:  8.01 - ED: -16.99 - noise: -1.41 - Transition probability: 1.104
+NF:    89 - NT+:   193 - NT-:   218 - Price:  0.00
+EDt:    24 - EDf:  4.40 - ED: 28.40 - noise: -8.54 - Transition probability: 1.192
+NF:    44 - NT+:   240 - NT-:   216 - Price:  1.00
+EDt:    25 - EDf:  3.69 - ED: 28.69 - noise:  2.05 - Transition probability: 1.844
+NF:    41 - NT+:   242 - NT-:   217 - Price:  2.00
+EDt:    20 - EDf:  3.36 - ED: 23.36 - noise:  5.52 - Transition probability: 1.733
+NF:    42 - NT+:   239 - NT-:   219 - Price:  3.00
+EDt:    20 - EDf:  3.08 - ED: 23.08 - noise:  2.88 - Transition probability: 1.557
+NF:    44 - NT+:   238 - NT-:   218 - Price:  4.00
+EDt:    18 - EDf:  2.76 - ED: 20.76 - noise:  1.20 - Transition probability: 1.317
+NF:    46 - NT+:   236 - NT-:   218 - Price:  5.00
+EDt:    17 - EDf:  2.35 - ED: 19.35 - noise:  5.96 - Transition probability: 1.518
+NF:    47 - NT+:   235 - NT-:   218 - Price:  6.00
+EDt:    22 - EDf:  2.00 - ED: 24.00 - noise:  1.96 - Transition probability: 1.558
+NF:    50 - NT+:   236 - NT-:   214 - Price:  7.00
+EDt:    28 - EDf:  1.50 - ED: 29.50 - noise: -1.71 - Transition probability: 1.667
+NF:    50 - NT+:   239 - NT-:   211 - Price:  8.00
+EDt:    14 - EDf:  1.12 - ED: 15.12 - noise: -7.51 - Transition probability: 0.457
+NF:    56 - NT+:   229 - NT-:   215 - Price:  9.00
+EDt:     9 - EDf:  0.59 - ED:  9.59 - noise:  1.86 - Transition probability: 0.687
+NF:    59 - NT+:   225 - NT-:   216 - Price: 10.00
+EDt:    10 - EDf:  0.00 - ED: 10.00 - noise: -4.95 - Transition probability: 0.303
+NF:    62 - NT+:   224 - NT-:   214 - Price: 11.00
+EDt:     5 - EDf: -0.65 - ED:  4.35 - noise: -5.09 - Transition probability: 0.045
+NF:    65 - NT+:   220 - NT-:   215 - Price: 11.00
+EDt:     2 - EDf: -0.66 - ED:  1.34 - noise:  6.28 - Transition probability: 0.457
+NF:    66 - NT+:   218 - NT-:   216 - Price: 11.00
+EDt:     1 - EDf: -0.67 - ED:  0.33 - noise:  3.38 - Transition probability: 0.223
+NF:    67 - NT+:   217 - NT-:   216 - Price: 11.00
+EDt:     5 - EDf: -0.71 - ED:  4.29 - noise:  9.88 - Transition probability: 0.850
+NF:    71 - NT+:   217 - NT-:   212 - Price: 12.00
+EDt:    -3 - EDf: -1.50 - ED: -4.50 - noise: -11.96 - Transition probability: 0.988
+NF:    75 - NT+:   211 - NT-:   214 - Price: 11.00
+EDt:    -7 - EDf: -0.79 - ED: -7.79 - noise: -7.76 - Transition probability: 0.933
+NF:    79 - NT+:   207 - NT-:   214 - Price: 10.00
+EDt:    -3 - EDf:  0.00 - ED: -3.00 - noise: -1.62 - Transition probability: 0.277
+NF:    79 - NT+:   209 - NT-:   212 - Price: 10.00
+EDt:    -5 - EDf:  0.00 - ED: -5.00 - noise: -2.90 - Transition probability: 0.474
+NF:    85 - NT+:   205 - NT-:   210 - Price: 10.00
+EDt:    -8 - EDf:  0.00 - ED: -8.00 - noise: -0.61 - Transition probability: 0.517
+NF:    92 - NT+:   200 - NT-:   208 - Price:  9.00
+EDt:   -10 - EDf:  0.94 - ED: -9.06 - noise: -6.46 - Transition probability: 0.931
+NF:    94 - NT+:   198 - NT-:   208 - Price:  8.00
+EDt:   -10 - EDf:  1.96 - ED: -8.04 - noise: -0.22 - Transition probability: 0.496
+NF:    98 - NT+:   196 - NT-:   206 - Price:  7.00
+EDt:   -10 - EDf:  3.00 - ED: -7.00 - noise:  2.05 - Transition probability: 0.297
+NF:   100 - NT+:   195 - NT-:   205 - Price:  6.00
+EDt:   -13 - EDf:  3.96 - ED: -9.04 - noise: -10.10 - Transition probability: 1.149
+NF:    99 - NT+:   194 - NT-:   207 - Price:  5.00
+EDt:   -13 - EDf:  5.05 - ED: -7.95 - noise: -2.16 - Transition probability: 0.607
+NF:   101 - NT+:   193 - NT-:   206 - Price:  4.00
+EDt:   -13 - EDf:  6.06 - ED: -6.94 - noise: -10.25 - Transition probability: 1.031
+NF:   101 - NT+:   193 - NT-:   206 - Price:  3.00
+EDt:   -14 - EDf:  7.14 - ED: -6.86 - noise: -5.14 - Transition probability: 0.720
+NF:   102 - NT+:   192 - NT-:   206 - Price:  2.00
+EDt:    -3 - EDf:  8.24 - ED:  5.24 - noise:  7.37 - Transition probability: 0.757
+NF:   103 - NT+:   197 - NT-:   200 - Price:  2.00
+EDt:     4 - EDf:  8.00 - ED: 12.00 - noise: -4.29 - Transition probability: 0.462
+NF:   100 - NT+:   202 - NT-:   198 - Price:  2.00
+EDt:    -4 - EDf:  8.00 - ED:  4.00 - noise:  1.71 - Transition probability: 0.342
+NF:   100 - NT+:   198 - NT-:   202 - Price:  2.00
+EDt:     0 - EDf:  8.00 - ED:  8.00 - noise: -1.58 - Transition probability: 0.385
+NF:   100 - NT+:   200 - NT-:   200 - Price:  2.00
+EDt:     1 - EDf:  7.76 - ED:  8.76 - noise:  2.34 - Transition probability: 0.666
+NF:    97 - NT+:   202 - NT-:   201 - Price:  3.00
+EDt:    -2 - EDf:  6.86 - ED:  4.86 - noise:  9.50 - Transition probability: 0.862
+NF:    98 - NT+:   200 - NT-:   202 - Price:  4.00
+EDt:     4 - EDf:  5.76 - ED:  9.76 - noise:  2.46 - Transition probability: 0.733
+NF:    96 - NT+:   204 - NT-:   200 - Price:  4.00
+EDt:     5 - EDf:  5.70 - ED: 10.70 - noise: -2.67 - Transition probability: 0.482
+NF:    95 - NT+:   205 - NT-:   200 - Price:  4.00
+EDt:     1 - EDf:  5.70 - ED:  6.70 - noise:  0.92 - Transition probability: 0.457
+NF:    95 - NT+:   203 - NT-:   202 - Price:  4.00
+EDt:    -8 - EDf:  5.76 - ED: -2.24 - noise: -12.13 - Transition probability: 0.862
+NF:    96 - NT+:   198 - NT-:   206 - Price:  3.00
+EDt:   -16 - EDf:  6.72 - ED: -9.28 - noise: -0.94 - Transition probability: 0.613
+NF:    96 - NT+:   194 - NT-:   210 - Price:  2.00
+EDt:   -20 - EDf:  7.52 - ED: -12.48 - noise:  0.82 - Transition probability: 0.699
+NF:    94 - NT+:   193 - NT-:   213 - Price:  2.00
+EDt:   -18 - EDf:  7.36 - ED: -10.64 - noise: -13.96 - Transition probability: 1.476
+NF:    92 - NT+:   195 - NT-:   213 - Price:  1.00
+EDt:    -4 - EDf:  7.20 - ED:  3.20 - noise: -5.65 - Transition probability: 0.147
+NF:    80 - NT+:   208 - NT-:   212 - Price:  1.00
+EDt:    -9 - EDf:  6.57 - ED: -2.43 - noise:  1.88 - Transition probability: 0.033
+NF:    73 - NT+:   209 - NT-:   218 - Price:  1.00
+EDt:    -9 - EDf:  5.85 - ED: -3.15 - noise:  2.65 - Transition probability: 0.030
+NF:    65 - NT+:   213 - NT-:   222 - Price:  1.00
+EDt:   -21 - EDf:  5.49 - ED: -15.51 - noise: -1.67 - Transition probability: 1.031
+NF:    61 - NT+:   209 - NT-:   230 - Price:  0.00
+EDt:    18 - EDf:  3.00 - ED: 21.00 - noise:  4.74 - Transition probability: 1.544
+NF:    30 - NT+:   244 - NT-:   226 - Price:  1.00
+EDt:    26 - EDf:  2.70 - ED: 28.70 - noise:  5.42 - Transition probability: 2.047
+NF:    30 - NT+:   248 - NT-:   222 - Price:  2.00
+EDt:    31 - EDf:  2.48 - ED: 33.48 - noise: -0.76 - Transition probability: 1.963
+NF:    31 - NT+:   250 - NT-:   219 - Price:  3.00
+EDt:    33 - EDf:  2.31 - ED: 35.31 - noise: -3.99 - Transition probability: 1.879
+NF:    33 - NT+:   250 - NT-:   217 - Price:  4.00
+EDt:    30 - EDf:  2.28 - ED: 32.28 - noise:  2.82 - Transition probability: 2.106
+NF:    38 - NT+:   246 - NT-:   216 - Price:  5.00
+EDt:    25 - EDf:  2.05 - ED: 27.05 - noise:  6.09 - Transition probability: 1.988
+NF:    41 - NT+:   242 - NT-:   217 - Price:  6.00
+EDt:    26 - EDf:  1.76 - ED: 27.76 - noise:  4.29 - Transition probability: 1.923
+NF:    44 - NT+:   241 - NT-:   215 - Price:  7.00
+EDt:    29 - EDf:  1.35 - ED: 30.35 - noise:  5.57 - Transition probability: 2.155
+NF:    45 - NT+:   242 - NT-:   213 - Price:  8.00
+EDt:    23 - EDf:  0.94 - ED: 23.94 - noise:  3.98 - Transition probability: 1.675
+NF:    47 - NT+:   238 - NT-:   215 - Price:  9.00
+EDt:    21 - EDf:  0.51 - ED: 21.51 - noise:  6.50 - Transition probability: 1.681
+NF:    51 - NT+:   235 - NT-:   214 - Price: 10.00
+EDt:    23 - EDf:  0.00 - ED: 23.00 - noise: -8.23 - Transition probability: 0.886
+NF:    53 - NT+:   235 - NT-:   212 - Price: 11.00
+EDt:    24 - EDf: -0.56 - ED: 23.44 - noise: -14.96 - Transition probability: 0.509
+NF:    56 - NT+:   234 - NT-:   210 - Price: 12.00
+EDt:    26 - EDf: -1.24 - ED: 24.76 - noise: -5.95 - Transition probability: 1.129
+NF:    62 - NT+:   232 - NT-:   206 - Price: 13.00
+EDt:    27 - EDf: -2.01 - ED: 24.99 - noise: -1.09 - Transition probability: 1.434
+NF:    67 - NT+:   230 - NT-:   203 - Price: 14.00
+EDt:    25 - EDf: -2.84 - ED: 22.16 - noise: -3.64 - Transition probability: 1.111
+NF:    71 - NT+:   227 - NT-:   202 - Price: 15.00
+EDt:    18 - EDf: -3.70 - ED: 14.30 - noise: -5.58 - Transition probability: 0.523
+NF:    74 - NT+:   222 - NT-:   204 - Price: 15.00
+EDt:    17 - EDf: -3.85 - ED: 13.15 - noise:  0.14 - Transition probability: 0.797
+NF:    77 - NT+:   220 - NT-:   203 - Price: 16.00
+EDt:    10 - EDf: -4.80 - ED:  5.20 - noise:  4.50 - Transition probability: 0.582
+NF:    80 - NT+:   215 - NT-:   205 - Price: 16.00
+EDt:     5 - EDf: -4.86 - ED:  0.14 - noise:  3.53 - Transition probability: 0.220
+NF:    81 - NT+:   212 - NT-:   207 - Price: 16.00
+EDt:    -5 - EDf: -4.86 - ED: -9.86 - noise:  7.95 - Transition probability: 0.114
+NF:    81 - NT+:   207 - NT-:   212 - Price: 16.00
+EDt:     2 - EDf: -4.92 - ED: -2.92 - noise:  6.00 - Transition probability: 0.185
+NF:    82 - NT+:   210 - NT-:   208 - Price: 16.00
+EDt:     0 - EDf: -4.92 - ED: -4.92 - noise: -0.37 - Transition probability: 0.317
+NF:    82 - NT+:   209 - NT-:   209 - Price: 16.00
+EDt:    -8 - EDf: -5.04 - ED: -13.04 - noise:  8.25 - Transition probability: 0.288
+NF:    84 - NT+:   204 - NT-:   212 - Price: 16.00
+EDt:   -18 - EDf: -5.40 - ED: -23.40 - noise: -3.01 - Transition probability: 1.585
+NF:    90 - NT+:   196 - NT-:   214 - Price: 15.00
+EDt:   -23 - EDf: -4.55 - ED: -27.55 - noise:  8.32 - Transition probability: 1.154
+NF:    91 - NT+:   193 - NT-:   216 - Price: 14.00
+EDt:   -21 - EDf: -3.72 - ED: -24.72 - noise:  4.05 - Transition probability: 1.240
+NF:    93 - NT+:   193 - NT-:   214 - Price: 13.00
+EDt:   -11 - EDf: -2.79 - ED: -13.79 - noise: -2.23 - Transition probability: 0.961
+NF:    93 - NT+:   198 - NT-:   209 - Price: 12.00
+EDt:   -22 - EDf: -1.88 - ED: -23.88 - noise:  6.08 - Transition probability: 1.068
+NF:    94 - NT+:   192 - NT-:   214 - Price: 11.00
+EDt:   -21 - EDf: -0.97 - ED: -21.97 - noise:  0.22 - Transition probability: 1.305
+NF:    97 - NT+:   191 - NT-:   212 - Price: 10.00
+EDt:   -13 - EDf:  0.00 - ED: -13.00 - noise: 11.26 - Transition probability: 0.105
+NF:   101 - NT+:   193 - NT-:   206 - Price:  9.00
+EDt:    -7 - EDf:  1.03 - ED: -5.97 - noise: -3.14 - Transition probability: 0.547
+NF:   103 - NT+:   195 - NT-:   202 - Price:  9.00
+EDt:   -14 - EDf:  1.08 - ED: -12.92 - noise: -10.81 - Transition probability: 1.424
+NF:   108 - NT+:   189 - NT-:   203 - Price:  8.00
+EDt:    -1 - EDf:  2.22 - ED:  1.22 - noise:  1.83 - Transition probability: 0.183
+NF:   111 - NT+:   194 - NT-:   195 - Price:  8.00
+EDt:    -1 - EDf:  2.30 - ED:  1.30 - noise:  2.47 - Transition probability: 0.226
+NF:   115 - NT+:   192 - NT-:   193 - Price:  9.00
+EDt:   -14 - EDf:  1.18 - ED: -12.82 - noise: -0.60 - Transition probability: 0.805
+NF:   118 - NT+:   184 - NT-:   198 - Price:  8.00
+EDt:   -18 - EDf:  2.40 - ED: -15.60 - noise: -2.09 - Transition probability: 1.061
+NF:   120 - NT+:   181 - NT-:   199 - Price:  7.00
+EDt:   -11 - EDf:  3.57 - ED: -7.43 - noise:  0.06 - Transition probability: 0.442
+NF:   119 - NT+:   185 - NT-:   196 - Price:  7.00
+EDt:    -9 - EDf:  3.63 - ED: -5.37 - noise:  4.82 - Transition probability: 0.033
+NF:   121 - NT+:   185 - NT-:   194 - Price:  7.00
+EDt:    -2 - EDf:  3.66 - ED:  1.66 - noise:  4.50 - Transition probability: 0.370
+NF:   122 - NT+:   188 - NT-:   190 - Price:  8.00
+EDt:   -10 - EDf:  2.44 - ED: -7.56 - noise:  1.21 - Transition probability: 0.381
+NF:   122 - NT+:   184 - NT-:   194 - Price:  8.00
+EDt:   -10 - EDf:  2.48 - ED: -7.52 - noise:  0.23 - Transition probability: 0.437
+NF:   124 - NT+:   183 - NT-:   193 - Price:  7.00
+EDt:   -19 - EDf:  3.81 - ED: -15.19 - noise:  9.93 - Transition probability: 0.315
+NF:   127 - NT+:   177 - NT-:   196 - Price:  6.00
+EDt:   -13 - EDf:  5.08 - ED: -7.92 - noise: -5.35 - Transition probability: 0.796
+NF:   127 - NT+:   180 - NT-:   193 - Price:  5.00
+EDt:    -4 - EDf:  6.30 - ED:  2.30 - noise: -3.92 - Transition probability: 0.097
+NF:   126 - NT+:   185 - NT-:   189 - Price:  5.00
+EDt:    -4 - EDf:  6.40 - ED:  2.40 - noise:  6.43 - Transition probability: 0.530
+NF:   128 - NT+:   184 - NT-:   188 - Price:  6.00
+EDt:     1 - EDf:  5.16 - ED:  6.16 - noise:  3.19 - Transition probability: 0.561
+NF:   129 - NT+:   186 - NT-:   185 - Price:  6.00
+EDt:     2 - EDf:  5.36 - ED:  7.36 - noise: 15.24 - Transition probability: 1.356
+NF:   134 - NT+:   184 - NT-:   182 - Price:  7.00
+EDt:     1 - EDf:  4.05 - ED:  5.05 - noise: -7.46 - Transition probability: 0.145
+NF:   135 - NT+:   183 - NT-:   182 - Price:  7.00
+EDt:    -9 - EDf:  4.17 - ED: -4.83 - noise:  3.66 - Transition probability: 0.070
+NF:   139 - NT+:   176 - NT-:   185 - Price:  7.00
+EDt:     2 - EDf:  4.26 - ED:  6.26 - noise: -2.22 - Transition probability: 0.242
+NF:   142 - NT+:   180 - NT-:   178 - Price:  8.00
+EDt:    15 - EDf:  2.82 - ED: 17.82 - noise: -5.82 - Transition probability: 0.720
+NF:   141 - NT+:   187 - NT-:   172 - Price:  9.00
+EDt:    10 - EDf:  1.40 - ED: 11.40 - noise: 11.31 - Transition probability: 1.362
+NF:   140 - NT+:   185 - NT-:   175 - Price: 10.00
+EDt:     8 - EDf:  0.00 - ED:  8.00 - noise: -2.91 - Transition probability: 0.305
+NF:   142 - NT+:   183 - NT-:   175 - Price: 10.00
+EDt:     3 - EDf:  0.00 - ED:  3.00 - noise:  3.24 - Transition probability: 0.374
+NF:   147 - NT+:   178 - NT-:   175 - Price: 10.00
+EDt:     6 - EDf:  0.00 - ED:  6.00 - noise: -5.93 - Transition probability: 0.004
+NF:   148 - NT+:   179 - NT-:   173 - Price: 10.00
+EDt:    -2 - EDf:  0.00 - ED: -2.00 - noise:  7.47 - Transition probability: 0.328
+NF:   152 - NT+:   173 - NT-:   175 - Price: 10.00
+EDt:    -3 - EDf:  0.00 - ED: -3.00 - noise: -3.55 - Transition probability: 0.393
+NF:   155 - NT+:   171 - NT-:   174 - Price:  9.00
+EDt:   -11 - EDf:  1.55 - ED: -9.45 - noise:  4.76 - Transition probability: 0.282
+NF:   155 - NT+:   167 - NT-:   178 - Price:  9.00
+EDt:    -5 - EDf:  1.55 - ED: -3.45 - noise: -0.93 - Transition probability: 0.263
+NF:   155 - NT+:   170 - NT-:   175 - Price:  8.00
+EDt:    -2 - EDf:  3.12 - ED:  1.12 - noise: -0.08 - Transition probability: 0.062
+NF:   156 - NT+:   171 - NT-:   173 - Price:  8.00
+EDt:    -5 - EDf:  3.14 - ED: -1.86 - noise: -4.53 - Transition probability: 0.383
+NF:   157 - NT+:   169 - NT-:   174 - Price:  8.00
+EDt:     0 - EDf:  3.16 - ED:  3.16 - noise: -2.01 - Transition probability: 0.069
+NF:   158 - NT+:   171 - NT-:   171 - Price:  8.00
+EDt:     5 - EDf:  3.22 - ED:  8.22 - noise:  2.74 - Transition probability: 0.657
+NF:   161 - NT+:   172 - NT-:   167 - Price:  9.00
+EDt:     0 - EDf:  1.62 - ED:  1.62 - noise: -6.21 - Transition probability: 0.276
+NF:   162 - NT+:   169 - NT-:   169 - Price:  9.00
+EDt:    -4 - EDf:  1.64 - ED: -2.36 - noise: -3.32 - Transition probability: 0.341
+NF:   164 - NT+:   166 - NT-:   170 - Price:  9.00
+EDt:     3 - EDf:  1.63 - ED:  4.63 - noise: -2.75 - Transition probability: 0.113
+NF:   163 - NT+:   170 - NT-:   167 - Price:  9.00
+EDt:     2 - EDf:  1.64 - ED:  3.64 - noise:  7.31 - Transition probability: 0.657
+NF:   164 - NT+:   169 - NT-:   167 - Price: 10.00
+EDt:     6 - EDf:  0.00 - ED:  6.00 - noise:  4.29 - Transition probability: 0.617
+NF:   164 - NT+:   171 - NT-:   165 - Price: 10.00
+EDt:     4 - EDf:  0.00 - ED:  4.00 - noise: -4.44 - Transition probability: 0.026
+NF:   162 - NT+:   171 - NT-:   167 - Price: 10.00
+EDt:     8 - EDf:  0.00 - ED:  8.00 - noise:  1.62 - Transition probability: 0.577
+NF:   160 - NT+:   174 - NT-:   166 - Price: 11.00
+EDt:    16 - EDf: -1.62 - ED: 14.38 - noise: -4.68 - Transition probability: 0.582
+NF:   162 - NT+:   177 - NT-:   161 - Price: 12.00
+EDt:    19 - EDf: -3.26 - ED: 15.74 - noise: -5.41 - Transition probability: 0.620
+NF:   163 - NT+:   178 - NT-:   159 - Price: 12.00
+EDt:    22 - EDf: -3.24 - ED: 18.76 - noise:  1.91 - Transition probability: 1.240
+NF:   162 - NT+:   180 - NT-:   158 - Price: 13.00
+EDt:    21 - EDf: -4.89 - ED: 16.11 - noise:  1.50 - Transition probability: 1.056
+NF:   163 - NT+:   179 - NT-:   158 - Price: 14.00
+EDt:    26 - EDf: -6.56 - ED: 19.44 - noise: -4.84 - Transition probability: 0.876
+NF:   164 - NT+:   181 - NT-:   155 - Price: 15.00
+EDt:    28 - EDf: -8.30 - ED: 19.70 - noise: -0.08 - Transition probability: 1.177
+NF:   166 - NT+:   181 - NT-:   153 - Price: 16.00
+EDt:    33 - EDf: -9.90 - ED: 23.10 - noise: -1.64 - Transition probability: 1.288
+NF:   165 - NT+:   184 - NT-:   151 - Price: 17.00
+EDt:    27 - EDf: -11.83 - ED: 15.17 - noise: -0.46 - Transition probability: 0.883
+NF:   169 - NT+:   179 - NT-:   152 - Price: 18.00
+EDt:    32 - EDf: -13.44 - ED: 18.56 - noise:  2.34 - Transition probability: 1.254
+NF:   168 - NT+:   182 - NT-:   150 - Price: 19.00
+EDt:    20 - EDf: -14.76 - ED:  5.24 - noise:  0.49 - Transition probability: 0.344
+NF:   164 - NT+:   178 - NT-:   158 - Price: 19.00
+EDt:    20 - EDf: -14.76 - ED:  5.24 - noise: -4.11 - Transition probability: 0.068
+NF:   164 - NT+:   178 - NT-:   158 - Price: 19.00
+EDt:    17 - EDf: -14.85 - ED:  2.15 - noise: -1.66 - Transition probability: 0.029
+NF:   165 - NT+:   176 - NT-:   159 - Price: 19.00
+EDt:     8 - EDf: -14.94 - ED: -6.94 - noise:  4.90 - Transition probability: 0.123
+NF:   166 - NT+:   171 - NT-:   163 - Price: 19.00
+EDt:     4 - EDf: -14.94 - ED: -10.94 - noise:  6.40 - Transition probability: 0.272
+NF:   166 - NT+:   169 - NT-:   165 - Price: 19.00
+EDt:    10 - EDf: -14.76 - ED: -4.76 - noise:  2.27 - Transition probability: 0.149
+NF:   164 - NT+:   173 - NT-:   163 - Price: 19.00
+EDt:    11 - EDf: -14.85 - ED: -3.85 - noise:  1.58 - Transition probability: 0.136
+NF:   165 - NT+:   173 - NT-:   162 - Price: 18.00
+EDt:    23 - EDf: -13.36 - ED:  9.64 - noise:  2.59 - Transition probability: 0.734
+NF:   167 - NT+:   178 - NT-:   155 - Price: 19.00
+EDt:    18 - EDf: -15.12 - ED:  2.88 - noise:  4.30 - Transition probability: 0.431
+NF:   168 - NT+:   175 - NT-:   157 - Price: 19.00
+EDt:    12 - EDf: -15.12 - ED: -3.12 - noise: -4.36 - Transition probability: 0.449
+NF:   168 - NT+:   172 - NT-:   160 - Price: 18.00
+EDt:    17 - EDf: -13.68 - ED:  3.32 - noise: -15.58 - Transition probability: 0.736
+NF:   171 - NT+:   173 - NT-:   156 - Price: 18.00
+EDt:    22 - EDf: -13.44 - ED:  8.56 - noise: 10.08 - Transition probability: 1.119
+NF:   168 - NT+:   177 - NT-:   155 - Price: 19.00
+EDt:    27 - EDf: -15.03 - ED: 11.97 - noise: 10.27 - Transition probability: 1.334
+NF:   167 - NT+:   180 - NT-:   153 - Price: 20.00
+EDt:    16 - EDf: -16.40 - ED: -0.40 - noise:  3.91 - Transition probability: 0.211
+NF:   164 - NT+:   176 - NT-:   160 - Price: 20.00
+EDt:    12 - EDf: -16.40 - ED: -4.40 - noise: -4.13 - Transition probability: 0.512
+NF:   164 - NT+:   174 - NT-:   162 - Price: 20.00
+EDt:     9 - EDf: -16.30 - ED: -7.30 - noise: -0.40 - Transition probability: 0.462
+NF:   163 - NT+:   173 - NT-:   164 - Price: 20.00
+EDt:    10 - EDf: -16.00 - ED: -6.00 - noise:  2.31 - Transition probability: 0.221
+NF:   160 - NT+:   175 - NT-:   165 - Price: 20.00
+EDt:     3 - EDf: -16.10 - ED: -13.10 - noise:  0.97 - Transition probability: 0.728
+NF:   161 - NT+:   171 - NT-:   168 - Price: 19.00
+EDt:    -5 - EDf: -14.49 - ED: -19.49 - noise: -3.94 - Transition probability: 1.406
+NF:   161 - NT+:   167 - NT-:   172 - Price: 18.00
+EDt:    -2 - EDf: -12.80 - ED: -14.80 - noise: -2.50 - Transition probability: 1.038
+NF:   160 - NT+:   169 - NT-:   171 - Price: 17.00
+EDt:    -4 - EDf: -11.34 - ED: -15.34 - noise: -2.01 - Transition probability: 1.041
+NF:   162 - NT+:   167 - NT-:   171 - Price: 16.00
+EDt:    -5 - EDf: -9.90 - ED: -14.90 - noise: -4.00 - Transition probability: 1.134
+NF:   165 - NT+:   165 - NT-:   170 - Price: 15.00
+EDt:    -8 - EDf: -8.50 - ED: -16.50 - noise: -0.12 - Transition probability: 0.997
+NF:   170 - NT+:   161 - NT-:   169 - Price: 14.00
+EDt:    -2 - EDf: -6.80 - ED: -8.80 - noise: -3.81 - Transition probability: 0.756
+NF:   170 - NT+:   164 - NT-:   166 - Price: 13.00
+EDt:    -4 - EDf: -5.04 - ED: -9.04 - noise: -3.36 - Transition probability: 0.744
+NF:   168 - NT+:   164 - NT-:   168 - Price: 12.00
+EDt:    -7 - EDf: -3.38 - ED: -10.38 - noise:  3.89 - Transition probability: 0.390
+NF:   169 - NT+:   162 - NT-:   169 - Price: 12.00
+EDt:    -5 - EDf: -3.42 - ED: -8.42 - noise:  4.04 - Transition probability: 0.263
+NF:   171 - NT+:   162 - NT-:   167 - Price: 12.00
+EDt:     3 - EDf: -3.42 - ED: -0.42 - noise:  0.70 - Transition probability: 0.017
+NF:   171 - NT+:   166 - NT-:   163 - Price: 12.00
+EDt:     1 - EDf: -3.46 - ED: -2.46 - noise: -6.59 - Transition probability: 0.543
+NF:   173 - NT+:   164 - NT-:   163 - Price: 12.00
+EDt:    10 - EDf: -3.52 - ED:  6.48 - noise:  1.32 - Transition probability: 0.468
+NF:   176 - NT+:   167 - NT-:   157 - Price: 12.00

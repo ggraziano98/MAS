@@ -3,12 +3,12 @@ from datetime import datetime
 
 import random
 import logging
-import math
 from typing import List, NamedTuple
 
 from mesa import Model, agent
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
+from numpy import sign
 
 from model.Agenti import Trader, Strategies, log_step
 
@@ -19,6 +19,9 @@ file_handler = logging.FileHandler('Market.log', mode='w')
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
 logger.info(datetime.now().strftime('%H:%M - %d/%m/%Y'))
+
+DT = 0.01
+MIN_TRADER = 5
 
 class Price(NamedTuple):                                                        # namedtuple per facilitare la price history
     p   : float = 10
@@ -34,17 +37,17 @@ class PriceSeries(List[Price]):
     def t(self):
         return self[-1]
 	
-    def slope(self, initial: int, final: int) -> float:
+    def slope(self) -> float:
         ''' rapporto incrementale fra prezzo al momento final e initial '''
         try:
-            x = (self[final].p - self[initial].p) / (final - initial)
+            x = (self[-1].p - self[-21].p) / (20)
         except IndexError as e:
             x = 0
         return x
 
 
 class Mercato(Model):
-    def __init__(self, nt: int, nf: int, p0: float = 10, beta: float = 1/6, gamma: float = 0.01, deltap: float = 1):
+    def __init__(self, nt: int, nf: int, p0: float = 10, beta: float = 6, gamma: float = 0.01, deltap: float = 1):
 
         # Set up model objects
         self.schedule = RandomActivation(self)
@@ -59,7 +62,7 @@ class Mercato(Model):
         self.gamma = gamma
         self.deltap = deltap
 
-        self.priceseries = PriceSeries([Price(p=p0, bid=0, ask = 0)])
+        self.priceseries = PriceSeries([Price(p=p0, bid=1, ask = 1)])
 
         self.datacollector = DataCollector(
             model_reporters={
@@ -100,12 +103,12 @@ class Mercato(Model):
         mu = random.gauss(0, 5)  # noise term
         U = self.beta * (ed + mu)
 
-        p_trans = max(0, abs(U))
+        p_trans = max(0, abs(U)) * DT
 
         logger.debug(f"EDt: {edt:5d} - EDf: {edf: 5.2f} - ED: {ed:5.2f} - noise: {mu:5.2f} - Transition probability: {p_trans:5.3f}")
 
         if random.random() < p_trans:
-            self.current_price += U / abs(U) * self.deltap
+            self.current_price += sign(U) * self.deltap
 
 
     def buy(self):
@@ -133,13 +136,28 @@ class Mercato(Model):
     def _calculate_properties(self):
         self.ask = self.priceseries.t.ask
         self.bid = self.priceseries.t.bid
-        self.tech_optimists = sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical and a.opinion == 1))
-        self.tech_pessimists = sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical and a.opinion == -1))
-        self.nt = sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical))
-        self.nf = sum((1 for a in self.schedule.agents if a.strategy == Strategies.Fundamentalist))
-        self.technical_fraction = self.nt / self.N
 
     @property
     def price(self):
         return self.current_price
+
+    @property
+    def tech_optimists(self):
+        return sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical and a.opinion == 1))
+
+    @property
+    def tech_pessimists(self):
+        return sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical and a.opinion == -1))
+    
+    @property
+    def nt(self):
+        return sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical))
+
+    @property
+    def nf(self):
+        return sum((1 for a in self.schedule.agents if a.strategy == Strategies.Fundamentalist))
+
+    @property
+    def technical_fraction(self):
+        return self.nt / self.N
 

@@ -1,3 +1,7 @@
+# sincrono vs asincrono
+# time step
+# run senza server
+
 #! python
 import logging 
 
