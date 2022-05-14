@@ -4,8 +4,8 @@ from datetime import datetime
 import random
 import math
 import logging
+import sys
 
-import numpy as np
 from mesa import Agent
 from prometheus_client import Enum
 
@@ -14,14 +14,22 @@ import model.Market as mk
         
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+stdout_handler = logging.StreamHandler()
+stdout_handler.setLevel(logging.WARNING)
+stdout_handler.setFormatter(formatter)
 
 file_handler = logging.FileHandler('Agenti.log', mode='w')
-file_handler.setLevel(logging.DEBUG)
-logger.addHandler(file_handler)
-logger.info(datetime.now().strftime('%H:%M - %d/%m/%Y'))
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(formatter)
 
-def log_step():
-    logger.debug("\n\nNEXT STEP\n\n")
+logger.addHandler(stdout_handler)
+logger.addHandler(file_handler)
+
+
+def log_agent_step(i):
+    logger.info(f"\n\nSTEP {i}\n\n")
 
 
 class Strategies(Enum):
@@ -33,12 +41,12 @@ class Trader(Agent):
     def __init__(self, model: mk.Mercato, unique_id: int, strategy: int, *args, **kwargs):
         super().__init__(unique_id, model)
         prop_defaults = {
-            "v1": 3,    # frequenza con cui un technical rivaluta la sua opinione
-            "v2": 2,    # frequenza con cui un trader cambia strategia
+            "v1": 3,      # frequenza con cui un technical rivaluta la sua opinione
+            "v2": 2,      # frequenza con cui un trader cambia strategia
             "a1": 0.6,    # dipendenza dalla maggioranza dei technical, < 1
             "a2": 0.2,    # dipendenza dal mercato dei technical, < 1
             "a3": 0.5,    # misura della pressione esercitata dai profitti differenziali / inerzia della reazione ai profitti differenziali
-            "R" : 0.0004,  # ritorno medio dagli altri investimenti
+            "R" : 0.0004, # ritorno medio dagli altri investimenti
             "r" : 0.004,  # dividendo nominale dell'asset
             "s" : 0.75,   # discount factor
             "pf": 10,     # prezzo del fundamentalist
@@ -76,19 +84,23 @@ class Trader(Agent):
 
         if self.strategy == Strategies.Fundamentalist and self.model.nf > mk.MIN_TRADER:
             trader_encoutered = 1 if random.random() < self.model.tech_optimists / self.model.nt else -1
+            n = self.model.tech_optimists / self.model.N if trader_encoutered == 1 else self.model.tech_pessimists / self.model.N
+            
             U = self.a3 * (trader_encoutered * ept - epf)
+            p_transition = self.v2 * n * math.exp(U) * mk.DT
 
-            p_transition = self.v2 * self.model.nf / self.model.N * math.exp(-U) * mk.DT
+            logger.debug(f"{'Picking strategy (F)':15s} - ID: {self.unique_id: 4d} - p_trans = {p_transition}")
 
             if random.random() < p_transition:
                 self.strategy = Strategies.Technical
                 self.opinion = trader_encoutered
 
-        elif self.strategy == Strategies.Technical and self.model.nf > mk.MIN_TRADER:
+        elif self.strategy == Strategies.Technical and self.model.nt > mk.MIN_TRADER:
             U = self.a3 * (self.opinion * ept - epf)
+           
+            p_transition = self.v2 * self.model.nf / self.model.N * math.exp(-U) * mk.DT
 
-            n = self.model.tech_optimists / self.model.N if self.opinion == 1 else self.model.tech_pessimists / self.model.N
-            p_transition = self.v2 * n * math.exp(U) * mk.DT
+            logger.debug(f"{'Picking strategy (T)':15s} - ID: {self.unique_id: 4d} - p_trans = {p_transition}")
 
             if random.random() < p_transition:
                 self.strategy = Strategies.Fundamentalist
@@ -100,7 +112,7 @@ class Trader(Agent):
             price_slope = self.model.priceseries.slope()
             x = (self.model.tech_optimists - self.model.tech_pessimists) / self.model.nt
             U1 = self.a1 * x + self.a2 * price_slope / self.v1
-            p_transition = self.v1 * (self.model.nt / self.model.N * math.exp(self.opinion * U1)) * mk.DT
+            p_transition = self.v1 * (self.model.nt / self.model.N * math.exp(- self.opinion * U1)) * mk.DT
 
             if random.random() < p_transition:
                 self.opinion = self.opinion * -1
