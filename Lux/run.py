@@ -4,33 +4,7 @@ from datetime import datetime
 from tqdm import tqdm
 
 GUI = False
-N_STEPS = 5000
-
-parameters = {
-    "Mercato": {
-        "nt0": 10,       # numero technical 
-        "nf0": 490,      # numero fundamentalist
-        "p0": 10,       # prezzo iniziale
-        "beta": 6,      # frequenza di cambio prezzo
-        "gamma": 0.01,  # parametro influenza dei fundamentalist sull'ED
-        "tc": 0.02,     # azioni scambiate dai chartist
-        "deltap": 0.01, # cambio di prezzo
-        "sigma": 0.25,  # noise sull'ED
-        "pf": 10,       # prezzo del fundamentalist
-    },
-
-    "Agenti": {
-        "v1": 3,      # frequenza con cui un technical rivaluta la sua opinione
-        "v2": 10,      # frequenza con cui un trader cambia strategia
-        "a1": 0.6,    # dipendenza dalla maggioranza dei technical, < 1
-        "a2": 0.2,    # dipendenza dal mercato dei technical, < 1
-        "a3": 2,    # misura della pressione esercitata dai profitti differenziali / inerzia della reazione ai profitti differenziali
-        "R" : 0.0004, # ritorno medio dagli altri investimenti
-        "r" : 0.004,  # dividendo nominale dell'asset
-        "s" : 0.75,   # discount factor
-        "pf": 10,     # prezzo del fundamentalist
-    }
-}
+N_STEPS = 500
 
 if GUI:
     print('SERVER STARTING')
@@ -43,7 +17,7 @@ if GUI:
 else:
     from model.Market import Mercato
     
-    model = Mercato(**parameters)
+    model = Mercato()
 
     print("Launching without GUI")
 

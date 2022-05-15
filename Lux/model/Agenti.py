@@ -4,12 +4,12 @@ from datetime import datetime
 import random
 import math
 import logging
-import sys
 
 from mesa import Agent
-from prometheus_client import Enum
+from enum import Enum
 
 import model.Market as mk
+from model.conf import *
 
         
 logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ stdout_handler.setLevel(logging.WARNING)
 stdout_handler.setFormatter(formatter)
 
 file_handler = logging.FileHandler('Agenti.log', mode='w')
-file_handler.setLevel(logging.INFO)
+file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 
 logger.addHandler(stdout_handler)
@@ -38,92 +38,65 @@ class Strategies(Enum):
 
 
 class Trader(Agent):
-    def __init__(self, model: mk.Mercato, unique_id: int, strategy: int, *args, **kwargs):
+    def __init__(self, model: mk.Mercato, unique_id: int, strategy: int, opinion: int = 1):
         super().__init__(unique_id, model)
-        prop_defaults = {
-            "v1": 3,      # frequenza con cui un technical rivaluta la sua opinione
-            "v2": 2,      # frequenza con cui un trader cambia strategia
-            "a1": 0.6,    # dipendenza dalla maggioranza dei technical, < 1
-            "a2": 0.2,    # dipendenza dal mercato dei technical, < 1
-            "a3": 0.5,    # misura della pressione esercitata dai profitti differenziali / inerzia della reazione ai profitti differenziali
-            "R" : 0.0004, # ritorno medio dagli altri investimenti
-            "r" : 0.004,  # dividendo nominale dell'asset
-            "s" : 0.75,   # discount factor
-            "pf": 10,     # prezzo del fundamentalist
-        }
-        
-        for (prop, default) in prop_defaults.items():
-            setattr(self, prop, kwargs.get(prop, default))
 
         self.model = model
-        self.opinion = random.choice([-1, +1])
         self.strategy = strategy
-
-    def _buy(self):
-        ''' place a buy order for n assets at price '''
-        self.model.buy()
-
-    def _sell(self):
-        ''' place a sell order for n assets at price '''
-        self.model.sell()
+        self.opinion = opinion
 
     def step(self):
-        self.trader_logic()
         self.pick_strategy()
-        if self.opinion > 0:
-            self._buy()
-        elif self.opinion < 0:
-            self._sell()
+        self.trader_logic()
 
     def pick_strategy(self):
         price_slope = self.model.priceseries.slope()
 
         # excess profits per unit by technical
-        ept = (self.r + price_slope / self.v2) / self.model.price - self.R
-        epf = self.s * abs((self.model.price - self.pf) / self.model.price)
+        ept = (r + price_slope / v2) / self.model.price - R
+        epf = s * abs((self.model.price - pf) / self.model.price)
 
-        if self.strategy == Strategies.Fundamentalist and self.model.nf > mk.MIN_TRADER:
+        if self.strategy == Strategies.Fundamentalist and self.model.nf > MIN_TRADER:
             trader_encoutered = 1 if random.random() < self.model.tech_optimists / self.model.nt else -1
-            n = self.model.tech_optimists / self.model.N if trader_encoutered == 1 else self.model.tech_pessimists / self.model.N
+            n = self.model.tech_optimists if trader_encoutered == 1 else self.model.tech_pessimists
             
-            U = self.a3 * (trader_encoutered * ept - epf)
-            p_transition = self.v2 * n * math.exp(U) * mk.DT
+            U = a3 * (trader_encoutered * ept - epf)
+            p_transition = v2 * n / N * math.exp(U) * DT
 
-            logger.debug(f"{'Picking strategy (F)':15s} - ID: {self.unique_id: 4d} - p_trans = {p_transition}")
+            logger.debug(f"{'Picking strategy (F)':15s} - U = {U} - p_trans = {p_transition}")
 
             if random.random() < p_transition:
-                self.strategy = Strategies.Technical
-                self.opinion = trader_encoutered
+                self.switch(Strategies.Technical, trader_encoutered)
 
-        elif self.strategy == Strategies.Technical and self.model.nt > mk.MIN_TRADER:
-            U = self.a3 * (self.opinion * ept - epf)
+        elif self.strategy == Strategies.Technical:
+            n = self.model.tech_optimists if self.opinion == 1 else self.model.tech_pessimists
+            if n < MIN_TRADER / 2:
+                return
+
+            U = a3 * (self.opinion * ept - epf)
            
-            p_transition = self.v2 * self.model.nf / self.model.N * math.exp(-U) * mk.DT
-
-            logger.debug(f"{'Picking strategy (T)':15s} - ID: {self.unique_id: 4d} - p_trans = {p_transition}")
+            p_transition = v2 * self.model.nf / N * math.exp(-U) * DT
+            logger.debug(f"{'Picking strategy (T)':15s} - U = {U} - p_trans = {p_transition}")
 
             if random.random() < p_transition:
-                self.strategy = Strategies.Fundamentalist
-                self.trader_logic()
+                self.switch(Strategies.Fundamentalist, 1)
         
     def trader_logic(self):
         # logica technical
         if self.strategy == Strategies.Technical:
             price_slope = self.model.priceseries.slope()
             x = (self.model.tech_optimists - self.model.tech_pessimists) / self.model.nt
-            U1 = self.a1 * x + self.a2 * price_slope / self.v1
-            p_transition = self.v1 * (self.model.nt / self.model.N * math.exp(- self.opinion * U1)) * mk.DT
+            U1 = a1 * x + a2 * price_slope / v1
+            p_transition = v1 * (self.model.nt / N * math.exp(- self.opinion * U1)) * DT
 
-            if random.random() < p_transition:
-                self.opinion = self.opinion * -1
+            n = self.model.tech_optimists if self.opinion == 1 else self.model.tech_pessimists
+            if random.random() < p_transition and n > MIN_TRADER/2:
+                self.switch(Strategies.Technical, - self.opinion)
 
-            logger.debug(f"{'Technical':15s} - ID: {self.unique_id : 4d} - Slope: {price_slope:4.2f} - x: {x:4.2f} - Transition probability: {p_transition:4.3f} - Opinion: {self.opinion}")
-            
-        # logica fundamentalist
-        elif self.strategy == Strategies.Fundamentalist:
-            self.opinion = 1 if self.pf > self.model.price else - 1
-            if self.pf == self.model.price:
-                self.opinion = random.choice([-1,1])
-            logger.debug(f"{'Fundamentalist':15s} - ID: {self.unique_id: 4d} - Market price: {self.model.price: 4.2f} - Opinion: {self.opinion}")
-        
-        
+            logger.debug(f"{'Technical':15s} - Slope: {price_slope:4.2f} - x: {x:4.2f} - Transition probability: {p_transition:4.3f} - Opinion: {self.opinion}")
+
+    def switch(self, new_strategy, new_opinion):
+        self.strategy = new_strategy
+        self.opinion = new_opinion
+        self.model.calculate_traders()
+
