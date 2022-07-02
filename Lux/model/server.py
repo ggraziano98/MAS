@@ -5,6 +5,8 @@ from mesa.visualization.modules import BarChartModule, PieChartModule, ChartModu
 
 from model.Market import Mercato
 
+from model.conf import *
+
 GREEN   = '#0cb325'
 RED     = '#cc0808'
 BLUE    = '#2655c9'
@@ -45,12 +47,12 @@ class CustomServer(ModularServer):
         super().reset_model()
         self.model.start()
 
-ask_bid_chart = ChartModule(
-    [
-        {"Label": "ask", "Color": GREEN},
-        {"Label": "bid", "Color": RED},
-    ]
-)
+# ask_bid_chart = ChartModule(
+#     [
+#         {"Label": "ask", "Color": GREEN},
+#         {"Label": "bid", "Color": RED},
+#     ]
+# )
 
 price_chart = ChartModule(
     [
@@ -72,14 +74,11 @@ tech_pie_chart = PieChartModule(
     ]
 )
 
-model_params = {
-    "nt": UserSettableParameter("slider", "Numero Technical", 10, 0, 500, 1),
-    "nf": UserSettableParameter("slider", "Numero Fundamentalists", 490, 0, 500, 1),
-}
+model_params = { }
 
 server = CustomServer(
     Mercato,
-    [ask_bid_chart, tech_pie_chart, price_chart, tech_fraction_chart],
+    [tech_pie_chart, price_chart, tech_fraction_chart],
     "Mercato prova 1",
     model_params=model_params,
 )
