@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 from model.conf import LOG_NAME_SUFFIX
 
-GUI = True
+GUI = False
 N_STEPS = 500
 
 if GUI:
@@ -31,7 +31,7 @@ else:
     print("Data collected")
 
     model_vars_dataframe = model.datacollector.get_model_vars_dataframe()
-    model_vars_dataframe.to_pickle(f"Model_vars{LOG_NAME_SUFFIX}.pkl")
+    model_vars_dataframe.to_pickle(f"./results/Model_vars{LOG_NAME_SUFFIX}.pkl")
     agent_vars_dataframe = model.datacollector.get_agent_vars_dataframe()
-    agent_vars_dataframe.to_pickle(f"Agent_vars{LOG_NAME_SUFFIX}.pkl")
+    agent_vars_dataframe.to_pickle(f"./results/Agent_vars{LOG_NAME_SUFFIX}.pkl")
 

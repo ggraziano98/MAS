@@ -21,7 +21,7 @@ stdout_handler = logging.StreamHandler()
 stdout_handler.setLevel(logging.WARNING)
 stdout_handler.setFormatter(formatter)
 
-file_handler = logging.FileHandler(f'Market{LOG_NAME_SUFFIX}.log', mode='w')
+file_handler = logging.FileHandler(f'./results/Market{LOG_NAME_SUFFIX}.log', mode='w')
 file_handler.setLevel(MARKET_LOG_LEVEL)
 file_handler.setFormatter(formatter)
 
