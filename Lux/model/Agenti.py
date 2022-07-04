@@ -20,7 +20,7 @@ stdout_handler = logging.StreamHandler()
 stdout_handler.setLevel(logging.WARNING)
 stdout_handler.setFormatter(formatter)
 
-file_handler = logging.FileHandler(f'Agenti{LOG_NAME_SUFFIX}.log', mode='w')
+file_handler = logging.FileHandler(f'./results/Agenti{LOG_NAME_SUFFIX}.log', mode='w')
 file_handler.setLevel(AGENTI_LOG_LEVEL)
 file_handler.setFormatter(formatter)
 
