@@ -1,12 +1,16 @@
 #! python
-import logging 
-from datetime import datetime
-from tqdm import tqdm
+import os 
+import shutil
 
-from model.conf import LOG_NAME_SUFFIX
+from tqdm import tqdm
+import pickle
+
+from model.conf import RESULT_DIR, N_STEPS, N_RUNS, vars_to_export
+if os.path.exists(RESULT_DIR):
+    shutil.rmtree(RESULT_DIR)
+os.makedirs(RESULT_DIR)
 
 GUI = False
-N_STEPS = 500
 
 if GUI:
     print('SERVER STARTING')
@@ -19,19 +23,27 @@ if GUI:
 else:
     from model.Market import Mercato
     
-    model = Mercato()
-
     print("Launching without GUI")
+    print(f"Saving results in {RESULT_DIR}")
 
-    model.start()
 
-    for i in tqdm(range(N_STEPS)):
-        model.step()
+    for n_run in range(N_RUNS):
+        print("============")
+        print(f"RUN = {n_run}")
+        print("============")
+        model = Mercato()
 
-    print("Data collected")
+        model.start()
+        
+        for i in tqdm(range(N_STEPS)):
+            model.step()
 
-    model_vars_dataframe = model.datacollector.get_model_vars_dataframe()
-    model_vars_dataframe.to_pickle(f"./results/Model_vars{LOG_NAME_SUFFIX}.pkl")
-    agent_vars_dataframe = model.datacollector.get_agent_vars_dataframe()
-    agent_vars_dataframe.to_pickle(f"./results/Agent_vars{LOG_NAME_SUFFIX}.pkl")
+        print("Data collected")
 
+        model_vars_dataframe = model.datacollector.get_model_vars_dataframe()
+        model_vars_dataframe.to_pickle(f"{RESULT_DIR}/Model_vars_{n_run}.pkl")
+        agent_vars_dataframe = model.datacollector.get_agent_vars_dataframe()
+        agent_vars_dataframe.to_pickle(f"{RESULT_DIR}/Agent_vars_{n_run}.pkl")
+
+    with open(f'{RESULT_DIR}/conf.pkl', 'wb') as f:
+        pickle.dump(vars_to_export, f)
