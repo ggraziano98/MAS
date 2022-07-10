@@ -61,7 +61,8 @@ class Mercato(Model):
                 'price'          : 'price',
                 'nf'             : 'nf',
                 'technical_fraction': 'technical_fraction',
-                'slope': 'slope'
+                'slope': 'slope',
+                'opinion_index': 'opinion_index',
             },
         )
             
@@ -122,3 +123,6 @@ class Mercato(Model):
     def slope(self):
         return self.priceseries.slope()
 
+    @property
+    def opinion_index(self):
+        return (self.tech_optimists - self.tech_pessimists) / self.nt

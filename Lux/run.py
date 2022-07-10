@@ -26,6 +26,8 @@ else:
     print("Launching without GUI")
     print(f"Saving results in {RESULT_DIR}")
 
+    with open(f'{RESULT_DIR}/conf.pkl', 'wb') as f:
+        pickle.dump(vars_to_export, f)
 
     for n_run in range(N_RUNS):
         print("============")
@@ -44,6 +46,3 @@ else:
         model_vars_dataframe.to_pickle(f"{RESULT_DIR}/Model_vars_{n_run}.pkl")
         agent_vars_dataframe = model.datacollector.get_agent_vars_dataframe()
         agent_vars_dataframe.to_pickle(f"{RESULT_DIR}/Agent_vars_{n_run}.pkl")
-
-    with open(f'{RESULT_DIR}/conf.pkl', 'wb') as f:
-        pickle.dump(vars_to_export, f)
