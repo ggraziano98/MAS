@@ -1,17 +1,16 @@
 from __future__ import annotations
-from datetime import datetime
 
-import random
 import logging
+import random
+from datetime import datetime
 from typing import List, NamedTuple
 
 from mesa import Model
-from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
-from numpy import sign
-
-from model.Agenti import Trader, Strategies, log_agent_step
+from mesa.time import RandomActivation
+from model.Agenti import Strategies, Trader, log_agent_step
 from model.conf import *
+from numpy import sign
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -28,17 +27,17 @@ file_handler.setFormatter(formatter)
 logger.addHandler(stdout_handler)
 logger.addHandler(file_handler)
 
+
 class PriceSeries(List[float]):
     def __init__(self, *iterable):
         super().__init__(*iterable)
     
     def slope(self) -> float:
         try:
-            x = (self[-1] - self[-20]) / (20 * DT)
+            x = (self[-1] - self[-sloperange]) / (sloperange * DT)
         except IndexError as e:
             x = (self[-1] - self[0]) / (len(self) * DT)
         return x
-
 
 class Mercato(Model):
     def __init__(self):
@@ -55,7 +54,7 @@ class Mercato(Model):
         self.priceseries = PriceSeries([p0])
 
         self.datacollector = DataCollector(
-            model_reporters={
+            model_reporters = {
                 'tech_optimists' : 'tech_optimists',
                 'tech_pessimists': 'tech_pessimists',
                 'price'          : 'price',
@@ -92,7 +91,7 @@ class Mercato(Model):
         logger.debug(f"EDt: {edt:5f} - EDf: {edf: 5.2f} - ED: {ed:5.2f} - noise: {mu:5.2f} - Transition probability: {p_trans:5.3f}")
 
         if random.random() < p_trans:
-            self.price += sign(U) * deltap
+            self.price += U * deltap 
 
     def step(self):
         '''
@@ -109,11 +108,28 @@ class Mercato(Model):
         self.datacollector.collect(self)
         logger.debug(f"NF: {self.nf:5d} - NT+: {self.tech_optimists:5d} - NT-: {self.tech_pessimists:5d} - Price: {self.price:5.2f}")
 
-    def calculate_traders(self):
-        self.tech_optimists = sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical and a.opinion == 1))
-        self.tech_pessimists = sum((1 for a in self.schedule.agents if a.strategy == Strategies.Technical and a.opinion == -1))
-        self.nt = self.tech_optimists + self.tech_pessimists
-        self.nf = sum((1 for a in self.schedule.agents if a.strategy == Strategies.Fundamentalist))
+    def update_traders_count(self, new_strategy, new_opinion, old_strategy, old_opinion):
+        if old_strategy == Strategies.Fundamentalist and new_strategy == Strategies.Technical:
+            self.nf += -1
+            self.nt += 1
+            if new_opinion == 1:
+                self.tech_optimists += 1
+            if new_opinion == -1:
+                self.tech_pessimists += 1
+        if old_strategy == Strategies.Technical and new_strategy == Strategies.Fundamentalist:
+            self.nf += 1
+            self.nt += -1
+            if old_opinion == 1:
+                self.tech_optimists += -1
+            if old_opinion == -1:
+                self.tech_pessimists += -1
+        if new_strategy == old_strategy == Strategies.Technical:
+            if new_opinion == 1:
+                self.tech_optimists += 1
+                self.tech_pessimists += -1
+            if new_opinion == -1:
+                self.tech_optimists += -1
+                self.tech_pessimists += 1
 
     @property
     def technical_fraction(self):

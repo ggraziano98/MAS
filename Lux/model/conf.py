@@ -2,45 +2,56 @@
 # Parametri mercato
 ############
 
-nt0 = 20       # numero technical 
-nf0 = 180      # numero fundamentalist
-p0 = 10       # prezzo iniziale
-beta = 4      # frequenza di cambio prezzo
-gamma = 0.01  # parametro influenza dei fundamentalist sull'ED
-deltap = 0.01 # cambio di prezzo
-sigma = 0.05  # noise sull'ED
+#### Market Population parameters
+nt0 = 495       # FIXnumero chartist 
+nf0 = 5       # FIXtenumero fundamentalist
+N = nf0 + nt0
+Tc = 3;         tc = Tc/N     # excess demand chartist influence
+Tf = 3;         gamma = Tf/N  # excess demand fundamentalist influence 
+
+#### Market regulation parameters
+p0 = 12         # initial price
+beta = 6        # price change frequency
+deltap = 0.0001 # FIXprice change
+sigma = 2       # FIXexcess demand noise traders
+
+###############################################################################
 
 ############
 # Parametri trader 
 ############
 
 # Parametri cambio strategia
-v2 = 0.6      # frequenza con cui un trader cambia strategia
-R  = 0.0004 # ritorno medio dagli altri investimenti
-r  = 0.004  # dividendo nominale dell'asset
+v2 = .05      # frequenza con cui un trader cambia strategia
+R  = .04    # ritorno medio dagli altri investimenti 0.0004
+r  = .12    # dividendo nominale dell'asset 0.004
 s  = 0.75   # discount factor
 
 # Parametri logica technical
-tc = 0.01     # azioni scambiate dai technical
-v1 = 2      # frequenza con cui un technical rivaluta la sua opinione
-a1 = 0.8    # dipendenza dalla maggioranza dei technical < 1
-a2 = 0.2    # dipendenza dal mercato dei technical < 1
+v1 = 1      # frequenza con cui un technical rivaluta la sua opinione
+a1 = .8     # peso decisionale dell'opinione media < 1
+a2 = .5     # peso decisionale della price slope < 1
+sloperange = 20
 
 # Parametri logica fundamentalist
-pf = 10       # prezzo del fundamentalist
-a3 = 1    # misura della pressione esercitata dai profitti differenziali / inerzia della reazione ai profitti differenziali
+pf = 11     # fundamental price
+a3 = .8     # inerzia alla reazione sui profitti differenziali 
 
-N = nf0 + nt0
-
-DT = 0.01
+DT = .01    # FIX 
 MIN_TRADER = 5
-RESULT_DIR = "results/parameter set 4"
 
-N_STEPS = 2000
-N_RUNS = 15
+#============================================
+TESTNUM = 4
+RESULT_DIR = "results/relazione_0"+str(TESTNUM)
+
+N_STEPS = 30000
+N_RUNS = 2
+#============================================
+
 
 vars_to_export = {k: v for k, v in locals().items() if not k.startswith('__')}
 
 import logging
+
 MARKET_LOG_LEVEL = logging.INFO
 AGENTI_LOG_LEVEL = logging.INFO
