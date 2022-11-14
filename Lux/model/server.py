@@ -1,7 +1,9 @@
+from mesa.visualization.modules import ChartModule, PieChartModule
 from mesa.visualization.ModularVisualization import ModularServer
-from mesa.visualization.modules import (BarChartModule, CanvasGrid,
-                                        ChartModule, PieChartModule)
-from mesa.visualization.UserParam import UserSettableParameter
+from mesa.visualization.modules import PieChartModule, ChartModule
+
+from model.Market import Mercato
+
 from model.conf import *
 from model.Market import Mercato
 
