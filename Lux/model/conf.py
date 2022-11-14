@@ -27,16 +27,18 @@ R = 0.0004      # ritorno medio dagli altri investimenti
 r = 0.004       # dividendo nominale dell'asset
 s = 0.75        # discount factor
 
-deltap = 0.01   # cambio di prezzo
+deltap = 0.0001   # cambio di prezzo
 sigma = 0.05    # noise sull'ED
 sloperange = 20 # numero di step su cui calcolare la slope
 
 DT = 0.01
 MIN_TRADER = 5
-RESULT_DIR = "results/good"
+RESULT_DIR = "results/merge"
 
-N_STEPS = 2000
-N_RUNS = 30
+N_STEPS = 5000
+N_RUNS = 10
+
+SEED = 42
 
 MARKET_LOG_LEVEL = logging.WARN
 AGENTI_LOG_LEVEL = logging.WARN

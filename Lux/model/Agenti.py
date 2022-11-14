@@ -49,13 +49,14 @@ class Trader(Agent):
             tech_factor_coeff = self.strategy.value or encountered.value # always 1 or -1
             U = Trader.calc_U_strategy(self.model.price, self.model.slope, tech_factor_coeff)
             freq = v2
-            U = (abs(self.strategy.value) - abs(encountered.value)) * U # +- U a seconda di che transizione faccio
+            U = abs(encountered.value) - abs(self.strategy.value) * U # +- U a seconda di che transizione faccio
         else:   # caso due technical
             U = Trader.calc_U_opinion(self.model.opinion_index, self.model.price)
-            U =  - encountered.value * U # +- U a seconda di che transizione faccio
+            U = encountered.value * U # +- U a seconda di che transizione faccio
             freq = v1
 
         # FIXME lui usa freq = freq * nt/N
+        freq = self.model.nt / N * freq
         p_transition = Trader.calc_p_transition(freq, U)
         return p_transition, U
 
@@ -64,7 +65,7 @@ class Trader(Agent):
     def calc_U_opinion(opinion_index, price):
         '''Calculate transition exponent for opinion change probability'''
         # FIXME lui ha tolto il /v1
-        return a1 * opinion_index + a2 * price / v1
+        return a1 * opinion_index + a2 * price
 
     @staticmethod
     @lru_cache(maxsize=2000, typed=False)
@@ -80,7 +81,7 @@ class Trader(Agent):
     @lru_cache(maxsize=2000, typed=False)
     def calc_p_transition(freq, U):
         # FIXME lui non ha messo la condizione U > 0
-        return freq * math.exp(-U / freq) * DT if U > 0 else 0
+        return freq * math.exp(U / freq) * DT
 
     def _get_random_encounter(self):
         rng = random.random() * N

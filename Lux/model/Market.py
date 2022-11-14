@@ -4,13 +4,11 @@ from enum import Enum
 
 import logging
 import random
-import numpy as np
 
 from mesa import Model
 from mesa.datacollection import DataCollector
 from mesa.time import RandomActivation
 
-from model.Agenti import Strategies, Trader, log_agent_step
 from model.Agenti import Trader, log_agent_step
 from model.conf import *
 
@@ -166,7 +164,7 @@ class Mercato(Model):
     
     @property
     def p_trans_strategy(self):
-        return Trader.calc_p_transition(v2, self.U_strategy, self.tech_optimists)
+        return Trader.calc_p_transition(v2, self.U_strategy)
 
     @property
     def edt(self):
