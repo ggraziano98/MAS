@@ -10,6 +10,7 @@ from mesa import Agent
 import model.Market as mk
 from model.conf import *
 
+CACHE_SIZE = 8192
 
 logger = logging.getLogger(__name__)
 logger.setLevel(AGENTI_LOG_LEVEL)
@@ -36,7 +37,6 @@ class Trader(Agent):
         self.model = model
         self.strategy = strategy
 
-
     def step(self):
         self.pick_strategy()
 
@@ -48,40 +48,39 @@ class Trader(Agent):
                 return 0, 0
             tech_factor_coeff = self.strategy.value or encountered.value # always 1 or -1
             U = Trader.calc_U_strategy(self.model.price, self.model.slope, tech_factor_coeff)
+            # FIXME lui usa freq = freq * nt/N
             freq = v2
-            U = abs(encountered.value) - abs(self.strategy.value) * U # +- U a seconda di che transizione faccio
+            U = (abs(self.strategy.value) - abs(encountered.value)) * U # +- U a seconda di che transizione faccio
         else:   # caso due technical
-            U = Trader.calc_U_opinion(self.model.opinion_index, self.model.price)
-            U = encountered.value * U # +- U a seconda di che transizione faccio
+            U = Trader.calc_U_opinion(self.model.opinion_index, self.model.slope)
+            U = - encountered.value * U # +- U a seconda di che transizione faccio
             freq = v1
 
-        # FIXME lui usa freq = freq * nt/N
-        freq = self.model.nt / N * freq
         p_transition = Trader.calc_p_transition(freq, U)
         return p_transition, U
 
     @staticmethod
-    @lru_cache(maxsize=2000, typed=False)
-    def calc_U_opinion(opinion_index, price):
+    @lru_cache(maxsize=CACHE_SIZE, typed=False)
+    def calc_U_opinion(opinion_index, slope):
         '''Calculate transition exponent for opinion change probability'''
         # FIXME lui ha tolto il /v1
-        return a1 * opinion_index + a2 * price
+        return a1 * opinion_index + a2 * slope / v1
 
     @staticmethod
-    @lru_cache(maxsize=2000, typed=False)
+    @lru_cache(maxsize=CACHE_SIZE, typed=False)
     def calc_U_strategy(price, slope, tech_factor_coeff):
         '''Calculate transition exponent for strategy change probability'''
         # excess profits per unit by technical
         ept = (r + slope / v2) / price - R
         # excess profits per unit by fundamentalist
-        epf = s * abs((price - pf) / price)
+        epf = s * abs(price - pf) / price
         return a3 * (tech_factor_coeff * ept - epf)
 
     @staticmethod
-    @lru_cache(maxsize=2000, typed=False)
+    @lru_cache(maxsize=CACHE_SIZE, typed=False)
     def calc_p_transition(freq, U):
         # FIXME lui non ha messo la condizione U > 0
-        return freq * math.exp(U / freq) * DT
+        return freq * math.exp(-U / freq) * DT if U > 0 else 0
 
     def _get_random_encounter(self):
         rng = random.random() * N

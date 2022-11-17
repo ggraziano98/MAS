@@ -131,7 +131,7 @@ class Mercato(Model):
         self.add_to_traders(old, -1)
         self.add_to_traders(new, +1)
         self.nt = self.tech_optimists + self.tech_pessimists
-        self.opinion_index = ARBITRARY_OPINION_INDEX or (self.tech_optimists - self.tech_pessimists) / self.nt
+        self.opinion_index = ARBITRARY_OPINION_INDEX or ((self.tech_optimists - self.tech_pessimists) / self.nt)
 
     def get_n_traders(self, strategy: Strategy):
         return self.nf if strategy == Strategy.Fundam else \
