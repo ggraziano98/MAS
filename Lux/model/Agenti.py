@@ -10,7 +10,7 @@ from mesa import Agent
 import model.Market as mk
 from model.conf import *
 
-CACHE_SIZE = 8192
+CACHE_SIZE = 2**15
 
 logger = logging.getLogger(__name__)
 logger.setLevel(AGENTI_LOG_LEVEL)
@@ -40,7 +40,7 @@ class Trader(Agent):
     def step(self):
         self.pick_strategy()
 
-    def _calc_transition_matrix(self, encountered: mk.Strategy):
+    def calc_transition_matrix(self, encountered: mk.Strategy):
         '''Calculate transition matrix given the encountered trader'''
         # basta controllare se uno è zero per vedere se sono di strategie diverse
         if self.strategy.value * encountered.value == 0: # caso un fundamentalist e un technical
@@ -49,7 +49,7 @@ class Trader(Agent):
             tech_factor_coeff = self.strategy.value or encountered.value # always 1 or -1
             U = Trader.calc_U_strategy(self.model.price, self.model.slope, tech_factor_coeff)
             # FIXME lui usa freq = freq * nt/N
-            freq = v2
+            freq = v2 * self.model.nt / N
             U = (abs(self.strategy.value) - abs(encountered.value)) * U # +- U a seconda di che transizione faccio
         else:   # caso due technical
             U = Trader.calc_U_opinion(self.model.opinion_index, self.model.slope)
@@ -64,7 +64,7 @@ class Trader(Agent):
     def calc_U_opinion(opinion_index, slope):
         '''Calculate transition exponent for opinion change probability'''
         # FIXME lui ha tolto il /v1
-        return a1 * opinion_index + a2 * slope / v1
+        return a1 * opinion_index + a2 * slope 
 
     @staticmethod
     @lru_cache(maxsize=CACHE_SIZE, typed=False)
@@ -80,12 +80,12 @@ class Trader(Agent):
     @lru_cache(maxsize=CACHE_SIZE, typed=False)
     def calc_p_transition(freq, U):
         # FIXME lui non ha messo la condizione U > 0
-        return freq * math.exp(-U / freq) * DT if U > 0 else 0
+        return freq * math.exp(-U / freq) * DT 
 
     def _get_random_encounter(self):
         rng = random.random() * N
         return mk.Strategy.Fundam if rng < self.model.nf \
-            else mk.Strategy.Tech_O if rng < self.model.tech_optimists \
+            else mk.Strategy.Tech_O if rng < self.model.nf + self.model.tech_optimists \
                 else mk.Strategy.Tech_P
 
 
@@ -96,7 +96,7 @@ class Trader(Agent):
             logger.debug(f"Cannot change strategy because there are too few {self.strategy.name}")
             return
         elif self.strategy != encountered:
-            p_transition, U = self._calc_transition_matrix(encountered)
+            p_transition, U = self.calc_transition_matrix(encountered)
             logger.debug(f"{self.strategy.name} -> {encountered.name}: U = {U} - p_trans = {p_transition}")
             if random.random() < p_transition:
                 self.switch(encountered)
