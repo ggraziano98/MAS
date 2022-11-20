@@ -5,23 +5,31 @@ import glob
 from tqdm import tqdm
 from pathlib import Path
 import random
+from distutils.dir_util import copy_tree
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
 import numpy as np
-from statsmodels.tsa.stattools import adfuller
-from statsmodels.stats.diagnostic import acorr_ljungbox
-from scipy.stats import kurtosis
 
 from model.conf import RESULT_DIR, N_STEPS, N_RUNS, SEED
+from model.stats import *
 
 plt.style.use('ggplot')
 
+latest = Path('results/latest').absolute()
+if latest.is_dir():
+    shutil.rmtree(latest)
+latest.mkdir(exist_ok=True, parents=True)
+
+
 n_run = len(glob.glob(f'{RESULT_DIR}/run_*'))
+while os.path.isdir(f'{RESULT_DIR}/run_{n_run}'):
+    n_run += 1
 run_dir = f'{RESULT_DIR}/run_{n_run}'
-Path(run_dir).mkdir(exist_ok=True, parents=True)
+Path(run_dir).mkdir(parents=True)
 os.chdir(run_dir)
+
 
 GUI = False
 DIRECT_SAVE = True
@@ -48,7 +56,8 @@ else:
     # agent_vars_dataframe = pd.DataFrame(columns=list(datacollector_dict['agent_reporters'].keys()) + ['step', 'run'])
     model_vars_df.index = pd.MultiIndex.from_arrays([[],[]], names=['run', 'step'])
     # agent_vars_dataframe.set_index(['run', 'step'])
-    stats_df = pd.DataFrame(columns=['seed', 'adfuller', 'acorr_ljungbox', 'kurtosis20', 'kurtosis60', 'kurtosis3600'])
+    kurtosis_windows = (10, 60, 600)
+    stats_df = pd.DataFrame(columns=['seed', 'adfuller', 'acorr_ljungbox', *(f'kurtosis{w}' for w in kurtosis_windows)])
     stats_df.index.name = 'run'
 
     random.seed(SEED)
@@ -69,19 +78,16 @@ else:
 
         df = model.datacollector.get_model_vars_dataframe()
         df['run'] = n_run
-        df.to_csv(f"model_vars.csv", mode='a')
+        df.index.name = 'step'
+        df.to_csv(f"model_vars.csv", mode='a', header=n_run==0)
         print("Data collected")
 
         if DIRECT_SAVE:
-            print('Saving plots...')                
+            print('Saving plots...')
 
-            pvalues = adfuller(df.price)[1]
-            volclus = acorr_ljungbox(df.price.to_numpy() ** 2, lags = [20], return_df = True)
-            volclusvalues = volclus['lb_pvalue'].values[0]
-            kurtosisvalues = [
-                kurtosis((df.price.iloc[1:] - df.price.iloc[:-1]).rolling(timeframe, step = 2).sum().iloc[10:])
-                for timeframe in [20, 60, 3600]
-            ]
+            adf_pvalue = adfuller_test(df)      
+            volclus_pvalue = volclus_test(df)
+            kurtosis_pvalues = kurtosis_test(df, kurtosis_windows)
 
             fig , ax = plt.subplots(3,1, figsize=(20, 16),dpi=300)
             
@@ -100,15 +106,20 @@ else:
             ax[2].set_ylabel('Opinion Index')
             ax[2].plot(df.opinion_index, label = f'Run {i}')
             
-            stats_df.loc[n_run] = [seed, pvalues, volclus, *kurtosisvalues]
+            stats_df.loc[n_run] = [seed, adf_pvalue, volclus_pvalue, *kurtosis_pvalues]
             stats_df.to_csv('stats.csv')
-            title = f'DF-Test pvalue = {pvalues:.3f} \u21FE Unit Root: {pvalues>0.05}\n' +\
-                    f'VC-Test pvalue = {volclusvalues:.3f} \u21FE Volatility Clustering:{volclusvalues<0.05} \n' +\
-                    f'Kurtosis = {kurtosisvalues[0]:.3f} \u21FE Leptokurtic: {kurtosisvalues[0]>0}\n'
+            title = f'DF-Test pvalue = {adf_pvalue:.3f} \u21FE Unit Root: {adf_pvalue>0.05}\n' +\
+                    f'VC-Test pvalue = {volclus_pvalue:.3f} \u21FE Volatility Clustering:{volclus_pvalue<0.05} \n' +\
+                    ''.join(
+                        (f'Kurtosis {w} = {v:.3f} \u21FE Leptokurtic: {v>0}\n' for w, v in zip(kurtosis_windows, kurtosis_pvalues))
+                    )
                     #'Kurtosis minute = ', kurtosisvalues[1].round(3),' \u21FE ','Leptokurtic:', kurtosisvalues[0]>0,'\n'
                     #'Kurtosis hour = ', kurtosisvalues[2].round(3),' \u21FE ','Leptokurtic:', kurtosisvalues[0]>0,'\n'    ]
             fig.suptitle(title,fontsize=20,color='black')
+            plt.tight_layout()
             fig.savefig(f'immagini/Plots run={n_run}.png',facecolor='white', transparent=False)
             plt.close(fig)
+
+            copy_tree('.', latest.as_posix())
             print("Data printed")
     print('All done')

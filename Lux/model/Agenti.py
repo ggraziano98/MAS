@@ -10,7 +10,7 @@ from mesa import Agent
 import model.Market as mk
 from model.conf import *
 
-CACHE_SIZE = 2**15
+CACHE_SIZE = 2**16
 
 logger = logging.getLogger(__name__)
 logger.setLevel(AGENTI_LOG_LEVEL)
@@ -37,11 +37,9 @@ class Trader(Agent):
         self.model = model
         self.strategy = strategy
 
-    def step(self):
-        self.pick_strategy()
-
     def calc_transition_matrix(self, encountered: mk.Strategy):
         '''Calculate transition matrix given the encountered trader'''
+        assert encountered != self.strategy, 'Cannot have transition when strategies are the same'
         # basta controllare se uno è zero per vedere se sono di strategie diverse
         if self.strategy.value * encountered.value == 0: # caso un fundamentalist e un technical
             if not PICK_STRATEGY:
@@ -49,11 +47,11 @@ class Trader(Agent):
             tech_factor_coeff = self.strategy.value or encountered.value # always 1 or -1
             U = Trader.calc_U_strategy(self.model.price, self.model.slope, tech_factor_coeff)
             # FIXME lui usa freq = freq * nt/N
-            freq = v2 * self.model.nt / N
-            U = (abs(self.strategy.value) - abs(encountered.value)) * U # +- U a seconda di che transizione faccio
+            freq = v2 
+            U = (abs(encountered.value) - abs(self.strategy.value)) * U # +- U a seconda di che transizione faccio
         else:   # caso due technical
             U = Trader.calc_U_opinion(self.model.opinion_index, self.model.slope)
-            U = - encountered.value * U # +- U a seconda di che transizione faccio
+            U = encountered.value * U # +- U a seconda di che transizione faccio
             freq = v1
 
         p_transition = Trader.calc_p_transition(freq, U)
@@ -64,14 +62,14 @@ class Trader(Agent):
     def calc_U_opinion(opinion_index, slope):
         '''Calculate transition exponent for opinion change probability'''
         # FIXME lui ha tolto il /v1
-        return a1 * opinion_index + a2 * slope 
+        return a1 * opinion_index + a2 * slope
 
     @staticmethod
     @lru_cache(maxsize=CACHE_SIZE, typed=False)
     def calc_U_strategy(price, slope, tech_factor_coeff):
         '''Calculate transition exponent for strategy change probability'''
         # excess profits per unit by technical
-        ept = (r + slope / v2) / price - R
+        ept = (r + slope) / price - R
         # excess profits per unit by fundamentalist
         epf = s * abs(price - pf) / price
         return a3 * (tech_factor_coeff * ept - epf)
@@ -79,8 +77,7 @@ class Trader(Agent):
     @staticmethod
     @lru_cache(maxsize=CACHE_SIZE, typed=False)
     def calc_p_transition(freq, U):
-        # FIXME lui non ha messo la condizione U > 0
-        return freq * math.exp(-U / freq) * DT 
+        return freq * math.exp(U) * DT
 
     def _get_random_encounter(self):
         rng = random.random() * N
@@ -89,7 +86,7 @@ class Trader(Agent):
                 else mk.Strategy.Tech_P
 
 
-    def pick_strategy(self):
+    def step(self):
         encountered = self._get_random_encounter()
 
         if self.model.get_n_traders(self.strategy) <= MIN_TRADER:

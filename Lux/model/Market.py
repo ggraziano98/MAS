@@ -50,19 +50,17 @@ datacollector_dict = {
 
 class Strategy(Enum):
     Tech_O = 1
-    Tech_P = -1
     Fundam = 0
+    Tech_P = -1
 
 class PriceSeries(List[float]):
     def __init__(self, *iterable):
         super().__init__(*iterable)
 
     def slope(self) -> float:
-        try:
-            x = (self[-1] - self[-sloperange]) / (sloperange * DT)
-        except IndexError as e:
-            x = (self[-1] - self[0]) / (len(self) * DT)
-        return x
+        if len(self) > sloperange:
+            return (self[-1] - self[-sloperange]) / (sloperange * DT)
+        return (self[-1] - self[0]) / (len(self) * DT)
 
 class Mercato(Model):
     def __init__(self):
@@ -105,7 +103,7 @@ class Mercato(Model):
 
         p_trans = abs(U)
 
-        logger.debug(f"EDt: {self.edt:5f} - EDf: {self.edf: 5.2f} - ED: {self.ed:5.2f} - noise: {mu:5.2f} - Transition probability: {p_trans:5.3f}")
+        logger.debug(f"EDt: {self.edt:5.4f} - EDf: {self.edf: 5.4f} - ED: {self.ed:5.4f} - noise: {mu:5.4f} - Transition probability: {p_trans:5.3f}")
 
         if random.random() < p_trans:
             self.price += U * deltap 
@@ -153,7 +151,7 @@ class Mercato(Model):
 
     @property
     def technical_fraction(self):
-        return (self.tech_optimists + self.tech_pessimists) / N
+        return (self.nt) / N
 
     @property
     def ept(self):
