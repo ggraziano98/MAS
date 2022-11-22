@@ -4,7 +4,7 @@
 
 #### Market Population parameters
 nt0 = 495       # FIXnumero chartist 
-nf0 = 5       # FIXtenumero fundamentalist
+nf0 = 5       # FIXnumero fundamentalist
 N = nf0 + nt0
 Tc = 3;         tc = Tc/N     # excess demand chartist influence
 Tf = 3;         gamma = Tf/N  # excess demand fundamentalist influence 
@@ -22,7 +22,7 @@ sigma = 2       # FIXexcess demand noise traders
 ############
 
 # Parametri cambio strategia
-v2 = .05      # frequenza con cui un trader cambia strategia
+v2 = .05    # frequenza con cui un trader cambia strategia
 R  = .04    # ritorno medio dagli altri investimenti 0.0004
 r  = .12    # dividendo nominale dell'asset 0.004
 s  = 0.75   # discount factor
@@ -41,11 +41,11 @@ DT = .01    # FIX
 MIN_TRADER = 5
 
 #============================================
-TESTNUM = 4
+TESTNUM = 0
 RESULT_DIR = "results/relazione_0"+str(TESTNUM)
 
 N_STEPS = 30000
-N_RUNS = 2
+N_RUNS = 5
 #============================================
 
 

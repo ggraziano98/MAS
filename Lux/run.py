@@ -67,7 +67,7 @@ else:
                 os.mkdir(f'{RESULT_DIR}/immagini')
 
             df_list = list([pd.read_pickle(f"{RESULT_DIR}/Model_vars_{n_run}.pkl")])
-            pvalues = adfuller(list(df_list[0].loc[:,'price']))[1]
+            pvalues = adfuller(list(df_list[0].loc[:,'price']))[1]  
             volclus = acorr_ljungbox(np.array(df_list[0].loc[:,'price'])**2, lags = [20], return_df = True)
             volclusvalues = volclus['lb_pvalue'].values[0]
             kurtosisvalues = [kurtosis(pd.DataFrame(df_list[0]['price'].values[1:] - df_list[0]['price'].values[:-1]).rolling(timeframe, step = 2).sum()[10:])\
