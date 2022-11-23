@@ -10,17 +10,26 @@ N_STEPS = 30000
 N_RUNS = 1
 SEED = 42
 
-############
-# Parametri mercato
-############
+#simulation parameters 
 DT = 0.01
 MIN_TRADER = 5
+deltap = 0.0001     # cambio di prezzo
+sloperange = 20     # numero di step su cui calcolare la slope
 
-deltap = 0.01   # cambio di prezzo
-sloperange = 20 # numero di step su cui calcolare la slope
-N=500; pf=10; r=0.01; R=0.001; nt0=50; p0=10
+#market initialization;     fundamental price 
+N=500; nt0=450; p0=10;      pf = 10
 
-v1=1; v2=3; beta=4; Tc=1; Tf=10; a1=0.05; a2=0.5; a3=3; sigma=0.05; s=0.8
+#excess demand parameters
+beta = 6; Tc=3; Tf=3; sigma=2; 
+
+#strategy change parameters
+v2=.05; a3=.8; r=0.12; R=0.04; s=0.75
+
+#technical opinion parameters
+v1=1; a1=0.8; a2=0.5; 
+
+RESULT_DIR = "results/original/parameter_set_1"
+
 
 #Parameter set I:
 # v1=3; v2=2; beta=6; Tc=10; Tf=5; a1=0.6; a2=0.2; a3=0.5; sigma=0.05; s=0.75
