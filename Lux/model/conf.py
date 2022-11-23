@@ -3,17 +3,17 @@
 ############
 
 #### Market Population parameters
-nt0 = 495       # FIXnumero chartist 
-nf0 = 5       # FIXnumero fundamentalist
+nt0 = 250       # FIXnumero chartist 
+nf0 = 250       # FIXnumero fundamentalist
 N = nf0 + nt0
-Tc = 3;         tc = Tc/N     # excess demand chartist influence
-Tf = 3;         gamma = Tf/N  # excess demand fundamentalist influence 
+Tc = 2;         tc = Tc/N     # excess demand chartist influence
+Tf = 1;         gamma = Tf/N  # excess demand fundamentalist influence 
 
 #### Market regulation parameters
-p0 = 12         # initial price
-beta = 6        # price change frequency
+p0 = 10         # initial price
+beta = 3        # price change frequency
 deltap = 0.0001 # FIXprice change
-sigma = 2       # FIXexcess demand noise traders
+sigma = 3       # FIXexcess demand noise traders
 
 ###############################################################################
 
@@ -22,7 +22,7 @@ sigma = 2       # FIXexcess demand noise traders
 ############
 
 # Parametri cambio strategia
-v2 = .05    # frequenza con cui un trader cambia strategia
+v2 = 2    # frequenza con cui un trader cambia strategia
 R  = .04    # ritorno medio dagli altri investimenti 0.0004
 r  = .12    # dividendo nominale dell'asset 0.004
 s  = 0.75   # discount factor
@@ -34,18 +34,18 @@ a2 = .5     # peso decisionale della price slope < 1
 sloperange = 20
 
 # Parametri logica fundamentalist
-pf = 11     # fundamental price
+pf = 10     # fundamental price
 a3 = .8     # inerzia alla reazione sui profitti differenziali 
 
 DT = .01    # FIX 
 MIN_TRADER = 5
 
 #============================================
-TESTNUM = 0
-RESULT_DIR = "results/relazione_0"+str(TESTNUM)
+TESTNUM = 2
+RESULT_DIR = "results/relazione/parameter_set_"+str(TESTNUM)
 
 N_STEPS = 30000
-N_RUNS = 5
+N_RUNS = 1
 #============================================
 
 
